@@ -17,7 +17,7 @@ MonoBehaviour:
   ButtonColors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5403672, g: 1, b: 0.51886785, a: 1}
-    m_PressedColor: {r: 0.8402444, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0.8016073, b: 0, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d06431df710b7754aa8182eba633c864
+guid: 919dd040595cac54289b01a0813a3df3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -963012161620885696
-    second: EndFlag_0
+      213: -2159978211480407020
+    second: LoswFlag_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EndFlag_0
+      name: LoswFlag_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
-        width: 383
-        height: 518
+        x: 76
+        y: 0
+        width: 381
+        height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04fb4309a81b2a2f0800000000000000
-      internalID: -963012161620885696
+      spriteID: 414702eb2473602e0800000000000000
+      internalID: -2159978211480407020
       vertices: []
       indices: 
       edges: []
@@ -172,7 +172,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EndFlag_0: -963012161620885696
+      LoswFlag_0: -2159978211480407020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

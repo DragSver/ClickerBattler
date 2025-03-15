@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d21bc1dc1cd37be46a2266c63698920e
+guid: b63d2d0439fd719448b5863f90d248a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -150904470731843597
-    second: WinBG_0
+      213: 1208040086343421634
+    second: image_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -135,11 +122,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WinBG_0
+      name: image_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f79203fe21e7edf0800000000000000
-      internalID: -150904470731843597
+      spriteID: 2ce8eecde02d3c010800000000000000
+      internalID: 1208040086343421634
       vertices: []
       indices: 
       edges: []
@@ -172,7 +172,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WinBG_0: -150904470731843597
+      image_0: 1208040086343421634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

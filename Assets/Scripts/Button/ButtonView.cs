@@ -25,5 +25,7 @@ namespace ClickRPG {
         public void UnsubscribeOnClick(UnityAction action) {
             Button.onClick.RemoveListener(action);
         }
+
+        public void ClearActionClick() => Button.onClick.RemoveAllListeners();
     }
 }

@@ -63,8 +63,12 @@ namespace ClickRPG
             _endLevelScreen.SetActive(true);
         }
 
-        public void HideEndLevelScreen() => 
+        public void HideEndLevelScreen() 
+        {
+            _continueGameButtonController.OnClick -= () => OnContinueGameClick?.Invoke();
+            _mapButtonController.OnClick -= () => OnMapButtonClick?.Invoke();
             _endLevelScreen.SetActive(false);
+        }
 
         private void InitTMP(TextMeshProUGUI initTMP, string text, Color color, Material material)
         {

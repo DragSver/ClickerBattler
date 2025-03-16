@@ -36,7 +36,6 @@ namespace ClickRPG
         public void DamageCurrentEnemy(float damage)
         {
             _currentEnemy.DoDamage(damage);
-            Debug.Log(_currentEnemy.GetHealth());
             
             _currentHealthBar.DecreaseValue(damage);
         }

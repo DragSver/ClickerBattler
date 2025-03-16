@@ -17,7 +17,10 @@ namespace ClickRPG
                 buttonData.ButtonColors,
                 buttonData.ImageType);
             
+            _buttonView.ClearActionClick();
             _buttonView.SubscribeOnClick(() => OnClick?.Invoke());
         }
+
+        public void ClearActionClick() => OnClick = null;
     }
 }

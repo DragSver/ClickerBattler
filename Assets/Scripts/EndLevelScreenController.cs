@@ -60,7 +60,7 @@ namespace ClickRPG
             {
                 InitTMP(_killTimeAndAdviceText, endLevelScreenData.KillTimeText, endLevelScreenData.ColorAdviceText,
                     endLevelScreenData.MaterialAdviceText);
-                InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, Color.red, 
+                InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, new Color(1, 0.8941177f, 0),
                     endLevelScreenData.MaterialAdviceText);
                 _bestKillTimeText.gameObject.SetActive(true);
                 _timeImage.gameObject.SetActive(true);

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,8 +7,10 @@ namespace ClickRPG
     public class ButtonController : MonoBehaviour
     {
         public event UnityAction OnClick;
-        
+
+        [SerializeField] private float _cooldownTime;
         [SerializeField] private ButtonView _buttonView;
+        private bool _canClick = true;
 
         public void Init(ButtonData buttonData) 
         {
@@ -18,9 +21,24 @@ namespace ClickRPG
                 buttonData.ImageType);
             
             _buttonView.ClearActionClick();
-            _buttonView.SubscribeOnClick(() => OnClick?.Invoke());
+            _buttonView.SubscribeOnClick(() =>
+            {
+                if (!_canClick) return;
+                
+                if (_cooldownTime > 0)
+                    _canClick = false;
+                OnClick?.Invoke();
+                if (!_canClick)
+                    StartCoroutine(ClickCooldown());
+            });
         }
 
         public void ClearActionClick() => OnClick = null;
+
+        IEnumerator ClickCooldown()
+        {
+            yield return new WaitForSeconds(_cooldownTime);
+            _canClick = true;
+        }
     }
 }

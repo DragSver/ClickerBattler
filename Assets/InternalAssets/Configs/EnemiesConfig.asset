@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 2633894443967000018, guid: 0f4a9cfd33b40794e9e280727958dd11, type: 3}
   Enemies:
-  - EnemySprite: {fileID: -5993671577458287816, guid: 04f4f8bba5485bd45ae91debb4f2751a, type: 3}
+  - EnemyId: cock_1
+    EnemySprite: {fileID: -5993671577458287816, guid: 04f4f8bba5485bd45ae91debb4f2751a, type: 3}
     Health: 50
-  - EnemySprite: {fileID: -970496585266668769, guid: fef9eaa974ecfda4099bbb67d1be01d9, type: 3}
+  - EnemyId: frog_2
+    EnemySprite: {fileID: -970496585266668769, guid: fef9eaa974ecfda4099bbb67d1be01d9, type: 3}
     Health: 60
-  - EnemySprite: {fileID: 1149390549615367492, guid: 76d747cfbfc95464a9e96055fa0b5d0c, type: 3}
+  - EnemyId: cat_1
+    EnemySprite: {fileID: 1149390549615367492, guid: 76d747cfbfc95464a9e96055fa0b5d0c, type: 3}
     Health: 100
-  - EnemySprite: {fileID: 5082477626945136644, guid: 17c137680fff3d444b977c60bbc31517, type: 3}
+  - EnemyId: fox_1
+    EnemySprite: {fileID: 5082477626945136644, guid: 17c137680fff3d444b977c60bbc31517, type: 3}
     Health: 80

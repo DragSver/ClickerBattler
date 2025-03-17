@@ -14,6 +14,16 @@ namespace ClickRPG
             return newTime;
         }
 
+        public float SaveBestTimeEnemy(float newTime, string idEnemy)
+        {
+            var bestTime = PlayerPrefs.GetFloat("BestTimeEnemy" + idEnemy, float.MaxValue);
+            if (newTime >= bestTime) return bestTime;
+            
+            PlayerPrefs.SetFloat("BestTimeEnemy" + idEnemy, newTime);
+            PlayerPrefs.Save();
+            return newTime;
+        }
+
         public int AddKills()
         {
             var totalKills = PlayerPrefs.GetInt("TotalKills", 0);

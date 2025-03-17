@@ -65,7 +65,7 @@ namespace ClickRPG {
             else
             {
                 var currentTime = _maxLevelTime - _timer.CurrentTime;
-                var bestTime = _gameStats.SaveBestTime(currentTime);
+                var bestTime = _gameStats.SaveBestTimeEnemy(currentTime, _enemyController.CurrentEnemyData.EnemyId);
                 var totalKills = _gameStats.AddKills();
                 
                 var victoryData = _victoryScreenData;
@@ -75,6 +75,8 @@ namespace ClickRPG {
 
                 _endLevelScreenController.CallEndLevelScreen(victoryData);
             }
+            
+            _enemyController.ClearEnemy();
         }
 
         private void DamageEnemy() => _enemyController.DamageCurrentEnemy(_damage);

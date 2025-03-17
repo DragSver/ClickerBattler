@@ -11,7 +11,8 @@ namespace ClickRPG
         [SerializeField] private Transform _enemyContainer;
         [SerializeField] private EnemiesConfig _enemiesConfig;
         [SerializeField] private HealthBar _healthBarPrefab;
-        
+
+        public EnemyData CurrentEnemyData => _currentEnemyData;
         private EnemyData _currentEnemyData;
         private Enemy _currentEnemy;
 
@@ -37,13 +38,14 @@ namespace ClickRPG
         {
             _currentEnemy.DoDamage(damage);
             
+            Debug.Log(damage);
+            
             _currentHealthBar.DecreaseValue(damage);
         }
 
         public void ClearEnemy()
         {
             Destroy(_currentEnemy.gameObject);
-            _currentEnemy = null;
         }
     }
 }

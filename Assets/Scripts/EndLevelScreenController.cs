@@ -22,9 +22,10 @@ namespace ClickRPG
 
         [SerializeField] private TextMeshProUGUI _statisticsText;
         [SerializeField] private TextMeshProUGUI _killTimeAndAdviceText;
+        [SerializeField] private TextMeshProUGUI _bestKillTimeText;
 
-        [SerializeField] private GameObject _killTimeAndAdviceTextHolder;
         [SerializeField] private Image _timeImage;
+        [SerializeField] private Image _bestTimeImage;
 
         [SerializeField] private ButtonController _continueGameButtonController;
         [SerializeField] private ButtonController _mapButtonController;
@@ -51,13 +52,19 @@ namespace ClickRPG
             {
                 InitTMP(_killTimeAndAdviceText, endLevelScreenData.AdviceText, endLevelScreenData.ColorAdviceText,
                     endLevelScreenData.MaterialAdviceText);
+                _bestKillTimeText.gameObject.SetActive(false);
                 _timeImage.gameObject.SetActive(false);
+                _bestTimeImage.gameObject.SetActive(false);
             }
             else 
             {
                 InitTMP(_killTimeAndAdviceText, endLevelScreenData.KillTimeText, endLevelScreenData.ColorAdviceText,
                     endLevelScreenData.MaterialAdviceText);
+                InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, Color.red, 
+                    endLevelScreenData.MaterialAdviceText);
+                _bestKillTimeText.gameObject.SetActive(true);
                 _timeImage.gameObject.SetActive(true);
+                _bestTimeImage.gameObject.SetActive(true);
             }
             
             _endLevelScreen.SetActive(true);
@@ -94,6 +101,7 @@ namespace ClickRPG
         public string StatisticText;
         public string AdviceText;
         public string KillTimeText;
+        public string BestKillTimeText;
         public Color ColorAdviceText;
         public Material MaterialAdviceText;
 

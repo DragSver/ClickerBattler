@@ -24,7 +24,7 @@ namespace ClickRPG
 
         public void SpawnEnemy()
         {
-            _currentEnemyData = _enemiesConfig.Enemies[^1];
+            _currentEnemyData = _enemiesConfig.Enemies[Random.Range(0, _enemiesConfig.Enemies.Length)];
             _currentEnemy = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
             _currentEnemy.Init(_currentEnemyData);
             _currentEnemy.OnDead += () => OnDead?.Invoke();
@@ -38,6 +38,12 @@ namespace ClickRPG
             _currentEnemy.DoDamage(damage);
             
             _currentHealthBar.DecreaseValue(damage);
+        }
+
+        public void ClearEnemy()
+        {
+            Destroy(_currentEnemy.gameObject);
+            _currentEnemy = null;
         }
     }
 }

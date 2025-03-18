@@ -1,11 +1,11 @@
+using ClickRPG.SceneManagment;
 using UnityEngine;
 
 namespace ClickRPG {
-    public class GameController : MonoBehaviour
+    public class GameController : EntryPoint
     {
         [Header("Enemy")]
         [SerializeField] private EnemyController _enemyController;
-
         
         [Header("GameScreen")]
         [SerializeField] private ButtonController _clickAttackButtonController;
@@ -20,7 +20,10 @@ namespace ClickRPG {
         [SerializeField] private EndLevelScreenData _victoryScreenData;
         [SerializeField] private EndLevelScreenData _loseScreenData;
 
-        private void Awake()
+        private const string SCENE_LOADER_TAG = "SceneLoader";
+
+        
+        public override void Run(SceneEnterParams enterParams)
         {
             _gameStats = new GameStats();
             StartLevel();
@@ -28,7 +31,7 @@ namespace ClickRPG {
 
         private void StartLevel()
         {
-            _endLevelScreenController.OnContinueGameClick -= StartLevel;
+            // _endLevelScreenController.OnContinueGameClick -= StartLevel;
             
             _endLevelScreenController.HideEndLevelScreen();
             _enemyController.Init();
@@ -46,12 +49,12 @@ namespace ClickRPG {
         {
             _timer.Stop();
             
-            _enemyController.OnDead -= EndLevel;
-            _enemyController.ClearEnemy();
-            _timer.OnTimerEnd -= EndLevel;
-            _clickAttackButtonController.ClearActionClick();
+            // _enemyController.OnDead -= EndLevel;
+            // _enemyController.ClearEnemy();
+            // _timer.OnTimerEnd -= EndLevel;
+            // _clickAttackButtonController.ClearActionClick();
             
-            _endLevelScreenController.OnContinueGameClick += StartLevel;
+            _endLevelScreenController.OnContinueGameClick += RestartLevel;
 
             if (_timer.CurrentTime == 0)
             {
@@ -80,5 +83,11 @@ namespace ClickRPG {
         }
 
         private void DamageEnemy() => _enemyController.DamageCurrentEnemy(_damage);
+
+        private void RestartLevel()
+        {
+            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            sceneLoader.LoadGameplayScene();
+        }
     }
 }

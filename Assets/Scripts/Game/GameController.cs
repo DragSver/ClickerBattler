@@ -55,6 +55,7 @@ namespace ClickRPG {
             // _clickAttackButtonController.ClearActionClick();
             
             _endLevelScreenController.OnContinueGameClick += RestartLevel;
+            _endLevelScreenController.OnMapButtonClick += LoadMetaScene;
 
             if (_timer.CurrentTime == 0)
             {
@@ -88,6 +89,12 @@ namespace ClickRPG {
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene();
+        }
+        
+        private void LoadMetaScene()
+        {
+            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            sceneLoader.LoadMetaScene();
         }
     }
 }

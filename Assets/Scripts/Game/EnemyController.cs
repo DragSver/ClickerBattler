@@ -23,7 +23,7 @@ namespace ClickRPG
             SpawnEnemy();
         }
 
-        public void SpawnEnemy()
+        private void SpawnEnemy()
         {
             _currentEnemyData = _enemiesConfig.Enemies[Random.Range(0, _enemiesConfig.Enemies.Length)];
             _currentEnemy = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);

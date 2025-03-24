@@ -2,9 +2,9 @@
 
 namespace ClickRPG
 {
-    public class GameStats
+    public static class GameStats
     {
-        public float SaveBestTime(float newTime)
+        public static float SaveBestTime(float newTime)
         {
             var bestTime = PlayerPrefs.GetFloat("BestTime", float.MaxValue);
             if (newTime >= bestTime) return bestTime;
@@ -14,7 +14,7 @@ namespace ClickRPG
             return newTime;
         }
 
-        public float SaveBestTimeEnemy(float newTime, string idEnemy)
+        public static float SaveBestTimeEnemy(float newTime, string idEnemy)
         {
             var bestTime = PlayerPrefs.GetFloat("BestTimeEnemy" + idEnemy, float.MaxValue);
             if (newTime >= bestTime) return bestTime;
@@ -24,7 +24,7 @@ namespace ClickRPG
             return newTime;
         }
 
-        public int AddKills()
+        public static int AddKills()
         {
             var totalKills = PlayerPrefs.GetInt("TotalKills", 0);
             totalKills++;
@@ -33,7 +33,7 @@ namespace ClickRPG
             return totalKills;
         }
 
-        public int AddDeaths()
+        public static int AddDeaths()
         {
             var totalDeaths = PlayerPrefs.GetInt("TotalDeaths", 0);
             totalDeaths++;
@@ -42,7 +42,7 @@ namespace ClickRPG
             return totalDeaths;
         }
         
-        public void ResetStats()
+        public static void ResetStats()
         {
             PlayerPrefs.DeleteKey("BestTime");
             PlayerPrefs.DeleteKey("TotalKills");

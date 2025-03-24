@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 10e4e76ccf07e044fa4090da6b396fb0
+guid: 6730922b98b0bc04d9926c1c5e8e074b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6042768977523502190
-    second: image-fotor-bg-remover-20250320104221 1_0
+      213: 3295243717992872476
+    second: 1000_F_187562734_YR12IPBCdxsXO6i6MJWiPk7sy5WEuBXJ-fotor-bg-remover-2025032416159_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: image-fotor-bg-remover-20250320104221 1_0
+      name: 1000_F_187562734_YR12IPBCdxsXO6i6MJWiPk7sy5WEuBXJ-fotor-bg-remover-2025032416159_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 145
-        height: 412
+        x: 12
+        y: 19
+        width: 457
+        height: 460
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e6ce90d7e5a3cd350800000000000000
-      internalID: 6042768977523502190
+      spriteID: c1a7d4bd3be0bbd20800000000000000
+      internalID: 3295243717992872476
       vertices: []
       indices: 
       edges: []

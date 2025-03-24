@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 6da71740b92c95f46baee095226434d6
+guid: 26c0107ad0b34974abbbcd3e7d737bf9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3769640910458060287
-    second: romantic_01-fotor-bg-remover-20250317222423 2_0
+      213: -4403037514510699364
+    second: gamedev25_71559_Fabulous_style_Isometry_View_from_afar_side_vie_afc4a773-3b87-465d-9b7d-a33eb7e7ed96-fotor-bg-remover-2025032012576
+      1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +140,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: romantic_01-fotor-bg-remover-20250317222423 2_0
+      name: gamedev25_71559_Fabulous_style_Isometry_View_from_afar_side_vie_afc4a773-3b87-465d-9b7d-a33eb7e7ed96-fotor-bg-remover-2025032012576
+        1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 147
-        height: 140
+        x: 6
+        y: 5
+        width: 77
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1020e59709b8fabc0800000000000000
-      internalID: -3769640910458060287
+      spriteID: c94fed675b445e2c0800000000000000
+      internalID: -4403037514510699364
       vertices: []
       indices: 
       edges: []
@@ -172,7 +174,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      romantic_01-fotor-bg-remover-20250317222423 2_0: -3769640910458060287
+      gamedev25_71559_Fabulous_style_Isometry_View_from_afar_side_vie_afc4a773-3b87-465d-9b7d-a33eb7e7ed96-fotor-bg-remover-2025032012576 1_0: -4403037514510699364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

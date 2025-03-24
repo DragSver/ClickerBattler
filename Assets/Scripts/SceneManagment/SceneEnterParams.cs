@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace ClickRPG.SceneManagment
 {
     public abstract class SceneEnterParams

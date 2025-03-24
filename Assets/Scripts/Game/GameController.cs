@@ -1,3 +1,5 @@
+using ClickRPG.CriticalHit;
+using ClickRPG.Meta;
 using ClickRPG.SceneManagment;
 using UnityEngine;
 
@@ -9,11 +11,11 @@ namespace ClickRPG {
         
         [Header("GameScreen")]
         [SerializeField] private ButtonController _clickAttackButtonController;
-        [SerializeField] private ButtonData _clickAttackButtonData;
+        [SerializeField] private CriticalHitController _criticalHitController;
         [SerializeField] private Timer _timer;
         [SerializeField] private float _maxLevelTime = 10;
         [SerializeField] private float _damage = 1f;
-        private GameStats _gameStats;
+        [SerializeField] private ButtonData _clickAttackButtonData;
 
         [Header("EndLevelScreen")]
         [SerializeField] private EndLevelScreenController _endLevelScreenController;
@@ -25,12 +27,13 @@ namespace ClickRPG {
         
         public override void Run(SceneEnterParams enterParams)
         {
-            _gameStats = new GameStats();
+            var gameParams = enterParams as GameEnterParams;
             StartLevel();
         }
 
         private void StartLevel()
         {
+            _criticalHitController.Init();
             // _endLevelScreenController.OnContinueGameClick -= StartLevel;
             
             _endLevelScreenController.HideEndLevelScreen();
@@ -38,9 +41,10 @@ namespace ClickRPG {
             _enemyController.OnDead += EndLevel;
             
             _clickAttackButtonController.Init(_clickAttackButtonData);
-            _clickAttackButtonController.OnClick += DamageEnemy;
+            _clickAttackButtonController.OnClick += () => DamageEnemy(_criticalHitController.GetDamageMultiplierPointerPosition(_damage));
             
             _timer.Init(_maxLevelTime);
+            _criticalHitController.StartGenerateCriticalPoint();
             _timer.Play();
             _timer.OnTimerEnd += EndLevel;
         }
@@ -48,7 +52,7 @@ namespace ClickRPG {
         private void EndLevel()
         {
             _timer.Stop();
-            
+            _criticalHitController.StopGenerateCriticalPoint();
             // _enemyController.OnDead -= EndLevel;
             // _enemyController.ClearEnemy();
             // _timer.OnTimerEnd -= EndLevel;
@@ -59,7 +63,7 @@ namespace ClickRPG {
 
             if (_timer.CurrentTime == 0)
             {
-                var totalDeaths = _gameStats.AddDeaths();
+                var totalDeaths = GameStats.AddDeaths();
                 
                 var loseData = _loseScreenData;
                 loseData.StatisticText = loseData.StatisticText.Replace("N", totalDeaths.ToString());
@@ -69,8 +73,8 @@ namespace ClickRPG {
             else
             {
                 var currentTime = _maxLevelTime - _timer.CurrentTime;
-                var bestTime = _gameStats.SaveBestTimeEnemy(currentTime, _enemyController.CurrentEnemyData.EnemyId);
-                var totalKills = _gameStats.AddKills();
+                var bestTime = GameStats.SaveBestTimeEnemy(currentTime, _enemyController.CurrentEnemyData.EnemyId);
+                var totalKills = GameStats.AddKills();
                 
                 var victoryData = _victoryScreenData;
                 victoryData.KillTimeText = currentTime.ToString("00:00.000s");
@@ -83,7 +87,7 @@ namespace ClickRPG {
             _enemyController.ClearEnemy();
         }
 
-        private void DamageEnemy() => _enemyController.DamageCurrentEnemy(_damage);
+        private void DamageEnemy(float damage) => _enemyController.DamageCurrentEnemy(damage);
 
         private void RestartLevel()
         {

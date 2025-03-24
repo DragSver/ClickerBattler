@@ -21,7 +21,7 @@ namespace ClickRPG.Meta
         private void StartLevel(Vector2Int locationLevel)
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-            sceneLoader.LoadGameplayScene();
+            sceneLoader.LoadGameplayScene(new GameEnterParams(Scenes.LevelScene, locationLevel));
         }
     }
 }

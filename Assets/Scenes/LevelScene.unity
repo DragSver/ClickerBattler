@@ -150,6 +150,7 @@ MonoBehaviour:
   _enemyController: {fileID: 627607019}
   _clickAttackButtonController: {fileID: 1673642388}
   _criticalHitController: {fileID: 2021477181}
+  _levels: {fileID: 11400000, guid: 89729ccb81f89444ab553bcd2797b6ca, type: 2}
   _timer: {fileID: 1288416902}
   _maxLevelTime: 10
   _damage: 1

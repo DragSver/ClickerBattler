@@ -13,7 +13,7 @@ namespace ClickRPG.Meta.Locations
 
         private int _currentLocation;
 
-        public void Init(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        public void Init(int currentLocation, UnityAction<int, int> startLevelCallback)
         {
             _currentLocation = currentLocation;
             FirstInitLocations(currentLocation, startLevelCallback);
@@ -54,12 +54,13 @@ namespace ClickRPG.Meta.Locations
                 _previousLocationButton.gameObject.SetActive(false);
         }
         
-        private void FirstInitLocations(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        private void FirstInitLocations(int currentLocation, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
-                _locations[i].Init(level => startLevelCallback?.Invoke(new(i, level)));
-                _locations[i].SetActive(currentLocation == i);
+                var locationNum = i;
+                _locations[locationNum].Init(level => startLevelCallback?.Invoke(locationNum, level));
+                _locations[locationNum].SetActive(currentLocation == locationNum);
             }
         }
     }

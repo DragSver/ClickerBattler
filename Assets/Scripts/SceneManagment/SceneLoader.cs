@@ -13,12 +13,12 @@ namespace ClickRPG.SceneManagment
         {
             StartCoroutine(LoadAndStartMeta(enterParams));
         }
-        public void LoadGameplayScene(SceneEnterParams enterParams = null)
+        public void LoadGameplayScene(GameEnterParams enterParams)
         {
             StartCoroutine(LoadAndStartGameplay(enterParams));
         }
 
-        private IEnumerator LoadAndStartGameplay(SceneEnterParams enterParams = null)
+        private IEnumerator LoadAndStartGameplay(GameEnterParams enterParams)
         {
             _loadingScreen.SetActive(true);
 

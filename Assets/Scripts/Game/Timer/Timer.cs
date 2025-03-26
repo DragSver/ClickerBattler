@@ -12,23 +12,22 @@ namespace ClickRPG
         private float _currentTime;
         private bool _isPlaying;
 
-        public void Init(float maxTime)
+        public void SetMaxTime(float maxTime)
         {
             _maxTime = maxTime;
             _currentTime = maxTime;
+            SetTime(maxTime);
         }
         
-        public void Resume() => _isPlaying = true;
-        
-        public void Pause() => _isPlaying = false;
-
         public void Play() => _isPlaying = true;
-
         public void Stop()
         {
             _isPlaying = false;
             OnTimerEnd = null;
         }
+        
+        public void Pause() => _isPlaying = false;
+        public void Resume() => _isPlaying = true;
 
         public void FixedUpdate()
         {

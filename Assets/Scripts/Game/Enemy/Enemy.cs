@@ -13,11 +13,11 @@ namespace ClickRPG
 
         private float _health;
 
-        public void Init(EnemyData enemyData)
+        public void Init(Sprite sprite, int health)
         {
-            _image.sprite = enemyData.EnemySprite;
+            _image.sprite = sprite;
             _image.preserveAspect = true;
-            _health = enemyData.Health;
+            _health = health;
         }
 
         public void DoDamage(float damage)

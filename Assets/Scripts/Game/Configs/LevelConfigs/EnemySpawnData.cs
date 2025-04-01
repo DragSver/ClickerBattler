@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.Configs.Levels.Data 
+namespace Game.Configs.LevelConfigs 
 {
     [Serializable]
     public struct EnemySpawnData 
@@ -8,6 +8,5 @@ namespace Game.Configs.Levels.Data
         public string Id;
         public int Hp;
         public bool IsBoss;
-        public float BossTime;
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ClickRPG
+namespace Game
 {
     public class HealthBar : MonoBehaviour
     {
@@ -9,11 +9,8 @@ namespace ClickRPG
         [SerializeField] private Image _backgroundSliderImage;
         [SerializeField] private Image _fillAreaSliderImage;
 
-        public void Init()
-        {
-            
-        }
-
+        public float CurrentValue => _slider.value;
+        
         public void SetMaxValue(float value)
         {
             _slider.maxValue = value;

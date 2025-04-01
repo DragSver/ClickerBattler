@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClickRPG
+namespace Game.Timer
 {
     public abstract class Timer : MonoBehaviour
     {

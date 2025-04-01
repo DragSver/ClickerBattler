@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace ClickRPG.CriticalHit
+namespace Game.CriticalHit
 {
     public class CriticalHitController : MonoBehaviour
     {
@@ -20,8 +20,9 @@ namespace ClickRPG.CriticalHit
         private CriticalHitPoint _criticalHitPoint;
         private bool _generateCriticalPoint;
 
-        public void Init()
+        public void Init(RectTransform buttonAttackRectTransform)
         {
+            _buttonAttackRectTransform = buttonAttackRectTransform;
             _criticalHitPoint = Instantiate(_criticalHitPointPrefab, _buttonAttackRectTransform);
         }
 

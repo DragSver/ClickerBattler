@@ -1,10 +1,11 @@
 using System;
+using ClickRPG;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ClickRPG
+namespace Game
 {
     public class EndLevelScreenController : MonoBehaviour
     {

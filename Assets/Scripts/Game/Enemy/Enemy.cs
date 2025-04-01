@@ -1,28 +1,30 @@
-using UnityEngine;
+using Game;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-namespace ClickRPG
+namespace Kolobrod.Game.Enemy
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy
     {
         public event UnityAction<float> OnDamaged;
         public event UnityAction OnDead;
-        
-        [SerializeField] private Image _image;
 
+        private EnemyView _enemyView;
         private float _health;
+        private Elements _element;
 
-        public void Init(Sprite sprite, int health)
+        public Enemy(int maxHealth, EnemyView enemyView, EnemyViewData enemyViewData)
         {
-            _image.sprite = sprite;
-            _image.preserveAspect = true;
-            _health = health;
+            _health = maxHealth;
+            _element = enemyViewData.Element;
+            _enemyView = enemyView;
+            _enemyView.Enemy = this;
+            _enemyView.SetEnemy(enemyViewData.Name, enemyViewData.Sprite, enemyViewData.Element, _health, ref OnDamaged, ref OnDead);
         }
 
-        public void DoDamage(float damage)
+        public void DoDamage(Elements element, float damage)
         {
-            if (damage >= _health)
+            var elementDamage = ElementDamageSystem.CalculateDamage(element, _element, damage);
+            if (elementDamage >= _health)
             {
                 _health = 0;
                 
@@ -31,8 +33,8 @@ namespace ClickRPG
                 return;
             }
 
-            _health -= damage;
-            OnDamaged?.Invoke(damage);
+            _health -= elementDamage;
+            OnDamaged?.Invoke(elementDamage);
         }
 
         public float GetHealth() => _health;

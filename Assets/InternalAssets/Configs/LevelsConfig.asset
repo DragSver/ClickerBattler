@@ -12,16 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84375c10b8374c87adf6dc153d119c9a, type: 3}
   m_Name: LevelsConfig
   m_EditorClassIdentifier: 
-  Levels:
+  Locations:
   - Location: 0
-    LevelNumber: 1
-    Enemies:
-    - Id: cock
-      Hp: 50
-      IsBoss: 0
-      BossTime: 0
-    - Id: frog
-      Hp: 80
-      IsBoss: 1
-      BossTime: 10
-    Reward: 0
+    Levels:
+    - Location: 0
+      LevelNumber: 0
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: log_1_n
+          Hp: 70
+          IsBoss: 0
+      - Time: 10
+        Enemies:
+        - Id: cock_1_s
+          Hp: 80
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 1
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: mouse_2_m
+          Hp: 50
+          IsBoss: 0
+        - Id: mouse_2_m
+          Hp: 50
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: mouse_2_m
+          Hp: 70
+          IsBoss: 0
+        - Id: mouse_1_m
+          Hp: 70
+          IsBoss: 0
+        - Id: mouse_1_m
+          Hp: 70
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 2
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: lizard_1_s
+          Hp: 80
+          IsBoss: 0
+      - Time: 5
+        Enemies:
+        - Id: snake_3_b
+          Hp: 50
+          IsBoss: 0
+    Type: 2

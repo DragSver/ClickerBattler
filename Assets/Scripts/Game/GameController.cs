@@ -1,31 +1,33 @@
-using ClickRPG.CriticalHit;
-using ClickRPG.Meta;
+using System.Linq;
+using ClickRPG;
 using ClickRPG.SceneManagment;
-using Game.Configs.Levels;
+using Game.Configs.LevelConfigs;
+using Game.CriticalHit;
+using Kolobrod.Game.Enemy;
 using UnityEngine;
 
-namespace ClickRPG {
+namespace Game {
     public class GameController : EntryPoint
     {
         [Header("Enemy")]
         [SerializeField] private EnemyController _enemyController;
         
         [Header("GameScreen")]
-        [SerializeField] private ButtonController _clickAttackButtonController;
-        [SerializeField] private CriticalHitController _criticalHitController;
+        [SerializeField] private Timer.Timer _timer;
         [SerializeField] private LevelsConfig _levels;
-        [SerializeField] private Timer _timer;
-        [SerializeField] private float _maxLevelTime = 10;
-        [SerializeField] private float _damage = 1f;
-        [SerializeField] private ButtonData _clickAttackButtonData;
+        [SerializeField] private LevelsViewConfig _levelsViewConfig;
+        [SerializeField] private LocationViewController _locationViewController;
+        [SerializeField] private CriticalHitController _criticalHitController;
+        [SerializeField] private AttackButtonController _attackButtonController;
 
         [Header("EndLevelScreen")]
         [SerializeField] private EndLevelScreenController _endLevelScreenController;
         [SerializeField] private EndLevelScreenData _victoryScreenData;
         [SerializeField] private EndLevelScreenData _loseScreenData;
 
+        private LevelData _levelData;
+        
         private GameEnterParams _gameEnterParams;
-
         private const string SCENE_LOADER_TAG = "SceneLoader";
 
         
@@ -39,10 +41,8 @@ namespace ClickRPG {
             var gameEnterParams = (GameEnterParams)enterParams;
             _gameEnterParams = gameEnterParams;
             
-            _criticalHitController.Init();
             _enemyController.Init(_timer);
-            _clickAttackButtonController.Init(_clickAttackButtonData);
-            _clickAttackButtonController.OnClick += () => DamageEnemy(_criticalHitController.GetDamageMultiplierPointerPosition(_damage));
+            _levelsViewConfig.Init();
 
             StartLevel();
         }
@@ -51,9 +51,17 @@ namespace ClickRPG {
         {
             _endLevelScreenController.HideEndLevelScreen();
             
-            var levelData = _levels.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
-            _enemyController.StartLevel(levelData);
-            _enemyController.OnLevelPassed += EndLevel;
+            _levelData = _levels.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
+
+            var locationView = _levelsViewConfig.GetLocationViewData(_levelData.Location);
+            _locationViewController.SetLocationView(locationView);
+            _attackButtonController = _locationViewController.AttackButtonController;
+            _attackButtonController.Init();
+            _criticalHitController.Init(_attackButtonController.GetComponent<RectTransform>());
+            _attackButtonController.OnClick += AttackClick;
+            
+            _enemyController.StartLevel(_levelData);
+            _enemyController.OnLevelComplete += EndLevel;
             _criticalHitController.StartGenerateCriticalPoint();
         }
 
@@ -67,13 +75,20 @@ namespace ClickRPG {
 
             if (levelPassed)
             {
-                var currentTime = _maxLevelTime - _timer.CurrentTime;
-                var bestTime = GameStats.SaveBestTime(currentTime);
-                var totalKills = GameStats.AddKills();
-                
                 var victoryData = _victoryScreenData;
-                victoryData.KillTimeText = currentTime.ToString("00:00.000s");
-                victoryData.BestKillTimeText = bestTime.ToString("00:00.000s");
+                var totalKills = GameStats.GetKills();
+                
+                var maxLevelTime = 0f;
+                foreach (var levelDataEnemiesWive in _levelData.EnemiesWives.Where(levelDataEnemiesWive => levelDataEnemiesWive.Time > 0)) 
+                    maxLevelTime = levelDataEnemiesWive.Time;
+                if (maxLevelTime > 0)
+                {
+                    var currentTime = maxLevelTime - _timer.CurrentTime;
+                    var bestTime = GameStats.SaveBestTime(currentTime);
+                    
+                    victoryData.KillTimeText = currentTime.ToString("00:00.000s");
+                    victoryData.BestKillTimeText = bestTime.ToString("00:00.000s");
+                }
                 victoryData.StatisticText = victoryData.StatisticText.Replace("N", totalKills.ToString());
 
                 _endLevelScreenController.CallEndLevelScreen(victoryData);
@@ -89,7 +104,8 @@ namespace ClickRPG {
             }
         }
 
-        private void DamageEnemy(float damage) => _enemyController.DamageCurrentEnemy(damage);
+        private void DamageEnemy(Enemy enemy, Elements element, float damage) =>
+            _enemyController.DamageCurrentEnemy(enemy, element, damage);
 
         private void RestartLevel()
         {
@@ -101,6 +117,12 @@ namespace ClickRPG {
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadMetaScene();
+        }
+
+        private void AttackClick(Enemy enemy, Elements element, float damage)
+        {
+            var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
+            DamageEnemy(enemy, element, damage);
         }
     }
 }

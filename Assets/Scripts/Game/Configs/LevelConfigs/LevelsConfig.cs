@@ -18,5 +18,18 @@ namespace Game.Configs.Levels
             Debug.LogError($"Not found Level data for location {location} and level {level}");
             return default;
         }
+
+        public int GetMaxLevelOnLocation(int location)
+        {
+            var maxLevel = 0;
+            foreach (var levelData in Levels)
+            {
+                if (location != levelData.Location) continue;
+                if (levelData.LevelNumber <= maxLevel) continue;
+                maxLevel = levelData.LevelNumber;
+            }
+
+            return maxLevel;
+        }
     }
 }

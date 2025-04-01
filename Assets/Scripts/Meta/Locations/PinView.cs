@@ -13,19 +13,19 @@ namespace ClickRPG.Meta.Locations
         [SerializeField] private Image _currentImage;
         
 
-        public void Init(int levelNumber, PinType pinType, UnityAction clickCallback)
+        public void Init(int levelNumber, ProgressState progressState, UnityAction clickCallback)
         {
             _text.text = levelNumber.ToString();
 
-            switch (pinType)
+            switch (progressState)
             {
-                case PinType.Complete:
+                case ProgressState.Complete:
                     _completeImage.gameObject.SetActive(true);
                     break;
-                case PinType.Current:
+                case ProgressState.Current:
                     _currentImage.gameObject.SetActive(true);
                     break;
-                case  PinType.Closed:
+                case  ProgressState.Closed:
                     _levelButton.enabled = false;
                     break;
             }

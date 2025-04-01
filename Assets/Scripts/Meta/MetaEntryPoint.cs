@@ -1,6 +1,8 @@
 using ClickRPG.Meta.Locations;
-using ClickRPG.SceneManagment;
-using Unity.VisualScripting;
+using ClickRPG.SceneManagement;
+using Global.Audio;
+using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 
 namespace ClickRPG.Meta
@@ -8,13 +10,22 @@ namespace ClickRPG.Meta
     public class MetaEntryPoint : EntryPoint
     {
         [SerializeField] private LocationManager _locationManager;
+        private SaveSystem _saveSystem;
+        private AudioManager _audioManager;
+        
         [SerializeField] private int _currentLocation = 1;
 
         private const string SCENE_LOADER_TAG = "SceneLoader";
         
         
         public override void Run(SceneEnterParams enterParams){
-            _locationManager.Init(_currentLocation, StartLevel);
+            _saveSystem = FindFirstObjectByType<SaveSystem>();
+            _audioManager = FindFirstObjectByType<AudioManager>();
+            _audioManager.Play(AudioNames.Audio_Meta_BG, false);
+
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            
+            _locationManager.Init(progress, StartLevel);
             // _startLevelButton.onClick.AddListener(StartLevel);
         }
 

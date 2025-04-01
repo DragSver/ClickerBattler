@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,10 +14,10 @@ namespace ClickRPG.Meta.Locations
 
         private int _currentLocation;
 
-        public void Init(int currentLocation, UnityAction<int, int> startLevelCallback)
+        public void Init(Progress progress, UnityAction<int, int> startLevelCallback)
         {
-            _currentLocation = currentLocation;
-            FirstInitLocations(currentLocation, startLevelCallback);
+            _currentLocation = progress.CurrentLocation;
+            FirstInitLocations(progress, startLevelCallback);
             FirstInitButtons();
         }
 
@@ -54,13 +55,19 @@ namespace ClickRPG.Meta.Locations
                 _previousLocationButton.gameObject.SetActive(false);
         }
         
-        private void FirstInitLocations(int currentLocation, UnityAction<int, int> startLevelCallback)
+        private void FirstInitLocations(Progress progress, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
                 var locationNum = i;
-                _locations[locationNum].Init(level => startLevelCallback?.Invoke(locationNum, level));
-                _locations[locationNum].SetActive(currentLocation == locationNum);
+
+                var isLocationPassed = locationNum > progress.CurrentLocation
+                    ? ProgressState.Complete
+                    : (locationNum == progress.CurrentLocation ? ProgressState.Current : ProgressState.Closed);
+                var currentLevel = progress.CurrentLocation;
+                
+                _locations[locationNum].Init(isLocationPassed, currentLevel, level => startLevelCallback?.Invoke(locationNum, level));
+                _locations[locationNum].SetActive(progress.CurrentLocation == locationNum);
             }
         }
     }

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace ClickRPG
+namespace Game.Timer
 {
     public class TextTimer : Timer
     {

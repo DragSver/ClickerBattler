@@ -32,6 +32,7 @@ namespace ClickRPG
             PlayerPrefs.Save();
             return totalKills;
         }
+        public static int GetKills() => PlayerPrefs.GetInt("TotalKills", 0);
 
         public static int AddDeaths()
         {

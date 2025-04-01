@@ -1,22 +1,22 @@
+using System.Collections.Generic;
+using Kolobrod.Game.Enemy;
 using UnityEngine;
 
-namespace ClickRPG
+namespace Game.Configs.EnemyConfigs
 {
     [CreateAssetMenu(menuName = "Configs/EnemiesConfig", fileName = "EnemiesConfig")]
     public class EnemiesConfig : ScriptableObject
     {
-        public Enemy EnemyPrefab;
         public EnemyViewData[] Enemies;
+        public Dictionary<string, EnemyViewData> EnemiesDict;
 
-        public EnemyViewData GetEnemy(string id)
+        public void Init()
         {
-            foreach (var enemyData in Enemies)
-            {
-                if (enemyData.Id == id) return enemyData;
-            }
-            
-            Debug.LogError($"Не найден враг с id {id}");
-            return default;
+            EnemiesDict = new Dictionary<string, EnemyViewData>();
+            foreach (var enemyViewData in Enemies)
+                EnemiesDict.Add(enemyViewData.Id, enemyViewData);
         }
+        
+        public EnemyViewData GetEnemy(string id) => EnemiesDict[id];
     }
 }

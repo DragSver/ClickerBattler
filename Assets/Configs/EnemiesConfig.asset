@@ -12,13 +12,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e00d2ce1622444dbe0a45850bc1edc5, type: 3}
   m_Name: EnemiesConfig
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 2633894443967000018, guid: 0f4a9cfd33b40794e9e280727958dd11, type: 3}
   Enemies:
-  - Id: cock
-    Sprite: {fileID: -5993671577458287816, guid: 04f4f8bba5485bd45ae91debb4f2751a, type: 3}
-  - Id: frog
-    Sprite: {fileID: -970496585266668769, guid: fef9eaa974ecfda4099bbb67d1be01d9, type: 3}
-  - Id: fox
-    Sprite: {fileID: 5082477626945136644, guid: 17c137680fff3d444b977c60bbc31517, type: 3}
-  - Id: cat
-    Sprite: {fileID: 1149390549615367492, guid: 76d747cfbfc95464a9e96055fa0b5d0c, type: 3}
+  - Id: log_1_n
+    Name: "\u041F\u043E\u043B\u0435\u043D\u043E"
+    Sprite: {fileID: -5034061168752090764, guid: f4853b8fe39422340b8938d476fb674c, type: 3}
+    Element: 0
+  - Id: cock_1_s
+    Name: "\u041A\u043B\u044E\u043A\u0443\u0434\u044F\u0440"
+    Sprite: {fileID: -2843062148381276162, guid: e136251b7a3d7904291f05c0eab33bee, type: 3}
+    Element: 1
+  - Id: cat_1_s
+    Name: "\u041D\u0430\u0441\u0442\u0430\u0432\u043D\u0438\u043A"
+    Sprite: {fileID: 4010371489758289374, guid: 5684f0a2a1292594f8d26dacb36763b5, type: 3}
+    Element: 1
+  - Id: mouse_1_m
+    Name: "\u041F\u043E\u043B\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u044C"
+    Sprite: {fileID: -7879523694507471910, guid: eac436ccbaa32f443ae9c9bb74eec2d9, type: 3}
+    Element: 2
+  - Id: mouse_2_m
+    Name: "\u041F\u043E\u043B\u0435\u0432\u0430\u044F \u043C\u044B\u0448\u044C"
+    Sprite: {fileID: -8109719929537929047, guid: 1bdc196cef3f31343812675f77a22b87, type: 3}
+    Element: 2
+  - Id: rabbit_1_s
+    Name: "\u041A\u0440\u043E\u043B\u0438\u043A"
+    Sprite: {fileID: -6735366541356093828, guid: caedb1e8b06547f44a0f9da8b0095877, type: 3}
+    Element: 1
+  - Id: rabbit_2_s
+    Name: "\u041A\u0440\u043E\u043B\u0438\u043A"
+    Sprite: {fileID: -2429193879928250221, guid: 7c2ec2b8be66b3c449e335de7470332f, type: 3}
+    Element: 1
+  - Id: frog_1_w
+    Name: "\u041B\u044F\u0433\u0443\u0448\u043A\u0430"
+    Sprite: {fileID: 1116521595047377346, guid: 92cb9e41c8fb610419edb0c44ba89c4f, type: 3}
+    Element: 4
+  - Id: e_owl_1_m
+    Name: "\u0424\u0438\u043B\u0438\u043D"
+    Sprite: {fileID: -796149542704313808, guid: ca4b297645ec146488dbcf283b3cbbca, type: 3}
+    Element: 2
+  - Id: e_owl_2_m
+    Name: "\u0424\u0438\u043B\u0438\u043D"
+    Sprite: {fileID: -2151054264885343087, guid: 9e44a956399c77e439b5012a992e3be2, type: 3}
+    Element: 2
+  - Id: wolf_1_m
+    Name: "\u0412\u043E\u043B\u043A"
+    Sprite: {fileID: -988132637539126569, guid: cdddf15ab2475c346a1d85c46b68e192, type: 3}
+    Element: 2
+  - Id: wolf_2_m
+    Name: "\u0412\u043E\u043B\u043A"
+    Sprite: {fileID: 807020720694070877, guid: 2821efa610c19a74ea1656c589b31c1c, type: 3}
+    Element: 2
+  - Id: raven_1_m
+    Name: "\u0412\u043E\u0440\u043E\u043D"
+    Sprite: {fileID: -7711272448059005599, guid: 6315d0018ecb7ce49a1b97d3fbf8906b, type: 3}
+    Element: 2
+  - Id: hare_1_m
+    Name: "\u0417\u0430\u044F\u0446"
+    Sprite: {fileID: -4641952833992361182, guid: 9ddb45c8c8d6c5745a39d6d3b6edc589, type: 3}
+    Element: 2
+  - Id: hare_2_m
+    Name: "\u0417\u0430\u044F\u0446"
+    Sprite: {fileID: -8163272373612333507, guid: de510cfe29e8b714e84ba251501fb3ad, type: 3}
+    Element: 2
+  - Id: snake_1_b
+    Name: "\u0417\u043C\u0435\u044F"
+    Sprite: {fileID: 8350396115035144537, guid: 88e65799772ce5747b073b8146d28f2e, type: 3}
+    Element: 3
+  - Id: snake_2_b
+    Name: "\u0417\u043C\u0435\u044F"
+    Sprite: {fileID: 7449364443338724268, guid: 794c8feef73010840820b9895f52713b, type: 3}
+    Element: 3
+  - Id: snake_3_b
+    Name: "\u0417\u043C\u0435\u044F"
+    Sprite: {fileID: 106521675753145763, guid: 562caa39a60790a48bba67bfe53e1772, type: 3}
+    Element: 3
+  - Id: fox_1_b
+    Name: "\u041B\u0438\u0441\u0430"
+    Sprite: {fileID: 5464059029561664874, guid: 0b3c2a73b67bba24cbc585340648c9ab, type: 3}
+    Element: 3
+  - Id: fox_2_b
+    Name: "\u041B\u0438\u0441\u0430"
+    Sprite: {fileID: 2496795874522234075, guid: 1785f01a46eef224287d044a9db1e424, type: 3}
+    Element: 3
+  - Id: bird_1_s
+    Name: "\u041F\u0438\u0447\u0443\u0436\u043A\u0430"
+    Sprite: {fileID: 7715863443711793543, guid: aacc2aa540816ee4b8821663b5b3d905, type: 3}
+    Element: 1
+  - Id: bird_2_s
+    Name: "\u041F\u0438\u0447\u0443\u0436\u043A\u0430"
+    Sprite: {fileID: -6635434219332666690, guid: 02018c6f991a0354d87119a1952261ab, type: 3}
+    Element: 1
+  - Id: magpie_1_s
+    Name: "\u0421\u043E\u0440\u043E\u043A\u0430"
+    Sprite: {fileID: 4389366187494977977, guid: ee365c457a8874446a8c0135fa1f9fc0, type: 3}
+    Element: 1
+  - Id: lizard_1_s
+    Name: "\u042F\u0449\u0435\u0440\u0438\u0446\u0430"
+    Sprite: {fileID: -9188699745512221896, guid: 7cf17db25e415cf40b795190d3a38d84, type: 3}
+    Element: 1
+  - Id: 
+    Name: 
+    Sprite: {fileID: 0}
+    Element: 0

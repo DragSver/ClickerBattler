@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ClickRPG.CriticalHit
+namespace Game.CriticalHit
 {
     public class CriticalHitPoint : MonoBehaviour
     {

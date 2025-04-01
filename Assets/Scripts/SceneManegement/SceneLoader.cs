@@ -1,9 +1,10 @@
 using System.Collections;
 using Global.Audio;
+using SceneManegement.EnterParams;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ClickRPG.SceneManagement
+namespace SceneManegement
 {
     public class SceneLoader : MonoBehaviour
     {

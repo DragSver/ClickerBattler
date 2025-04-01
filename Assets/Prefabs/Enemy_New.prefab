@@ -395,7 +395,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 489, y: 699.8401}
+  m_SizeDelta: {x: 512, y: 517}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &590251725196734683
 CanvasRenderer:
@@ -648,15 +648,15 @@ MonoBehaviour:
   _healthBar: {fileID: 5835625174676953776}
   _damageText: {fileID: 4361252652500729748}
   _image: {fileID: 4783000866475710633}
-  _boxCollider: {fileID: 0}
+  _boxCollider: {fileID: 5478774910891022279}
   _elementViewDatas:
-  - Element: 0
-    ElementImage: {fileID: 2679380159489492507}
   - Element: 1
-    ElementImage: {fileID: 5401593482756620599}
+    ElementImage: {fileID: 2679380159489492507}
   - Element: 2
-    ElementImage: {fileID: 3145958195041898746}
+    ElementImage: {fileID: 5401593482756620599}
   - Element: 3
+    ElementImage: {fileID: 3145958195041898746}
+  - Element: 4
     ElementImage: {fileID: 4887437330243222837}
 --- !u!1 &5022017073058652444
 GameObject:
@@ -958,6 +958,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1971896161007693300, guid: 4ab48dd216477f24c9dfb7f8aa036e40, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971896161007693300, guid: 4ab48dd216477f24c9dfb7f8aa036e40, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3427757492706434208, guid: 4ab48dd216477f24c9dfb7f8aa036e40, type: 3}

@@ -1,5 +1,5 @@
 ﻿using System;
-using ClickRPG;
+using Button;
 using UnityEngine;
 
 namespace Game.Configs.LevelConfigs

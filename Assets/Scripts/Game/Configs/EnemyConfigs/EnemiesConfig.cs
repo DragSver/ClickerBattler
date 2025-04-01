@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Kolobrod.Game.Enemy;
+using Game.Enemy;
 using UnityEngine;
 
 namespace Game.Configs.EnemyConfigs

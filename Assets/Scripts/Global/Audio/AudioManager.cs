@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ClickRPG.SceneManagement;
+using SceneManegement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

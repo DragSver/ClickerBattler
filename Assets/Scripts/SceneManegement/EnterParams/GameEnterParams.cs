@@ -1,4 +1,4 @@
-namespace ClickRPG.SceneManagement
+namespace SceneManegement.EnterParams
 {
     public class GameEnterParams : SceneEnterParams
     {

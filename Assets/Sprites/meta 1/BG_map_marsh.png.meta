@@ -171,7 +171,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BG_map_marsh_0: 2051729029578749285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

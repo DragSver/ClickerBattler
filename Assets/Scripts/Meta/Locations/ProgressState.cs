@@ -1,4 +1,4 @@
-namespace ClickRPG.Meta.Locations
+namespace Meta.Locations
 {
     public enum ProgressState
     {

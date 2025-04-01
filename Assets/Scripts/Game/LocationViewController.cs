@@ -1,4 +1,4 @@
-﻿using ClickRPG;
+﻿using Button;
 using Game.Configs.LevelConfigs;
 using TMPro;
 using UnityEngine;

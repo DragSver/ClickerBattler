@@ -18,3 +18,8 @@ MonoBehaviour:
     AttackButtonControllerPrefab: {fileID: 1857283482930386652, guid: 6c62f17a5553efe49b72449ccf8db6ed, type: 3}
     Name: "\u0422\u0438\u0445\u0438\u0439 \u041B\u0443\u0433"
     TimerColor: {r: 0.47058827, g: 0.8078432, b: 0.87843144, a: 1}
+  - Id: 1
+    Background: {fileID: -2672186584697084523, guid: 29617edfe7407954f95ad673f48597d9, type: 3}
+    AttackButtonControllerPrefab: {fileID: 1857283482930386652, guid: 6c62f17a5553efe49b72449ccf8db6ed, type: 3}
+    Name: "\u0413\u043B\u0443\u0445\u043E\u0439 \u041B\u0435\u0441"
+    TimerColor: {r: 0.95686275, g: 0.8980392, b: 0.7647059, a: 1}

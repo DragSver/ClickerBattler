@@ -171,7 +171,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      green_shop_button_0: 2732362555731886640
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

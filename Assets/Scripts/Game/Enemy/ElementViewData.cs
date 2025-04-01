@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine.UI;
 
-namespace Kolobrod.Game.Enemy
+namespace Game.Enemy
 {
     [Serializable]
     public struct ElementViewData

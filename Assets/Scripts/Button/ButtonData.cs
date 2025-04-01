@@ -2,11 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct ButtonData
+namespace Button
 {
-    public Sprite DefaultSprite;
-    public string Text;
-    public Image.Type ImageType;
-    public ColorBlock ButtonColors;
+    [Serializable]
+    public struct ButtonData
+    {
+        public Sprite DefaultSprite;
+        public string Text;
+        public Image.Type ImageType;
+        public ColorBlock ButtonColors;
+    }
 }

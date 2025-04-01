@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ClickRPG {
+namespace Button {
     public class ButtonView : MonoBehaviour {
         
-        [field: SerializeField] private Button Button { get; set; }
+        [field: SerializeField] private UnityEngine.UI.Button Button { get; set; }
         [field: SerializeField] private Image Image { get; set; }
         [field: SerializeField] private TextMeshProUGUI Text { get; set; }
 

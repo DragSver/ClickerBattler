@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Kolobrod.Game.Enemy;
+using Game.Enemy;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClickRPG
+namespace Button
 {
     public class AttackButtonController : MonoBehaviour
     {

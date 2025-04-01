@@ -23,17 +23,27 @@ namespace Game.Configs.LevelConfigs
             return default;
         }
 
-        public int GetMaxLevelOnLocation(int location)
-        {
-            var maxLevel = 0;
-            foreach (var levelData in Levels)
-            {
-                if (location != levelData.Location) continue;
-                if (levelData.LevelNumber <= maxLevel) continue;
-                maxLevel = levelData.LevelNumber;
-            }
+        // public int GetMaxLevelOnLocation(int location)
+        // {
+        //     var maxLevel = 0;
+        //     foreach (var levelData in Levels)
+        //     {
+        //         if (location != levelData.Location) continue;
+        //         if (levelData.LevelNumber <= maxLevel) continue;
+        //         maxLevel = levelData.LevelNumber;
+        //     }
+        //
+        //     return maxLevel;
+        // }
 
-            return maxLevel;
+        public int GetCountMainLevelOnLocation(int location)
+        {
+            foreach (var locationLevelData in Locations)
+            {
+                if (locationLevelData.Location == location)
+                    return locationLevelData.Levels.FindAll(data => !data.ExtraLevel).Count;
+            }
+            return default;
         }
     }
 }

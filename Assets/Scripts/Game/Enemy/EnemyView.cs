@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Kolobrod.Game.Enemy
+namespace Game.Enemy
 {
     public class EnemyView : MonoBehaviour
     {
@@ -24,9 +24,6 @@ namespace Kolobrod.Game.Enemy
         [SerializeField] private ElementViewData[] _elementViewDatas;
         
         private Dictionary<Elements, Image> _elementsImages;
-        
-        private UnityAction<float> _onDamaged;
-        private UnityAction _onDeath;
 
 
         public void Init()
@@ -34,81 +31,69 @@ namespace Kolobrod.Game.Enemy
             _elementsImages = new Dictionary<Elements, Image>();
             foreach (var elementViewData in _elementViewDatas)
                 _elementsImages.Add(elementViewData.Element, elementViewData.ElementImage);
+            
             gameObject.SetActive(false);
         }
 
-        public void SetEnemy(string enemyName, Sprite enemyImage, Elements element, float health, ref UnityAction<float> onDamaged, ref UnityAction onDeath)
+        public void SetEnemy(Enemy enemy, string enemyName, Sprite enemyImage, Elements element, float health, ref UnityAction<float> onDamaged, ref UnityAction onDeath)
         {
+            Enemy = enemy;
+            
             gameObject.SetActive(true);
             
             _enemyName.text = enemyName;
             _image.sprite = enemyImage;
+            _image.SetNativeSize();
             _elementsImages[element].gameObject.SetActive(true);
             
             _healthBar.SetMaxValue(health);
 
-            if (_onDamaged != null)
-                _onDamaged -= GetDamage;
-            _onDamaged = onDamaged;
-            _onDamaged += GetDamage;
-
-            if (_onDeath != null)
-                _onDeath -= Death;
-            _onDeath = onDeath;
-            _onDeath += Death;
+            onDamaged += GetDamage;
+            onDeath += () => StartCoroutine(Death());
         }
-
         public void ClearEnemy()
         {
             _enemyName.text = "";
             _image.sprite = null;
+            Enemy = null;
             foreach (var elementViewData in _elementViewDatas)
                 elementViewData.ElementImage.gameObject.SetActive(false);
-            
-            _onDamaged -= GetDamage;
-            _onDamaged = null;
-            
-            _onDeath -= Death;
-            _onDeath = null;
             
             gameObject.SetActive(false);
         }
 
         private void GetDamage(float damage)
         {
-            CallDamageInfo(damage);
-            DamageAnimation();
+            _healthBar.DecreaseValue(damage);
+            StartCoroutine(CallDamageInfo(damage));
+            StartCoroutine(DamageAnimation());
         }
-
-        private void DamageAnimation()
+        private IEnumerator DamageAnimation()
         {
             _image.color = Color.red;
-            StartCoroutine(Wait(0.1f));
+            yield return new WaitForSeconds(0.5f);
             _image.color = Color.white;
         }
-        private void CallDamageInfo(float damage)
+        private IEnumerator CallDamageInfo(float damage)
         {
             _damageText.text = $"- {damage.ToString(CultureInfo.InvariantCulture)}";
-            StartCoroutine(Wait(0.1f));
+            yield return new WaitForSeconds(0.5f);
             _damageText.text = "";
         }
 
-        private void Death()
+        private IEnumerator Death()
         {
-            CallDamageInfo(_healthBar.CurrentValue);
+            _healthBar.DecreaseValue(_healthBar.CurrentValue);
+            StartCoroutine(CallDamageInfo(_healthBar.CurrentValue));
             DeathAnimation();
-            StartCoroutine(Wait(0.3f));
-            ClearEnemy();
+            yield return new WaitForSeconds(0.15f);
+            gameObject.SetActive(false);
         }
         private void DeathAnimation()
         {
             for (int i = 0; i < 3; i++)
-                DamageAnimation();
+                StartCoroutine(DamageAnimation());
         }
         
-        private IEnumerator Wait(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-        }
     }
 }

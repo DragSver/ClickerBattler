@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClickRPG.Meta.Locations;
+using Meta.Locations;
 
 namespace Game.Configs.LevelConfigs
 {
@@ -9,6 +9,6 @@ namespace Game.Configs.LevelConfigs
     {
         public int Location;
         public List<LevelData> Levels;
-        public PinType Type;
+        public ProgressState State;
     }
 }

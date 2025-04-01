@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
-using ClickRPG;
 using Game.Configs.EnemyConfigs;
 using Game.Configs.LevelConfigs;
 using Game.Timer;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Kolobrod.Game.Enemy
+namespace Game.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
@@ -24,28 +23,22 @@ namespace Kolobrod.Game.Enemy
         [SerializeField] private BossEnemyView _bossEnemyView;
 
         private List<Enemy> _currentEnemies = new List<Enemy>();
+        private EnemyView[] _enemyViews;
 
         private LevelData _levelData;
         private int _currentEnemyWiveIndex;
 
-        private Timer _timer;
+        private TimerController _timerController;
 
-        public void Init(Timer timer)
+        public void Init(TimerController timerController)
         {
-            _timer = timer;
-            
-            _centralEnemy.Init();
-            _leftForwardEnemy.Init();
-            _leftBackEnemy.Init();
-            _rightBackEnemy.Init();
-            _rightForwardEnemy.Init();
-            
             _enemiesConfig.Init();
-        }
-
-        public void DamageCurrentEnemy(Enemy enemy, Elements element, float damage)
-        {
-            enemy.DoDamage(element, damage);
+            
+            _enemyViews = new[]
+                { _centralEnemy, _leftForwardEnemy, _leftBackEnemy, _rightForwardEnemy, _rightBackEnemy };
+            foreach (var enemyView in _enemyViews) enemyView.Init();
+            
+            _timerController = timerController;
         }
         
         public void StartLevel(LevelData levelData)
@@ -55,23 +48,18 @@ namespace Kolobrod.Game.Enemy
             
             SpawnWiveEnemy();
         }
-        
         private void SpawnWiveEnemy()
         {
-            _centralEnemy.ClearEnemy();
-            _leftForwardEnemy.ClearEnemy();
-            _leftBackEnemy.ClearEnemy();
-            _rightBackEnemy.ClearEnemy();
-            _rightForwardEnemy.ClearEnemy();
+            foreach (var enemyView in _enemyViews) enemyView.ClearEnemy();
             
             _currentEnemyWiveIndex++;
             if (_currentEnemyWiveIndex >= _levelData.EnemiesWives.Count)
             {
-                _timer.Stop();
-                OnLevelComplete?.Invoke(true);
+                EndLevel();
                 return;
             }
 
+            
             var currentEnemyWiveSpawnData = _levelData.EnemiesWives[_currentEnemyWiveIndex];
 
             if (currentEnemyWiveSpawnData.IsBoss)
@@ -197,14 +185,19 @@ namespace Kolobrod.Game.Enemy
         {
             if (time != 0)
             {
-                _timer.gameObject.SetActive(true);
-                _timer.SetMaxTime(time);
-                _timer.OnTimerEnd += () => OnLevelComplete?.Invoke(false);
-                _timer.Play();
+                _timerController.SetActive(true);
+                _timerController.SetMaxTime(time);
+                _timerController.OnTimerEnd += () => OnLevelComplete?.Invoke(false);
+                _timerController.Play();
             }
-            else _timer.gameObject.SetActive(false);
+            else _timerController.SetActive(false);
         }
 
+        public void DamageEnemy(Enemy enemy, Elements element, float damage)
+        {
+            enemy.DoDamage(element, damage);
+        }
+        
         private void OnDamaged(float damage)
         {
             
@@ -214,8 +207,14 @@ namespace Kolobrod.Game.Enemy
             GameStats.AddKills();
             if (_currentEnemies.Any(enemy => enemy.GetHealth() != 0)) return;
             
-            _timer.Stop();
+            _timerController.Stop();
             SpawnWiveEnemy();
+        }
+
+        private void EndLevel()
+        {
+            _timerController.Stop();
+            OnLevelComplete?.Invoke(true);
         }
     }
 }

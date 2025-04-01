@@ -12,72 +12,187 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84375c10b8374c87adf6dc153d119c9a, type: 3}
   m_Name: LevelsConfig
   m_EditorClassIdentifier: 
-  Levels:
+  Locations:
   - Location: 0
-    LevelNumber: 0
-    Enemies:
-    - Id: cock
-      Hp: 50
-      IsBoss: 0
-      BossTime: 0
-    Reward: 0
-  - Location: 0
-    LevelNumber: 1
-    Enemies:
-    - Id: frog
-      Hp: 70
-      IsBoss: 0
-      BossTime: 0
-    Reward: 0
-  - Location: 0
-    LevelNumber: 2
-    Enemies:
-    - Id: fox
-      Hp: 85
-      IsBoss: 0
-      BossTime: 0
-    Reward: 0
-  - Location: 0
-    LevelNumber: 3
-    Enemies:
-    - Id: cat
-      Hp: 100
-      IsBoss: 1
-      BossTime: 10
-    Reward: 0
+    Levels:
+    - Location: 0
+      LevelNumber: 0
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: mouse_2_m
+          Hp: 50
+          IsBoss: 0
+        - Id: mouse_2_m
+          Hp: 50
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: mouse_2_m
+          Hp: 60
+          IsBoss: 0
+        - Id: mouse_1_m
+          Hp: 60
+          IsBoss: 0
+        - Id: mouse_1_m
+          Hp: 60
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 1
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: rabbit_1_s
+          Hp: 60
+          IsBoss: 0
+      - Time: 8
+        Enemies:
+        - Id: rabbit_2_s
+          Hp: 70
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 2
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: lizard_1_s
+          Hp: 70
+          IsBoss: 0
+      - Time: 3
+        Enemies:
+        - Id: lizard_1_s
+          Hp: 40
+          IsBoss: 0
+      - Time: 3
+        Enemies:
+        - Id: snake_3_b
+          Hp: 30
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 3
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: fox_2_b
+          Hp: 100
+          IsBoss: 0
+        - Id: fox_1_b
+          Hp: 100
+          IsBoss: 0
+      - Time: 10
+        Enemies:
+        - Id: cat_1_s
+          Hp: 110
+          IsBoss: 0
+    State: 0
   - Location: 1
-    LevelNumber: 0
-    Enemies:
-    - Id: cock
-      Hp: 40
-      IsBoss: 1
-      BossTime: 6
-    - Id: cock
-      Hp: 40
-      IsBoss: 0
-      BossTime: 6
-    Reward: 0
-  - Location: 1
-    LevelNumber: 1
-    Enemies:
-    - Id: frog
-      Hp: 40
-      IsBoss: 0
-      BossTime: 6
-    - Id: frog
-      Hp: 80
-      IsBoss: 1
-      BossTime: 10
-    Reward: 0
-  - Location: 1
-    LevelNumber: 1
-    Enemies:
-    - Id: frog
-      Hp: 40
-      IsBoss: 0
-      BossTime: 6
-    - Id: frog
-      Hp: 80
-      IsBoss: 1
-      BossTime: 10
-    Reward: 0
+    Levels:
+    - Location: 0
+      LevelNumber: 0
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: frog_1_w
+          Hp: 50
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: frog_1_w
+          Hp: 60
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 60
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: frog_1_w
+          Hp: 70
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 70
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 70
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: frog_1_w
+          Hp: 80
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 80
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 80
+          IsBoss: 0
+        - Id: frog_1_w
+          Hp: 80
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 1
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: e_owl_2_m
+          Hp: 80
+          IsBoss: 0
+      - Time: 8
+        Enemies:
+        - Id: e_owl_1_m
+          Hp: 120
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 2
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: hare_1_m
+          Hp: 80
+          IsBoss: 0
+        - Id: hare_2_m
+          Hp: 80
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: fox_2_b
+          Hp: 150
+          IsBoss: 0
+    - Location: 0
+      LevelNumber: 3
+      IsComleted: 0
+      ExtraLevel: 0
+      EnemiesWives:
+      - Time: 0
+        Enemies:
+        - Id: wolf_1_m
+          Hp: 200
+          IsBoss: 0
+      - Time: 0
+        Enemies:
+        - Id: wolf_1_m
+          Hp: 200
+          IsBoss: 0
+        - Id: wolf_1_m
+          Hp: 200
+          IsBoss: 0
+        - Id: wolf_1_m
+          Hp: 200
+          IsBoss: 0
+        - Id: wolf_1_m
+          Hp: 200
+          IsBoss: 0
+    State: 0

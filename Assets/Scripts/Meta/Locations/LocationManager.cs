@@ -2,15 +2,14 @@ using System.Collections.Generic;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
-namespace ClickRPG.Meta.Locations
+namespace Meta.Locations
 {
     public class LocationManager : MonoBehaviour
     {
         [SerializeField] private List<Location> _locations;
-        [SerializeField] private Button _nextLocationButton;
-        [SerializeField] private Button _previousLocationButton;
+        [SerializeField] private UnityEngine.UI.Button _nextLocationButton;
+        [SerializeField] private UnityEngine.UI.Button _previousLocationButton;
 
         private int _currentLocation;
 
@@ -27,7 +26,7 @@ namespace ClickRPG.Meta.Locations
             _currentLocation++;
             _locations[_currentLocation].SetActive(true);
             
-            if (_currentLocation == _locations.Count-1)
+            if (_currentLocation == _locations.Count-1 || _locations[_currentLocation+1].ProgressState == ProgressState.Closed)
                 _nextLocationButton.gameObject.SetActive(false);
             if (_currentLocation == 1)
                 _previousLocationButton.gameObject.SetActive(true);
@@ -61,12 +60,11 @@ namespace ClickRPG.Meta.Locations
             {
                 var locationNum = i;
 
-                var isLocationPassed = locationNum > progress.CurrentLocation
+                var isLocationCompleted = locationNum < progress.CurrentLocation
                     ? ProgressState.Complete
                     : (locationNum == progress.CurrentLocation ? ProgressState.Current : ProgressState.Closed);
-                var currentLevel = progress.CurrentLocation;
                 
-                _locations[locationNum].Init(isLocationPassed, currentLevel, level => startLevelCallback?.Invoke(locationNum, level));
+                _locations[locationNum].Init(isLocationCompleted, progress.CurrentLevel, level => startLevelCallback?.Invoke(locationNum, level));
                 _locations[locationNum].SetActive(progress.CurrentLocation == locationNum);
             }
         }

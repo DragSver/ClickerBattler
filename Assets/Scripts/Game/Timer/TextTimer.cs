@@ -7,7 +7,7 @@ namespace Game.Timer
     {
         [SerializeField] private TextMeshProUGUI _timerText;
 
-        protected override void SetTime(float currentTime)
+        public override void SetTime(float currentTime)
         {
             _timerText.text = currentTime.ToString("00.000");
         }

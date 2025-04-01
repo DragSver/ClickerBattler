@@ -2,7 +2,7 @@ using Global.Audio;
 using Global.SaveSystem;
 using UnityEngine;
 
-namespace ClickRPG.SceneManagement
+namespace SceneManegement
 {
     public class MainEntryPoint : MonoBehaviour
     {

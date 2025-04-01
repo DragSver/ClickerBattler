@@ -196,7 +196,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      darkGradient_0: -4689657523463152740
+      darkGradient_1: 1800801687280739358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

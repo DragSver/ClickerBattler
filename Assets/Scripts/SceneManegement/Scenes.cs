@@ -1,4 +1,4 @@
-namespace ClickRPG.SceneManagement
+namespace SceneManegement
 {
     public static class Scenes
     {

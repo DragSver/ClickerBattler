@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ClickRPG
+namespace Game
 {
     public static class GameStats
     {

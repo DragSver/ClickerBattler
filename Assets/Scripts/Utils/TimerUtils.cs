@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClickRPG.Utils
+namespace Utils
 {
     public class TimerUtils
     {

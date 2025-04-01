@@ -4,16 +4,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClickRPG.Meta.Locations
+namespace Meta.Locations
 {
     public class Location : MonoBehaviour
     {
         [SerializeField] private List<PinView> _pinViews;
         [SerializeField] private TextMeshProUGUI _locationName;
 
+        public ProgressState ProgressState => _progressState;
+        private ProgressState _progressState;
+
 
         public void Init(ProgressState locationState, int currentLevel, UnityAction<int> levelStartCallback)
         {
+            _progressState = locationState;
             for (int i = 0; i < _pinViews.Count; i++)
             {
                 var levelNumber = i;

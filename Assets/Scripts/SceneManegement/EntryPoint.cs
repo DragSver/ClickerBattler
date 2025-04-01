@@ -1,6 +1,7 @@
+using SceneManegement.EnterParams;
 using UnityEngine;
 
-namespace ClickRPG.SceneManagement
+namespace SceneManegement
 {
     public abstract class EntryPoint : MonoBehaviour
     {

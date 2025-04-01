@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClickRPG
+namespace Button
 {
     public class ButtonController : MonoBehaviour
     {

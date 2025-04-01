@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ClickRPG.Meta.Locations
+namespace Meta.Locations
 {
     public class PinView : MonoBehaviour
     {
-        [SerializeField] private Button _levelButton;
+        [SerializeField] private UnityEngine.UI.Button _levelButton;
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Image _completeImage;
         [SerializeField] private Image _currentImage;

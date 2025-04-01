@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Configs/ButtonConfig", fileName = "ButtonConfig")]
-public class ButtonConfig : ScriptableObject
+namespace Button
 {
-    public UnityAction OnReinitialize;
+    [CreateAssetMenu(menuName = "Configs/ButtonConfig", fileName = "ButtonConfig")]
+    public class ButtonConfig : ScriptableObject
+    {
+        public UnityAction OnReinitialize;
 
-    [Header("GameScreen")]
-    public ButtonData ClickAttackButtonData;
+        [Header("GameScreen")]
+        public ButtonData ClickAttackButtonData;
     
-    [Header("EndScreen")]
-    public ButtonData ContinueGameButtonData;
-    public ButtonData MapButtonData;
+        [Header("EndScreen")]
+        public ButtonData ContinueGameButtonData;
+        public ButtonData MapButtonData;
 
     
-    [ContextMenu("Повторно инициализировать")]
-    private void Reinitialize() => OnReinitialize?.Invoke();
+        [ContextMenu("Повторно инициализировать")]
+        private void Reinitialize() => OnReinitialize?.Invoke();
+    }
 }

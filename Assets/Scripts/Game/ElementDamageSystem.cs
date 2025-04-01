@@ -1,4 +1,4 @@
-﻿using Kolobrod.Game.Enemy;
+﻿using Game.Enemy;
 
 namespace Game
 {

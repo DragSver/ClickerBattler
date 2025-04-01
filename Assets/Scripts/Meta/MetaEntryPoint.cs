@@ -1,11 +1,12 @@
-using ClickRPG.Meta.Locations;
-using ClickRPG.SceneManagement;
 using Global.Audio;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using Meta.Locations;
+using SceneManegement;
+using SceneManegement.EnterParams;
 using UnityEngine;
 
-namespace ClickRPG.Meta
+namespace Meta
 {
     public class MetaEntryPoint : EntryPoint
     {

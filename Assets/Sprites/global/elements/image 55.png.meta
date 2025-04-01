@@ -471,7 +471,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      image 55_0: 717664102412938848
+      image 55_1: 64259822222026539
+      image 55_10: 7248728655741491299
+      image 55_11: 6124615617610676356
+      image 55_12: 1329391442799413912
+      image 55_2: -5390027869279253001
+      image 55_3: -6738480356661086862
+      image 55_4: -8960169414556972248
+      image 55_5: 1262806004256034040
+      image 55_6: -620830453375741123
+      image 55_7: 8246079124985074866
+      image 55_8: -1654569995489674529
+      image 55_9: -1632134754947690311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

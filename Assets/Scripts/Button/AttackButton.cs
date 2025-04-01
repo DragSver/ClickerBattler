@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using Kolobrod.Game.Enemy;
+using Game.Enemy;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-namespace ClickRPG
+namespace Button
 {
     public class AttackButton : MonoBehaviour, IPointerClickHandler
     {
@@ -13,7 +12,7 @@ namespace ClickRPG
         
         public Elements Element => _element;
         [SerializeField] private Elements _element;
-        [SerializeField] private Button _button;
+        [SerializeField] private UnityEngine.UI.Button _button;
         [SerializeField] private float _currentDamage = 1;
         [SerializeField] private float _cooldownTime = 0.05f;
         [SerializeField] private LayerMask _enemyLayer;
@@ -32,7 +31,9 @@ namespace ClickRPG
                 _canClick = false;
             
             var clickPosition = eventData.position;
-            var worldPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+            var worldPosition = Camera.main.ScreenToWorldPoint(new Vector2(clickPosition.x, clickPosition.y));
+            
+            Debug.DrawRay(worldPosition, Vector2.up * 2000, Color.red, 2f);
             
             var hit = Physics2D.Raycast(worldPosition, Vector2.up, 2000, _enemyLayer);
             if (hit.collider != null)

@@ -1,4 +1,4 @@
-﻿namespace Kolobrod.Game.Enemy
+﻿namespace Game.Enemy
 {
     public enum Elements
     {

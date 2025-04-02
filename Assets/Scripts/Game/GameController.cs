@@ -2,8 +2,10 @@ using Global.Audio;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using System.Linq;
-using Button;
-using Game.Configs.LevelConfigs;
+using Configs.LevelConfigs;
+using Datas.Game;
+using Datas.Global;
+using Game.AttackButtons;
 using Game.CriticalHit;
 using Game.Enemy;
 using Game.Timer;
@@ -14,17 +16,19 @@ using UnityEngine;
 namespace Game {
     public class GameController : EntryPoint
     {
-        [Header("Enemy")]
+        [Header("Game")]
         [SerializeField] private EnemyController _enemyController;
-
-        [Header("GameScreen")] 
-        [SerializeField] private UnityEngine.UI.Button _mapButton;
         [SerializeField] private TimerController _timerController;
+        [SerializeField] private AttackButtonController _attackButtonController;
+        [SerializeField] private CriticalHitController _criticalHitController;
+
+        [Header("UI")] 
+        [SerializeField] private GameObject _pausePopup;
+        [SerializeField] private LocationViewController _locationViewController;
+        
+        [Header("Configs")]
         [SerializeField] private LevelsConfig _levels;
         [SerializeField] private LevelsViewConfig _levelsViewConfig;
-        [SerializeField] private LocationViewController _locationViewController;
-        [SerializeField] private CriticalHitController _criticalHitController;
-        [SerializeField] private AttackButtonController _attackButtonController;
 
         [Header("EndLevelScreen")]
         [SerializeField] private EndLevelScreenController _endLevelScreenController;
@@ -39,7 +43,7 @@ namespace Game {
         
         private Progress _progress;
 
-        
+
         private const string SCENE_LOADER_TAG = "SceneLoader";
 
         
@@ -49,6 +53,7 @@ namespace Game {
             _audioManager = FindFirstObjectByType<AudioManager>();
             _audioManager.Play(AudioNames.Audio_Game_BG, false);
             _gameEnterParams = ReceiveGameEnterParams(enterParams);
+            
             
             _enemyController.Init(_timerController);
             _levelsViewConfig.Init();
@@ -61,14 +66,19 @@ namespace Game {
         {
             _endLevelScreenController.HideEndLevelScreen();
             
-            _mapButton.onClick.AddListener(LoadMetaScene);
-            
             _levelData = _levels.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
 
             var locationView = _levelsViewConfig.GetLocationViewData(_levelData.Location);
-            _locationViewController.SetLocationView(locationView);
+            _locationViewController.ClearLocationView();
+            _locationViewController.SetLocationView(locationView,
+                _gameEnterParams.Level, _levels.GetCountMainLevelOnLocation(_gameEnterParams.Location),
+                0, LoadMetaScene, null, () =>
+                {
+                    _timerController.SwitchPause();
+                    _pausePopup.SetActive(!_timerController.IsPlaying);
+                });
             _attackButtonController = _locationViewController.AttackButtonController;
-            _attackButtonController.Init();
+            _attackButtonController.Init(_locationViewController.Canvas);
             _criticalHitController.Init(_attackButtonController.GetComponent<RectTransform>());
             _attackButtonController.OnClick += AttackClick;
             
@@ -79,10 +89,10 @@ namespace Game {
 
         private void EndLevel(bool levelPassed)
         {
+            _attackButtonController.Unsubscribe();
             _timerController.Stop();
             _criticalHitController.StopGenerateCriticalPoint();
             
-            _mapButton.onClick.RemoveListener(LoadMetaScene);
             _endLevelScreenController.OnMapButtonClick += LoadMetaScene;
 
             if (levelPassed)
@@ -90,18 +100,18 @@ namespace Game {
                 TrySaveEndLevelData();
                 
                 _endLevelScreenController.OnContinueGameClick += LoadNextLevel;
-                _endLevelScreenController.CallEndLevelScreen(EditVictoryData());
+                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), LoadNextLevel, LoadMetaScene, true);
             }
             else
             {
                 var totalDeaths = GameStats.AddDeaths();
                 
                 var loseData = _loseScreenData;
-                loseData.StatisticText = loseData.StatisticText.Replace("N", totalDeaths.ToString());
+                loseData.FirstLabel = loseData.FirstLabel.Replace("N", totalDeaths.ToString());
                 
                 _endLevelScreenController.OnContinueGameClick += LoadRestartLevel;
                 
-                _endLevelScreenController.CallEndLevelScreen(loseData);
+                _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, false);
             }
         }
         
@@ -187,10 +197,10 @@ namespace Game {
                 var currentTime = maxLevelTime - _timerController.CurrentTime;
                 var bestTime = GameStats.SaveBestTime(currentTime);
                     
-                victoryData.KillTimeText = currentTime.ToString("00:00.000s");
-                victoryData.BestKillTimeText = bestTime.ToString("00:00.000s");
+                victoryData.ThirdLabel = currentTime.ToString("00:00.000s");
+                // victoryData.BestKillTimeText = bestTime.ToString("00:00.000s");
             }
-            victoryData.StatisticText = victoryData.StatisticText.Replace("N", totalKills.ToString());
+            victoryData.FirstLabel = victoryData.FirstLabel.Replace("N", totalKills.ToString());
             return victoryData;
         }
     }

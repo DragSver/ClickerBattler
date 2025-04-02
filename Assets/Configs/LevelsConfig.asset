@@ -23,21 +23,21 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: mouse_2_m
-          Hp: 50
+          Hp: 100
           IsBoss: 0
         - Id: mouse_2_m
-          Hp: 50
+          Hp: 100
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: mouse_2_m
-          Hp: 60
+          Hp: 120
           IsBoss: 0
         - Id: mouse_1_m
-          Hp: 60
+          Hp: 130
           IsBoss: 0
         - Id: mouse_1_m
-          Hp: 60
+          Hp: 130
           IsBoss: 0
     - Location: 0
       LevelNumber: 1
@@ -47,12 +47,12 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: rabbit_1_s
-          Hp: 60
+          Hp: 200
           IsBoss: 0
       - Time: 8
         Enemies:
         - Id: rabbit_2_s
-          Hp: 70
+          Hp: 300
           IsBoss: 0
     - Location: 0
       LevelNumber: 2

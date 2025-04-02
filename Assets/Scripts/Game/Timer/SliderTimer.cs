@@ -9,8 +9,8 @@ namespace Game.Timer
 
         public override void SetMaxTime(float maxTime)
         {
-            base.SetMaxTime(maxTime);
             _timerSlider.maxValue = maxTime;
+            SetTime(maxTime);
         }
 
         public override void SetTime(float currentTime)

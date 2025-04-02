@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Game.Configs.EnemyConfigs;
-using Game.Configs.LevelConfigs;
+using Configs.EnemyConfigs;
+using Datas.Game.EnemiesData;
+using Datas.Global;
 using Game.Timer;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,9 +21,9 @@ namespace Game.Enemy
         [SerializeField] private EnemyView _rightForwardEnemy;
         [SerializeField] private EnemyView _rightBackEnemy;
         
-        [SerializeField] private BossEnemyView _bossEnemyView;
+        [SerializeField] private EnemyView _bossEnemyView;
 
-        private List<Enemy> _currentEnemies = new List<Enemy>();
+        private List<Enemy> _currentEnemies;
         private EnemyView[] _enemyViews;
 
         private LevelData _levelData;
@@ -33,7 +34,8 @@ namespace Game.Enemy
         public void Init(TimerController timerController)
         {
             _enemiesConfig.Init();
-            
+
+            _currentEnemies = new List<Enemy>();
             _enemyViews = new[]
                 { _centralEnemy, _leftForwardEnemy, _leftBackEnemy, _rightForwardEnemy, _rightBackEnemy };
             foreach (var enemyView in _enemyViews) enemyView.Init();
@@ -66,9 +68,10 @@ namespace Game.Enemy
                 InitBossEnemies(currentEnemyWiveSpawnData);
             else
             {
-                if (currentEnemyWiveSpawnData.Enemies.Count()/2 == 0)
-                    InitOddEnemies(currentEnemyWiveSpawnData.Enemies);
-                else InitEvenEnemies(currentEnemyWiveSpawnData.Enemies);
+                if (currentEnemyWiveSpawnData.Enemies.Length%2 == 0)
+                    InitEvenEnemies(currentEnemyWiveSpawnData.Enemies);
+                else 
+                    InitUnevenEnemies(currentEnemyWiveSpawnData.Enemies);
             }
 
             InitTimer(currentEnemyWiveSpawnData.Time);
@@ -114,11 +117,11 @@ namespace Game.Enemy
                 CreateNewEnemy(enemySpawnData, enemyView);
             }
         }
-        private void InitOddEnemies(EnemySpawnData[] enemySpawnDatas)
+        private void InitUnevenEnemies(EnemySpawnData[] enemySpawnDatas)
         {
             for (var i = 0; i < enemySpawnDatas.Length; i++)
             {
-                var enemySpawnData = enemySpawnDatas[0];
+                var enemySpawnData = enemySpawnDatas[i];
                 EnemyView enemyView;
 
                 switch (i)
@@ -149,7 +152,7 @@ namespace Game.Enemy
         {
             for (var i = 0; i < enemySpawnDatas.Length; i++)
             {
-                var enemySpawnData = enemySpawnDatas[0];
+                var enemySpawnData = enemySpawnDatas[i];
                 EnemyView enemyView;
 
                 switch (i)

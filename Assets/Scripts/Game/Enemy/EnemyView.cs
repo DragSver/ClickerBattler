@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using Game;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -71,13 +71,13 @@ namespace Game.Enemy
         private IEnumerator DamageAnimation()
         {
             _image.color = Color.red;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             _image.color = Color.white;
         }
         private IEnumerator CallDamageInfo(float damage)
         {
-            _damageText.text = $"- {damage.ToString(CultureInfo.InvariantCulture)}";
-            yield return new WaitForSeconds(0.5f);
+            _damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}";
+            yield return new WaitForSeconds(0.3f);
             _damageText.text = "";
         }
 
@@ -86,7 +86,7 @@ namespace Game.Enemy
             _healthBar.DecreaseValue(_healthBar.CurrentValue);
             StartCoroutine(CallDamageInfo(_healthBar.CurrentValue));
             DeathAnimation();
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.9f);
             gameObject.SetActive(false);
         }
         private void DeathAnimation()

@@ -26,7 +26,7 @@ namespace Meta
 
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
-            _locationManager.Init(progress, StartLevel);
+            _locationManager.Init(progress, StartLevel, _saveSystem);
             // _startLevelButton.onClick.AddListener(StartLevel);
         }
 

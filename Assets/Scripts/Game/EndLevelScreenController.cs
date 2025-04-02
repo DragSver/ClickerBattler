@@ -1,5 +1,3 @@
-using System;
-using Button;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,85 +26,55 @@ namespace Game
         [SerializeField] private Image _timeImage;
         [SerializeField] private Image _bestTimeImage;
 
-        [SerializeField] private ButtonController _continueGameButtonController;
-        [SerializeField] private ButtonController _mapButtonController;
-
+        [SerializeField] private Button _continueGameButton;
+        [SerializeField] private Button _mapButton;
         
-        public void CallEndLevelScreen(EndLevelScreenData endLevelScreenData)
+        
+        public void CallEndLevelScreen(Datas.Game.EndLevelScreenData endLevelScreenData, UnityAction onContinueGameClick, UnityAction onMapButtonClick, bool win)
         {
-            _continueGameButtonController.Init(endLevelScreenData.ContinueGameButtonData);
-            _mapButtonController.Init(endLevelScreenData.MapButtonData);
-
-            _continueGameButtonController.OnClick += () => OnContinueGameClick?.Invoke();
-            _mapButtonController.OnClick += () => OnMapButtonClick?.Invoke();
-
+            InitButton(_continueGameButton, onContinueGameClick);
+            InitButton(_mapButton, onMapButtonClick);
+            
             _background.sprite = endLevelScreenData.Background;
             _flagImage.sprite = endLevelScreenData.Flag;
 
             _colorMainTextHolder.color = endLevelScreenData.ColorMainTextHolder;
 
-            InitTMP(_mainText, endLevelScreenData.MainText, endLevelScreenData.ColorMainText,
-                endLevelScreenData.MaterialMainText);
-            InitTMP(_statisticsText, endLevelScreenData.StatisticText, endLevelScreenData.ColorAdviceText,
-                endLevelScreenData.MaterialAdviceText);
-            if (endLevelScreenData.KillTimeText == string.Empty)
+            InitTMP(_mainText, endLevelScreenData.MainText, endLevelScreenData.ColorMainText);
+            InitTMP(_statisticsText, endLevelScreenData.FirstLabel, endLevelScreenData.ColorAdviceText);
+
+            if (win)
             {
-                InitTMP(_killTimeAndAdviceText, endLevelScreenData.AdviceText, endLevelScreenData.ColorAdviceText,
-                    endLevelScreenData.MaterialAdviceText);
-                _bestKillTimeText.gameObject.SetActive(false);
-                _timeImage.gameObject.SetActive(false);
-                _bestTimeImage.gameObject.SetActive(false);
-            }
-            else 
-            {
-                InitTMP(_killTimeAndAdviceText, endLevelScreenData.KillTimeText, endLevelScreenData.ColorAdviceText,
-                    endLevelScreenData.MaterialAdviceText);
-                InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, new Color(1, 0.8941177f, 0),
-                    endLevelScreenData.MaterialAdviceText);
+                InitTMP(_killTimeAndAdviceText, endLevelScreenData.ThirdLabel, endLevelScreenData.ColorAdviceText);
+                // InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, new Color(1, 0.8941177f, 0));
                 _bestKillTimeText.gameObject.SetActive(true);
                 _timeImage.gameObject.SetActive(true);
                 _bestTimeImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                InitTMP(_killTimeAndAdviceText, endLevelScreenData.SecondLabel, endLevelScreenData.ColorAdviceText);
+                _bestKillTimeText.gameObject.SetActive(false);
+                _timeImage.gameObject.SetActive(false);
+                _bestTimeImage.gameObject.SetActive(false);
             }
             
             _endLevelScreen.SetActive(true);
         }
 
-        public void HideEndLevelScreen() 
-        {
-            _continueGameButtonController.OnClick -= () => OnContinueGameClick?.Invoke();
-            _mapButtonController.OnClick -= () => OnMapButtonClick?.Invoke();
+        public void HideEndLevelScreen() => 
             _endLevelScreen.SetActive(false);
-        }
 
-        private void InitTMP(TextMeshProUGUI initTMP, string text, Color color, Material material)
+        private void InitTMP(TextMeshProUGUI initTMP, string text, Color color)
         {
             initTMP.text = text;
             initTMP.color = color;
-            initTMP.fontMaterial = material;
-        } 
+        }
+        private void InitButton(Button button, UnityAction action)
+        {
+            if (action != null)
+                button.onClick.AddListener(action);
+            button.enabled = action != null;
+        }
     }
-
-    [Serializable]
-    public struct EndLevelScreenData
-    {
-        public Sprite Background;
-
-        public Sprite Flag;
-
-        public Color ColorMainTextHolder;
-
-        public string MainText;
-        public Color ColorMainText;
-        public Material MaterialMainText;
-
-        public string StatisticText;
-        public string AdviceText;
-        public string KillTimeText;
-        public string BestKillTimeText;
-        public Color ColorAdviceText;
-        public Material MaterialAdviceText;
-
-        public ButtonData ContinueGameButtonData;
-        public ButtonData MapButtonData;
-    } 
 }

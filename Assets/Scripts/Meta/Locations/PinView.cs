@@ -7,7 +7,7 @@ namespace Meta.Locations
 {
     public class PinView : MonoBehaviour
     {
-        [SerializeField] private UnityEngine.UI.Button _levelButton;
+        [SerializeField] private Button _levelButton;
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Image _completeImage;
         [SerializeField] private Image _currentImage;

@@ -12,6 +12,8 @@ namespace Game.Timer
         public float CurrentTime => _currentTime;
         private float _currentTime;
         protected float _maxTime;
+
+        public bool IsPlaying => _isPlaying;
         private bool _isPlaying;
 
         
@@ -25,11 +27,14 @@ namespace Game.Timer
         
         public void SetMaxTime(float maxTime)
         {
+            _maxTime = maxTime;
+            _currentTime = maxTime;
             foreach (var timer in _timers)
                 timer.SetMaxTime(maxTime);
         }
         private void SetTime(float currentTime)
         {
+            _currentTime = currentTime;
             foreach (var timer in _timers)
                 timer.SetTime(currentTime);
         }
@@ -41,6 +46,7 @@ namespace Game.Timer
             OnTimerEnd = null;
         }
         
+        public void SwitchPause() => _isPlaying = !_isPlaying;
         public void Pause() => _isPlaying = false;
         public void Resume() => _isPlaying = true;
         

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,7 +8,6 @@ namespace Meta.Locations
     public class Location : MonoBehaviour
     {
         [SerializeField] private List<PinView> _pinViews;
-        [SerializeField] private TextMeshProUGUI _locationName;
 
         public ProgressState ProgressState => _progressState;
         private ProgressState _progressState;

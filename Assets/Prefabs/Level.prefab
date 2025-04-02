@@ -213,7 +213,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
+  m_fontSize: 92.85
   m_fontSizeBase: 49
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -308,5 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelButton: {fileID: 6405815027021636018}
   _text: {fileID: 5903705487518106937}
-  _completeImage: {fileID: 0}
-  _currentImage: {fileID: 0}
+  _image: {fileID: 4038387174706344285}
+  _completeColor: {r: 0.6627451, g: 0.6039216, b: 0.30588236, a: 1}
+  _closeColor: {r: 0, g: 0, b: 0, a: 0.5372549}

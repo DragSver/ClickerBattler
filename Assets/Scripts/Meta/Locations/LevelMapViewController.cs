@@ -12,7 +12,9 @@ namespace Meta.Locations
         [SerializeField] private TextMeshProUGUI _coins;
         [SerializeField] private Image _background;
 
+        public Button NextLocationButton => _nextLocationButton;
         [SerializeField] private Button _nextLocationButton;
+        public Button PreviousLocationButton => _previousLocationButton;
         [SerializeField] private Button _previousLocationButton;
 
         [SerializeField] private Button _campButton;

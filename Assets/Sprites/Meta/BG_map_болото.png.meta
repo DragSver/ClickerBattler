@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: fef9eaa974ecfda4099bbb67d1be01d9
+guid: 1c8f5ad7617fa344eaa9f96817f2b7df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -970496585266668769
-    second: IMG_0123_0
-  - first:
-      213: 5421983757800610005
-    second: IMG_0123_1
-  - first:
-      213: 4692129596856568640
-    second: IMG_0123_2
-  - first:
-      213: 399493841215786337
-    second: IMG_0123_3
-  - first:
-      213: 538926642757717577
-    second: IMG_0123_4
+      213: 6623177179626659432
+    second: 29c9973b-8739-4884-b26c-db02704a9f14_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -65,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -84,12 +72,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -97,6 +85,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -134,30 +135,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_0123_0
+      name: 29c9973b-8739-4884-b26c-db02704a9f14_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 10
-        width: 373
-        height: 429
+        x: 0
+        y: 0
+        width: 1024
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,96 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1b53736f7a1882f0800000000000000
-      internalID: -970496585266668769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0123_1
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 151
-        width: 10
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d894a53081ce3b40800000000000000
-      internalID: 5421983757800610005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0123_2
-      rect:
-        serializedVersion: 2
-        x: 481
-        y: 123
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04b8bb4220bcd1140800000000000000
-      internalID: 4692129596856568640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0123_3
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 74
-        width: 29
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16d8f9f28894b8500800000000000000
-      internalID: 399493841215786337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_0123_4
-      rect:
-        serializedVersion: 2
-        x: 483
-        y: 106
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94e419d1de6aa7700800000000000000
-      internalID: 538926642757717577
+      spriteID: 86ede14cd804aeb50800000000000000
+      internalID: 6623177179626659432
       vertices: []
       indices: 
       edges: []
@@ -272,11 +172,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      IMG_0123_0: -970496585266668769
-      IMG_0123_1: 5421983757800610005
-      IMG_0123_2: 4692129596856568640
-      IMG_0123_3: 399493841215786337
-      IMG_0123_4: 538926642757717577
+      29c9973b-8739-4884-b26c-db02704a9f14_0: 6623177179626659432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

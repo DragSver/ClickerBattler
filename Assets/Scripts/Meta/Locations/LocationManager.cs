@@ -10,8 +10,6 @@ namespace Meta.Locations
     public class LocationManager : MonoBehaviour
     {
         [SerializeField] private List<Location> _locations;
-        [SerializeField] private UnityEngine.UI.Button _nextLocationButton;
-        [SerializeField] private UnityEngine.UI.Button _previousLocationButton;
         
         [SerializeField] private LevelMapViewConfig _levelMapViewConfig;
         [SerializeField] private LevelMapViewController _levelMapViewController;
@@ -24,6 +22,7 @@ namespace Meta.Locations
             _saveSystem = saveSystem;
             _levelMapViewController.Init(ShowNextLocation, ShowPreviousLocation, null, null, null);
             _currentLocation = progress.CurrentLocation;
+            _levelMapViewConfig.Init();
             FirstInitLocations(progress, startLevelCallback);
             FirstInitButtons();
         }
@@ -36,31 +35,29 @@ namespace Meta.Locations
             _locations[_currentLocation].SetActive(true);
             
             if (_currentLocation == _locations.Count-1 || _locations[_currentLocation+1].ProgressState == ProgressState.Closed)
-                _nextLocationButton.gameObject.SetActive(false);
+                _levelMapViewController.NextLocationButton.gameObject.SetActive(false);
             if (_currentLocation == 1)
-                _previousLocationButton.gameObject.SetActive(true);
+                _levelMapViewController.PreviousLocationButton.gameObject.SetActive(true);
         }
         private void ShowPreviousLocation()
         {
             _locations[_currentLocation].SetActive(false);
             _currentLocation--;
+            SetViewLocation(_currentLocation);
             _locations[_currentLocation].SetActive(true);
             
             if (_currentLocation == _locations.Count-2)
-                _nextLocationButton.gameObject.SetActive(true);
+                _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
             if (_currentLocation == 0)
-                _previousLocationButton.gameObject.SetActive(false);
+                _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
         }
 
         private void FirstInitButtons()
         {
-            _nextLocationButton.onClick.AddListener(ShowNextLocation);
-            _previousLocationButton.onClick.AddListener(ShowPreviousLocation);
-            
             if (_currentLocation == _locations.Count-1)
-                _nextLocationButton.gameObject.SetActive(true);
+                _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
             if (_currentLocation == 0)
-                _previousLocationButton.gameObject.SetActive(false);
+                _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
         }
         
         private void FirstInitLocations(Progress progress, UnityAction<int, int> startLevelCallback)

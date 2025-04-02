@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5998052568181758001}
-  - component: {fileID: 7437336378745494387}
   - component: {fileID: 4067906914521301732}
   - component: {fileID: 5403780328079735678}
   - component: {fileID: 5256422461354987834}
@@ -42,21 +41,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &7437336378745494387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241824369317062058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e148065e918644890c224518627a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 5256422461354987834}
-  <Image>k__BackingField: {fileID: 5403780328079735678}
-  <Text>k__BackingField: {fileID: 8837074308718335921}
 --- !u!222 &4067906914521301732
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -242,7 +226,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2219783674574552328}
-  - component: {fileID: 289969924403564660}
   - component: {fileID: 7825483991548743326}
   - component: {fileID: 3578301619634756846}
   - component: {fileID: 5457876115314445053}
@@ -275,21 +258,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &289969924403564660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396605853709876262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e148065e918644890c224518627a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 5457876115314445053}
-  <Image>k__BackingField: {fileID: 3578301619634756846}
-  <Text>k__BackingField: {fileID: 6136916707592687883}
 --- !u!222 &7825483991548743326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -686,7 +654,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5307893910790400073}
-  - component: {fileID: 2957511100699612850}
   - component: {fileID: 1231430220992007627}
   - component: {fileID: 2646367442501029707}
   - component: {fileID: 9091548797900386223}
@@ -719,21 +686,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &2957511100699612850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4287550328964781096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e148065e918644890c224518627a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 9091548797900386223}
-  <Image>k__BackingField: {fileID: 2646367442501029707}
-  <Text>k__BackingField: {fileID: 789597952027251457}
 --- !u!222 &1231430220992007627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1055,7 +1007,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5177064074142087719}
-  - component: {fileID: 286602020485360419}
   - component: {fileID: 5118060790513167979}
   - component: {fileID: 7808102922519112612}
   - component: {fileID: 8551857743774923396}
@@ -1088,21 +1039,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &286602020485360419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6227639678641801013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e148065e918644890c224518627a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Button>k__BackingField: {fileID: 8551857743774923396}
-  <Image>k__BackingField: {fileID: 7808102922519112612}
-  <Text>k__BackingField: {fileID: 3286753139672652669}
 --- !u!222 &5118060790513167979
 CanvasRenderer:
   m_ObjectHideFlags: 0

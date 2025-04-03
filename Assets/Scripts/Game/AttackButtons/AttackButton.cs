@@ -41,6 +41,8 @@ namespace Game.AttackButtons
             var worldPoint = _canvas.transform.TransformPoint(localPoint);
             var rayOrigin = new Vector2(worldPoint.x, worldPoint.y);
             
+            Debug.DrawRay(rayOrigin, Vector2.up * 3000, Color.red, 2f);
+            
             var hit = Physics2D.Raycast(rayOrigin, Vector2.up, 3000, _enemyLayer);
             if (hit.collider != null)
             {

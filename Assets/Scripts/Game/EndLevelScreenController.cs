@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game
@@ -19,9 +20,9 @@ namespace Game
 
         [SerializeField] private TextMeshProUGUI _mainText;
 
-        [SerializeField] private TextMeshProUGUI _statisticsText;
-        [SerializeField] private TextMeshProUGUI _killTimeAndAdviceText;
-        [SerializeField] private TextMeshProUGUI _bestKillTimeText;
+        [SerializeField] private TextMeshProUGUI _firstTitle;
+        [SerializeField] private TextMeshProUGUI _secondTitle;
+        [SerializeField] private TextMeshProUGUI _thirdTitle;
 
         [SerializeField] private Image _timeImage;
         [SerializeField] private Image _bestTimeImage;
@@ -41,20 +42,17 @@ namespace Game
             _colorMainTextHolder.color = endLevelScreenData.ColorMainTextHolder;
 
             InitTMP(_mainText, endLevelScreenData.MainText, endLevelScreenData.ColorMainText);
-            InitTMP(_statisticsText, endLevelScreenData.FirstLabel, endLevelScreenData.ColorAdviceText);
+            InitTMP(_firstTitle, endLevelScreenData.FirstLabel, endLevelScreenData.ColorAdviceText);
+            InitTMP(_secondTitle, endLevelScreenData.SecondLabel, endLevelScreenData.ColorAdviceText);
+            InitTMP(_thirdTitle, endLevelScreenData.ThirdLabel, endLevelScreenData.ColorAdviceText);
 
             if (win)
             {
-                InitTMP(_killTimeAndAdviceText, endLevelScreenData.ThirdLabel, endLevelScreenData.ColorAdviceText);
-                // InitTMP(_bestKillTimeText, endLevelScreenData.BestKillTimeText, new Color(1, 0.8941177f, 0));
-                _bestKillTimeText.gameObject.SetActive(true);
                 _timeImage.gameObject.SetActive(true);
                 _bestTimeImage.gameObject.SetActive(true);
             }
             else
             {
-                InitTMP(_killTimeAndAdviceText, endLevelScreenData.SecondLabel, endLevelScreenData.ColorAdviceText);
-                _bestKillTimeText.gameObject.SetActive(false);
                 _timeImage.gameObject.SetActive(false);
                 _bestTimeImage.gameObject.SetActive(false);
             }

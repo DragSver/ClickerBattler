@@ -27,7 +27,7 @@ namespace Global.Audio
             if (SceneManager.GetActiveScene().name == scene) return;
             
             UnloadAssets();
-            if (scene == Scenes.LevelScene)
+            if (scene == Scenes.GameScene)
             {
                 _sceneClips = LoadAudioClips(GamePath);
             }

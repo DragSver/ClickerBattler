@@ -35,7 +35,7 @@ namespace Game.Enemy
             gameObject.SetActive(false);
         }
 
-        public void SetEnemy(Enemy enemy, string enemyName, Sprite enemyImage, Elements element, float health, ref UnityAction<float> onDamaged, ref UnityAction onDeath)
+        public void SetEnemy(Enemy enemy, string enemyName, Sprite enemyImage, Elements element, float health, ref UnityAction<float, ElementsInfluence> onDamaged, ref UnityAction<ElementsInfluence> onDeath)
         {
             Enemy = enemy;
             
@@ -49,7 +49,7 @@ namespace Game.Enemy
             _healthBar.SetMaxValue(health);
 
             onDamaged += GetDamage;
-            onDeath += () => StartCoroutine(Death());
+            onDeath += influence => Death(influence);
         }
         public void ClearEnemy()
         {
@@ -62,10 +62,10 @@ namespace Game.Enemy
             gameObject.SetActive(false);
         }
 
-        private void GetDamage(float damage)
+        private void GetDamage(float damage, ElementsInfluence influence)
         {
             _healthBar.DecreaseValue(damage);
-            StartCoroutine(CallDamageInfo(damage));
+            StartCoroutine(CallDamageInfo(damage, influence));
             StartCoroutine(DamageAnimation());
         }
         private IEnumerator DamageAnimation()
@@ -74,19 +74,26 @@ namespace Game.Enemy
             yield return new WaitForSeconds(0.3f);
             _image.color = Color.white;
         }
-        private IEnumerator CallDamageInfo(float damage)
+        private IEnumerator CallDamageInfo(float damage, ElementsInfluence influence)
         {
-            _damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}";
+            var text = influence switch
+            {
+                ElementsInfluence.Strong => "сильно",
+                ElementsInfluence.Standard => "нормально",
+                ElementsInfluence.Weakly => "слабо",
+                _ => ""
+            };
+            _damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}\n{text}";
             yield return new WaitForSeconds(0.3f);
             _damageText.text = "";
         }
 
-        private IEnumerator Death()
+        private void Death(ElementsInfluence influence)
         {
             _healthBar.DecreaseValue(_healthBar.CurrentValue);
-            StartCoroutine(CallDamageInfo(_healthBar.CurrentValue));
-            DeathAnimation();
-            yield return new WaitForSeconds(0.9f);
+            // StartCoroutine(CallDamageInfo(_healthBar.CurrentValue, influence));
+            // DeathAnimation();
+            // yield return new WaitForSeconds(0.3f);
             gameObject.SetActive(false);
         }
         private void DeathAnimation()

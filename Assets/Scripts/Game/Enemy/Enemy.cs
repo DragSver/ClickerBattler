@@ -4,12 +4,13 @@ namespace Game.Enemy
 {
     public class Enemy
     {
-        public event UnityAction<float> OnDamaged;
-        public event UnityAction OnDead;
+        public event UnityAction<float, ElementsInfluence> OnDamaged;
+        public event UnityAction<ElementsInfluence> OnDead;
 
         private float _health;
         private Elements _element;
         private EnemyView _enemyView;
+        private bool _isAlive = true;
 
         public Enemy(int maxHealth, EnemyView enemyView, EnemyViewData enemyViewData)
         {
@@ -23,18 +24,23 @@ namespace Game.Enemy
 
         public void DoDamage(Elements element, float damage)
         {
+            var influence = ElementDamageSystem.GetElementsInfluence(element, _element);
             var elementDamage = ElementDamageSystem.CalculateDamage(element, _element, damage);
             if (elementDamage >= _health)
             {
                 _health = 0;
                 
-                OnDamaged?.Invoke(_health);
-                OnDead?.Invoke();
+                OnDamaged?.Invoke(_health, influence);
+
+                if (!_isAlive) return;
+                
+                OnDead?.Invoke(influence);
+                _isAlive = false;
                 return;
             }
 
             _health -= elementDamage;
-            OnDamaged?.Invoke(elementDamage);
+            OnDamaged?.Invoke(elementDamage, influence);
         }
 
         public float GetHealth() => _health;

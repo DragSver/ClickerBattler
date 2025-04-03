@@ -10,6 +10,7 @@ namespace Global.SaveSystem {
             _savableObjects = new() {
                 { SavableObjectType.Wallet, new Wallet() },
                 { SavableObjectType.Progress, new Progress() },
+                { SavableObjectType.OpenSkills, new OpenSkills() },
             };
 
             LoadData();
@@ -50,5 +51,6 @@ namespace Global.SaveSystem {
         Wallet = 1,
         Progress = 2,
         Stats = 3,
+        OpenSkills = 4,
     }
 }

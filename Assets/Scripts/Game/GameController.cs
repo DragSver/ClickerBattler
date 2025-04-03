@@ -2,12 +2,14 @@ using Global.Audio;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using System.Linq;
+using Configs;
 using Configs.LevelConfigs;
 using Datas.Game;
 using Datas.Global;
 using Game.AttackButtons;
 using Game.CriticalHit;
 using Game.Enemy;
+using Game.Skills;
 using Game.Timer;
 using SceneManegement;
 using SceneManegement.EnterParams;
@@ -29,6 +31,7 @@ namespace Game {
         [Header("Configs")]
         [SerializeField] private LevelsConfig _levels;
         [SerializeField] private LevelsViewConfig _levelsViewConfig;
+        [SerializeField] private SkillConfig _skillConfig;
 
         [Header("EndLevelScreen")]
         [SerializeField] private EndLevelScreenController _endLevelScreenController;
@@ -40,6 +43,7 @@ namespace Game {
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
+        private SkillSystem _skillSystem;
         
         private Progress _progress;
 
@@ -53,7 +57,9 @@ namespace Game {
             _audioManager = FindFirstObjectByType<AudioManager>();
             _audioManager.Play(AudioNames.Audio_Game_BG, false);
             _gameEnterParams = ReceiveGameEnterParams(enterParams);
-            
+
+            var openedSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
+            _skillSystem = new(openedSkills, _skillConfig, _enemyController);
             
             _enemyController.Init(_timerController);
             _levelsViewConfig.Init();
@@ -119,6 +125,7 @@ namespace Game {
         {
             var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
             DamageEnemy(enemy, element, multiplierDamage);
+            _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
         }
         private void DamageEnemy(Enemy.Enemy enemy, Elements element, float damage) =>
             _enemyController.DamageEnemy(enemy, element, damage);

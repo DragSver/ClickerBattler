@@ -200,6 +200,10 @@ namespace Game.Enemy
         {
             enemy.DoDamage(element, damage);
         }
+        public void DamageRandomEnemy(Elements element, float damage)
+        {
+            DamageEnemy(_currentEnemies[Random.Range(0, _currentEnemies.Count)], element, damage);
+        }
         
         private void OnDamaged(float damage)
         {

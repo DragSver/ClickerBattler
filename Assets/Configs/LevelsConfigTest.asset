@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84375c10b8374c87adf6dc153d119c9a, type: 3}
-  m_Name: LevelsConfig
+  m_Name: LevelsConfigTest
   m_EditorClassIdentifier: 
   _locations:
   - Location: 0
@@ -23,51 +23,35 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: mouse_1_m
-          Hp: 50
+          Hp: 10
           IsBoss: 0
         - Id: mouse_1_m
-          Hp: 50
+          Hp: 10
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: mouse_1_m
-          Hp: 50
+          Hp: 10
           IsBoss: 0
         - Id: mouse_2_m
-          Hp: 60
+          Hp: 10
           IsBoss: 0
         - Id: mouse_2_m
-          Hp: 60
+          Hp: 10
           IsBoss: 0
       Rewards: []
     - Location: 0
       LevelNumber: 1
-      IsComleted: 1
+      IsComleted: 0
       ExtraLevel: 0
       EnemiesWives:
       - Time: 0
         Enemies:
         - Id: bird_2_s
-          Hp: 55
-          IsBoss: 0
-      - Time: 0
-        Enemies:
-        - Id: bird_2_s
-          Hp: 55
+          Hp: 10
           IsBoss: 0
         - Id: bird_2_s
-          Hp: 55
-          IsBoss: 0
-      - Time: 0
-        Enemies:
-        - Id: bird_1_s
-          Hp: 60
-          IsBoss: 0
-        - Id: bird_2_s
-          Hp: 60
-          IsBoss: 0
-        - Id: bird_2_s
-          Hp: 60
+          Hp: 10
           IsBoss: 0
       Rewards: []
     - Location: 0
@@ -78,12 +62,12 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: lizard_1_s
-          Hp: 65
+          Hp: 10
           IsBoss: 0
       - Time: 3
         Enemies:
         - Id: snake_3_b
-          Hp: 30
+          Hp: 10
           IsBoss: 0
       Rewards: []
     - Location: 0
@@ -94,7 +78,7 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: frog_1_w
-          Hp: 70
+          Hp: 10
           IsBoss: 0
       Rewards: []
     - Location: 0
@@ -105,12 +89,12 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: rabbit_1_s
-          Hp: 100
+          Hp: 10
           IsBoss: 0
       - Time: 10
         Enemies:
         - Id: rabbit_2_s
-          Hp: 100
+          Hp: 10
           IsBoss: 0
       Rewards: []
     - Location: 0
@@ -121,21 +105,21 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: fox_2_b
-          Hp: 150
+          Hp: 5
           IsBoss: 0
         - Id: fox_1_b
-          Hp: 150
+          Hp: 5
           IsBoss: 0
-      - Time: 30
+      - Time: 80
         Enemies:
         - Id: fox_boss_s
-          Hp: 300
+          Hp: 10
           IsBoss: 1
         - Id: fox_2_b
-          Hp: 150
+          Hp: 10
           IsBoss: 0
         - Id: fox_1_b
-          Hp: 150
+          Hp: 20
           IsBoss: 0
       Rewards: []
     State: 0
@@ -149,26 +133,26 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
         - Id: frog_1_w
-          Hp: 80
+          Hp: 300
           IsBoss: 0
       Rewards: []
     - Location: 1
@@ -179,32 +163,32 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: rabbit_1_s
-          Hp: 85
+          Hp: 100
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: hare_1_m
-          Hp: 150
+          Hp: 400
           IsBoss: 0
         - Id: hare_2_m
-          Hp: 150
+          Hp: 400
           IsBoss: 0
         - Id: hare_2_m
-          Hp: 150
+          Hp: 400
           IsBoss: 0
       Rewards: []
-    - Location: 1
-      LevelNumber: 2
+    - Location: 0
+      LevelNumber: 0
       IsComleted: 0
       ExtraLevel: 0
       EnemiesWives:
       - Time: 0
         Enemies:
         - Id: fox_2_b
-          Hp: 200
+          Hp: 500
           IsBoss: 0
         - Id: fox_1_b
-          Hp: 200
+          Hp: 500
           IsBoss: 0
       Rewards: []
     - Location: 1
@@ -220,10 +204,10 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: snake_1_b
-          Hp: 160
+          Hp: 500
           IsBoss: 0
       Rewards: []
-    - Location: 1
+    - Location: 0
       LevelNumber: 4
       IsComleted: 0
       ExtraLevel: 0
@@ -231,10 +215,10 @@ MonoBehaviour:
       - Time: 30
         Enemies:
         - Id: e_owl_1_m
-          Hp: 170
+          Hp: 500
           IsBoss: 0
       Rewards: []
-    - Location: 1
+    - Location: 0
       LevelNumber: 5
       IsComleted: 0
       ExtraLevel: 0
@@ -242,29 +226,29 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: log_1_n
-          Hp: 175
+          Hp: 300
           IsBoss: 0
         - Id: log_1_n
-          Hp: 175
+          Hp: 300
           IsBoss: 0
         - Id: log_1_n
-          Hp: 175
+          Hp: 300
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: sundew_1_b
-          Hp: 200
+          Hp: 500
           IsBoss: 0
       - Time: 0
         Enemies:
         - Id: frog_1_w
-          Hp: 155
+          Hp: 300
           IsBoss: 0
         - Id: frog_1_w
-          Hp: 155
+          Hp: 300
           IsBoss: 0
       Rewards: []
-    - Location: 1
+    - Location: 0
       LevelNumber: 6
       IsComleted: 0
       ExtraLevel: 0
@@ -272,24 +256,24 @@ MonoBehaviour:
       - Time: 0
         Enemies:
         - Id: wolf_1_m
-          Hp: 260
+          Hp: 700
           IsBoss: 0
         - Id: wolf_1_m
-          Hp: 260
+          Hp: 700
           IsBoss: 0
-      - Time: 60
+      - Time: 140
         Enemies:
         - Id: wolf_1_m
-          Hp: 265
+          Hp: 700
           IsBoss: 0
         - Id: wolf_1_m
-          Hp: 265
+          Hp: 700
           IsBoss: 0
         - Id: wolf_1_m
-          Hp: 265
+          Hp: 700
           IsBoss: 0
         - Id: wolf_1_m
-          Hp: 265
+          Hp: 700
           IsBoss: 0
       Rewards: []
     State: 0

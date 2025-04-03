@@ -52,6 +52,7 @@ namespace Game.Enemy
         }
         private void SpawnWiveEnemy()
         {
+            _currentEnemies.Clear();
             foreach (var enemyView in _enemyViews) enemyView.ClearEnemy();
             
             _currentEnemyWiveIndex++;
@@ -205,11 +206,11 @@ namespace Game.Enemy
             DamageEnemy(_currentEnemies[Random.Range(0, _currentEnemies.Count)], element, damage);
         }
         
-        private void OnDamaged(float damage)
+        private void OnDamaged(float damage, ElementsInfluence influence)
         {
             
         }
-        private void OnDead()
+        private void OnDead(ElementsInfluence influence)
         {
             GameStats.AddKills();
             if (_currentEnemies.Any(enemy => enemy.GetHealth() != 0)) return;

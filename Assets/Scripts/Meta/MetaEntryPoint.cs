@@ -13,8 +13,6 @@ namespace Meta
         [SerializeField] private LocationManager _locationManager;
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
-        
-        [SerializeField] private int _currentLocation = 1;
 
         private const string SCENE_LOADER_TAG = "SceneLoader";
         

@@ -30,7 +30,7 @@ namespace SceneManegement
             _loadingScreen.SetActive(true);
 
             yield return LoadScene(Scenes.Boostrap);
-            yield return LoadScene(Scenes.LevelScene);
+            yield return LoadScene(Scenes.GameScene);
 
             var sceneEntryPoint = FindFirstObjectByType<EntryPoint>();
             sceneEntryPoint.Run(enterParams);

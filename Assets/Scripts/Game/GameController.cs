@@ -71,52 +71,48 @@ namespace Game {
         private void StartLevel()
         {
             _endLevelScreenController.HideEndLevelScreen();
-            
+            _timeOnLevel = 0;
             _levelData = _levels.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
 
             var locationView = _levelsViewConfig.GetLocationViewData(_levelData.Location);
             _locationViewController.ClearLocationView();
             _locationViewController.SetLocationView(locationView,
-                _gameEnterParams.Level, _levels.GetCountMainLevelOnLocation(_gameEnterParams.Location),
+                _gameEnterParams.Level+1, _levels.GetCountMainLevelOnLocation(_gameEnterParams.Location),
                 0, LoadMetaScene, null, () =>
                 {
                     _timerController.SwitchPause();
+                    _isPlaying = !_isPlaying;
                     _pausePopup.SetActive(!_timerController.IsPlaying);
                 });
+            
             _attackButtonController = _locationViewController.AttackButtonController;
             _attackButtonController.Init(_locationViewController.Canvas);
             _criticalHitController.Init(_attackButtonController.GetComponent<RectTransform>());
             _attackButtonController.OnClick += AttackClick;
             
             _enemyController.StartLevel(_levelData);
-            _enemyController.OnLevelComplete += EndLevel;
+            _isPlaying = true;
             _criticalHitController.StartGenerateCriticalPoint();
         }
 
         private void EndLevel(bool levelPassed)
         {
-            _attackButtonController.Unsubscribe();
+            _isPlaying = false;
             _timerController.Stop();
+            _attackButtonController.Unsubscribe();
             _criticalHitController.StopGenerateCriticalPoint();
-            
-            _endLevelScreenController.OnMapButtonClick += LoadMetaScene;
 
             if (levelPassed)
             {
                 TrySaveEndLevelData();
                 
-                _endLevelScreenController.OnContinueGameClick += LoadNextLevel;
                 _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), LoadNextLevel, LoadMetaScene, true);
             }
             else
             {
-                var totalDeaths = GameStats.AddDeaths();
-                
                 var loseData = _loseScreenData;
-                loseData.FirstLabel = loseData.FirstLabel.Replace("N", totalDeaths.ToString());
-                
-                _endLevelScreenController.OnContinueGameClick += LoadRestartLevel;
-                
+                var totalDeaths = GameStats.AddDeaths();
+                loseData.FirstLabel = $"Вы погибли {totalDeaths} раз";
                 _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, false);
             }
         }
@@ -194,21 +190,24 @@ namespace Game {
         private EndLevelScreenData EditVictoryData()
         {
             var victoryData = _victoryScreenData;
+            
             var totalKills = GameStats.GetKills();
-                
-            var maxLevelTime = 0f;
-            foreach (var levelDataEnemiesWive in _levelData.EnemiesWives.Where(levelDataEnemiesWive => levelDataEnemiesWive.Time > 0)) 
-                maxLevelTime = levelDataEnemiesWive.Time;
-            if (maxLevelTime > 0)
-            {
-                var currentTime = maxLevelTime - _timerController.CurrentTime;
-                var bestTime = GameStats.SaveBestTime(currentTime);
-                    
-                victoryData.ThirdLabel = currentTime.ToString("00:00.000s");
-                // victoryData.BestKillTimeText = bestTime.ToString("00:00.000s");
-            }
-            victoryData.FirstLabel = victoryData.FirstLabel.Replace("N", totalKills.ToString());
+            var currentTime = _timeOnLevel;
+            var bestTime = GameStats.SaveBestTimeOnID(currentTime, $"{_levelData.Location}:{_levelData.LevelNumber}");
+            victoryData.FirstLabel = $"Вы одолели {totalKills} врагов!";
+            victoryData.SecondLabel = currentTime.ToString("00:00.000s");
+            victoryData.ThirdLabel = bestTime.ToString("00:00.000s");
             return victoryData;
+        }
+
+        private float _timeOnLevel = 0;
+        private bool _isPlaying = false;
+        private void FixedUpdate()
+        {
+            if (!_isPlaying) return;
+
+            var deltaTime = Time.fixedDeltaTime;
+            _timeOnLevel += deltaTime;
         }
     }
 }

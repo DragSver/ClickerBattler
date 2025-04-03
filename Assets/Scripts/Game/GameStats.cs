@@ -14,12 +14,12 @@ namespace Game
             return newTime;
         }
 
-        public static float SaveBestTimeEnemy(float newTime, string idEnemy)
+        public static float SaveBestTimeOnID(float newTime, string id)
         {
-            var bestTime = PlayerPrefs.GetFloat("BestTimeEnemy" + idEnemy, float.MaxValue);
+            var bestTime = PlayerPrefs.GetFloat(id, float.MaxValue);
             if (newTime >= bestTime) return bestTime;
             
-            PlayerPrefs.SetFloat("BestTimeEnemy" + idEnemy, newTime);
+            PlayerPrefs.SetFloat(id, newTime);
             PlayerPrefs.Save();
             return newTime;
         }

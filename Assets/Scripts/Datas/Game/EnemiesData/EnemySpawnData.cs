@@ -7,6 +7,7 @@ namespace Datas.Game.EnemiesData
     {
         public string Id;
         public int Hp;
+        public bool AutoHP;
         public bool IsBoss;
     }
 }

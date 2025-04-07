@@ -9,6 +9,5 @@ namespace Datas.Global
     {
         public int Location;
         public List<LevelData> Levels;
-        public ProgressState State;
     }
 }

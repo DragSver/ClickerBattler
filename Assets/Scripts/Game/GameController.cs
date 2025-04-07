@@ -59,9 +59,12 @@ namespace Game {
             _gameEnterParams = ReceiveGameEnterParams(enterParams);
 
             var openedSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
-            _skillSystem = new(openedSkills, _skillConfig, _enemyController);
             
             _enemyController.Init(_timerController);
+            _enemyController.OnLevelComplete += EndLevel;
+            
+            _skillSystem = new(openedSkills, _skillConfig, _enemyController);
+            
             _levelsViewConfig.Init();
 
             StartLevel();
@@ -82,7 +85,7 @@ namespace Game {
                 {
                     _timerController.SwitchPause();
                     _isPlaying = !_isPlaying;
-                    _pausePopup.SetActive(!_timerController.IsPlaying);
+                    _pausePopup.SetActive(!_isPlaying);
                 });
             
             _attackButtonController = _locationViewController.AttackButtonController;

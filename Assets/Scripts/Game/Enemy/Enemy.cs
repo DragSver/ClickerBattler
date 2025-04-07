@@ -1,15 +1,19 @@
+using System;
+using Unity.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game.Enemy
 {
+    [Serializable]
     public class Enemy
     {
         public event UnityAction<float, ElementsInfluence> OnDamaged;
         public event UnityAction<ElementsInfluence> OnDead;
 
-        private float _health;
+        [SerializeField, ReadOnly] private float _health;
         private Elements _element;
-        private EnemyView _enemyView;
+        // private EnemyView _enemyView;
         private bool _isAlive = true;
 
         public Enemy(int maxHealth, EnemyView enemyView, EnemyViewData enemyViewData)
@@ -17,9 +21,9 @@ namespace Game.Enemy
             _health = maxHealth;
             _element = enemyViewData.Element;
             
-            _enemyView = enemyView;
-            _enemyView.Init();
-            _enemyView.SetEnemy(this, enemyViewData.Name, enemyViewData.Sprite, enemyViewData.Element, _health, ref OnDamaged, ref OnDead);
+            // _enemyView = enemyView;
+            // _enemyView.Init();
+            enemyView.SetEnemy(this, enemyViewData.Name, enemyViewData.Sprite, enemyViewData.Element, _health, ref OnDamaged, ref OnDead);
         }
 
         public void DoDamage(Elements element, float damage)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Game.Enemy;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +10,10 @@ namespace Game.AttackButtons
     {
         public UnityAction<Enemy.Enemy, Elements, float> OnClick;
         
+        [SerializeField] private float _cooldownTime = 0.05f;
         [SerializeField] private List<AttackButton> _attackButtons;
+        
+        private bool _canClick = true;
 
         public void Init(Canvas canvas)
         {
@@ -29,7 +33,20 @@ namespace Game.AttackButtons
         
         private void Click(Enemy.Enemy enemy, Elements elements, float damage)
         {
+            if (!_canClick) return;
+            
+            if (_cooldownTime > 0)
+                _canClick = false;
+            
             OnClick.Invoke(enemy, elements, damage);
+            
+            if (!_canClick) StartCoroutine(ClickCooldown());
+        }
+        
+        IEnumerator ClickCooldown()
+        {
+            yield return new WaitForSeconds(_cooldownTime);
+            _canClick = true;
         }
     }
 }

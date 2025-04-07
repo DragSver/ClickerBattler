@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,22 +14,23 @@ namespace Game.Enemy
     {
         public Enemy Enemy;
         
-        [InspectorName("InfoArea")] 
+        [Header("InfoArea")] 
         [SerializeField] private TextMeshProUGUI _enemyName;
         [SerializeField] private HealthBar _healthBar;
         [SerializeField] private TextMeshProUGUI _damageText;
+        [SerializeField] private RectTransform _damageTextHolder;
         
-        [InspectorName("EnemyArea")]
+        [Header("EnemyArea")]
         [SerializeField] private Image _image;
         [SerializeField] private BoxCollider2D _boxCollider;
         [SerializeField] private ElementViewData[] _elementViewDatas;
         
-        private Dictionary<Elements, Image> _elementsImages;
+        private Dictionary<Elements, Image> _elementsImages = new();
+        private List<TextMeshProUGUI> _damageTexts = new();
 
 
         public void Init()
         {
-            _elementsImages = new Dictionary<Elements, Image>();
             foreach (var elementViewData in _elementViewDatas)
                 _elementsImages.Add(elementViewData.Element, elementViewData.ElementImage);
             
@@ -74,18 +76,34 @@ namespace Game.Enemy
             yield return new WaitForSeconds(0.3f);
             _image.color = Color.white;
         }
+
         private IEnumerator CallDamageInfo(float damage, ElementsInfluence influence)
         {
+            TextMeshProUGUI damageText = null;
+
+            if ( _damageTexts.Count != 0 && _damageTexts.Any(text => text.text == ""))
+            {
+                damageText = _damageTexts.First(text => text.text == "");
+            }
+            if (damageText is null)
+            {
+                damageText = Instantiate(_damageText, _damageTextHolder);
+                _damageTexts.Add(damageText);
+            }
+            
+            damageText.gameObject.SetActive(true);
+            damageText.transform.SetAsFirstSibling();
             var text = influence switch
             {
-                ElementsInfluence.Strong => "сильно",
-                ElementsInfluence.Standard => "нормально",
-                ElementsInfluence.Weakly => "слабо",
+                ElementsInfluence.Strong => "\nсильно",
+                ElementsInfluence.Standard => "\nнормально",
+                ElementsInfluence.Weakly => "\nслабо",
                 _ => ""
             };
-            _damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}\n{text}";
+            damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}{text}";
             yield return new WaitForSeconds(0.3f);
-            _damageText.text = "";
+            damageText.text = "";
+            damageText.gameObject.SetActive(false);
         }
 
         private void Death(ElementsInfluence influence)

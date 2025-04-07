@@ -14,10 +14,8 @@ namespace Game.AttackButtons
         [SerializeField] private Elements _element;
         [SerializeField] private Button _button;
         [SerializeField] private float _currentDamage = 1;
-        [SerializeField] private float _cooldownTime = 0.05f;
         [SerializeField] private LayerMask _enemyLayer;
         
-        private bool _canClick = true;
         private Canvas _canvas;
 
         public void Init(Canvas screenCanvas)
@@ -27,10 +25,6 @@ namespace Game.AttackButtons
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (!_canClick) return;
-            
-            if (_cooldownTime > 0)
-                _canClick = false;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _canvas.transform as RectTransform, 
@@ -50,14 +44,6 @@ namespace Game.AttackButtons
                 if (enemyView != null)
                     OnClick?.Invoke(enemyView.Enemy, _element, _currentDamage);
             }
-
-            if (!_canClick) StartCoroutine(ClickCooldown());
-        }
-        
-        IEnumerator ClickCooldown()
-        {
-            yield return new WaitForSeconds(_cooldownTime);
-            _canClick = true;
         }
     }
 }

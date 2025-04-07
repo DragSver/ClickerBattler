@@ -11,7 +11,7 @@ namespace Game.Timer
 
         public override void SetTime(float currentTime)
         {
-            _timerText.text = currentTime.ToString("00.000");
+            _timerText.text = currentTime.ToString("00.000") + " s.";
         }
 
     }

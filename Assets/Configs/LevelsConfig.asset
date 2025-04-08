@@ -43,7 +43,9 @@ MonoBehaviour:
           Hp: 55
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+      Rewards:
+      - Id: 
+        Count: 0
     - Location: 0
       LevelNumber: 1
       ExtraLevel: 0

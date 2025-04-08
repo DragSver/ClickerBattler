@@ -46,6 +46,7 @@ namespace Game {
         private SkillSystem _skillSystem;
         
         private Progress _progress;
+        private Wallet _wallet;
 
 
         private const string SCENE_LOADER_TAG = "SceneLoader";
@@ -65,6 +66,9 @@ namespace Game {
             
             _skillSystem = new(openedSkills, _skillConfig, _enemyController);
             
+            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            
             _levelsViewConfig.Init();
 
             StartLevel();
@@ -81,7 +85,7 @@ namespace Game {
             _locationViewController.ClearLocationView();
             _locationViewController.SetLocationView(locationView,
                 _gameEnterParams.Level+1, _levels.GetCountMainLevelOnLocation(_gameEnterParams.Location),
-                0, LoadMetaScene, null, () =>
+                _wallet.Coins, LoadMetaScene, null, () =>
                 {
                     _timerController.SwitchPause();
                     _isPlaying = !_isPlaying;
@@ -108,17 +112,19 @@ namespace Game {
             if (levelPassed)
             {
                 TrySaveEndLevelData();
+                AddAndSaveRewards(_levelData.Rewards[0].Count);
                 
-                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), LoadNextLevel, LoadMetaScene, true);
+                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), LoadNextLevel, LoadMetaScene, _levelData.Rewards, _wallet.Coins, true);
             }
             else
             {
                 var loseData = _loseScreenData;
                 var totalDeaths = GameStats.AddDeaths();
                 loseData.FirstLabel = $"Вы погибли {totalDeaths} раз";
-                _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, false);
+                _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, null, _wallet.Coins, false);
             }
         }
+        
         
         private void AttackClick(Enemy.Enemy enemy, Elements element, float damage)
         {
@@ -176,7 +182,6 @@ namespace Game {
         }
         private void TrySaveEndLevelData()
         {
-            _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             if (_gameEnterParams.Location == _progress.CurrentLocation &&
                 _gameEnterParams.Level == _progress.CurrentLevel)
             {
@@ -190,6 +195,12 @@ namespace Game {
                 _saveSystem.SaveData(SavableObjectType.Progress);
             }
         }
+        private void AddAndSaveRewards(int coins)
+        {
+            _wallet.Coins += coins;
+            _saveSystem.SaveData(SavableObjectType.Wallet);
+        }
+        
         private EndLevelScreenData EditVictoryData()
         {
             var victoryData = _victoryScreenData;

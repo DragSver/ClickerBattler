@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+using Datas.Game;
+using Datas.Global;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Game
@@ -9,7 +11,6 @@ namespace Game
     public class EndLevelScreenController : MonoBehaviour
     {
         public event UnityAction OnContinueGameClick;
-        public event UnityAction OnMapButtonClick;
 
         [SerializeField] private GameObject _endLevelScreen;
 
@@ -19,7 +20,6 @@ namespace Game
         [SerializeField] private Image _colorMainTextHolder;
 
         [SerializeField] private TextMeshProUGUI _mainText;
-
         [SerializeField] private TextMeshProUGUI _firstTitle;
         [SerializeField] private TextMeshProUGUI _secondTitle;
         [SerializeField] private TextMeshProUGUI _thirdTitle;
@@ -30,11 +30,17 @@ namespace Game
         [SerializeField] private Button _continueGameButton;
         [SerializeField] private Button _mapButton;
         
+        [SerializeField] private RewardsController _rewardsController;
+
+        [SerializeField] private TextMeshProUGUI _wallet;
         
-        public void CallEndLevelScreen(Datas.Game.EndLevelScreenData endLevelScreenData, UnityAction onContinueGameClick, UnityAction onMapButtonClick, bool win)
+        
+        public void CallEndLevelScreen(EndLevelScreenData endLevelScreenData, UnityAction onContinueGameClick, UnityAction onMapButtonClick, List<CollectedItemsData> collectedItems, int coins, bool win)
         {
             InitButton(_continueGameButton, onContinueGameClick);
             InitButton(_mapButton, onMapButtonClick);
+
+            _wallet.text = coins.ToString();
             
             _background.sprite = endLevelScreenData.Background;
             _flagImage.sprite = endLevelScreenData.Flag;
@@ -56,6 +62,9 @@ namespace Game
                 _timeImage.gameObject.SetActive(false);
                 _bestTimeImage.gameObject.SetActive(false);
             }
+            
+            if (collectedItems != null && collectedItems.Count > 0) _rewardsController.SetRewards(collectedItems);
+            else _rewardsController.ClearRewards();
             
             _endLevelScreen.SetActive(true);
         }

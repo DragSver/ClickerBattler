@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53e5da33d6cd13942869057e58470443
+guid: 0504d9de4895b714c90ef015956ebe9c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7591818585124797798
-    second: EndGameButton_0
+      213: 4281128995336173893
+    second: "Group \u0446_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -72,12 +72,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EndGameButton_0
+      name: "Group \u0446_0"
       rect:
         serializedVersion: 2
-        x: 6
-        y: 8
-        width: 352
-        height: 121
+        x: 1
+        y: 2
+        width: 161
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a928d62583174a690800000000000000
-      internalID: -7591818585124797798
+      spriteID: 54933ac8320a96b30800000000000000
+      internalID: 4281128995336173893
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      EndGameButton_0: -7591818585124797798
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

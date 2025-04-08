@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d4b5ea17d6a8c3a44b781886f9877279
+guid: 35947784540a32348a351668ede4aa10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1969861831796190246
-    second: gamedev25_71559_Fabulous_simple_style_without_drawing_details_r_f6dbade1-90bc-4452-8408-3dff1a9b5a46-fotor-bg-remover-20250314101752_0
+      213: -5500038318453223586
+    second: 2618378e-b236-4432-bb97-5a75fd4289c9_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +53,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -72,12 +72,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -85,6 +85,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -122,30 +135,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gamedev25_71559_Fabulous_simple_style_without_drawing_details_r_f6dbade1-90bc-4452-8408-3dff1a9b5a46-fotor-bg-remover-20250314101752_0
+      name: 2618378e-b236-4432-bb97-5a75fd4289c9_0
       rect:
         serializedVersion: 2
-        x: 76
+        x: 0
         y: 0
-        width: 381
-        height: 470
+        width: 1024
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62cefc436ea565b10800000000000000
-      internalID: 1969861831796190246
+      spriteID: e5f0f813a40fba3b0800000000000000
+      internalID: -5500038318453223586
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      gamedev25_71559_Fabulous_simple_style_without_drawing_details_r_f6dbade1-90bc-4452-8408-3dff1a9b5a46-fotor-bg-remover-20250314101752_0: 1969861831796190246
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

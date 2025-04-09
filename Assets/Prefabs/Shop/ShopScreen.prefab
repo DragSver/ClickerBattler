@@ -427,6 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2664472419757836982}
+  - component: {fileID: 8184671111543969314}
   m_Layer: 0
   m_Name: ShopView
   m_TagString: Untagged
@@ -453,6 +454,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8184671111543969314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204970799879754325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fb84213e60b7641932137644fc475d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _walletText: {fileID: 0}
+  _skillsHolder: {fileID: 5602295194995613355}
+  _skillViewPrefab: {fileID: 3367654773220641477, guid: ed3ae14135f7c37489f748086e83cd86, type: 3}
+  _mapButton: {fileID: 0}
 --- !u!1 &8444705672532672327
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 namespace Global.SaveSystem.SavableObjects
 {
-    public struct SkillWithLevel
+    public class SkillWithLevel
     {
         public string Id;
         public int Level;

@@ -42,7 +42,7 @@ namespace Game.Skills
         
         private void RegisterSkill(SkillWithLevel skill)
         {
-            var skillData = _skillConfig.GetSkillData(skill.Id, skill.Level);
+            var skillData = _skillConfig.GetSkillDataByLevel(skill.Id, skill.Level);
 
             var skillType = Type.GetType($"Game.Skills.SkillVariants.{skill.Id}");
             if (skillType == null)

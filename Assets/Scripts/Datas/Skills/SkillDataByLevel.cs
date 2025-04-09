@@ -10,5 +10,6 @@ namespace Configs
         public float Value;
         public SkillTrigger Trigger;
         public float TriggerValue;
+        public int Price;
     }
 }

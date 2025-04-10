@@ -13,6 +13,8 @@ namespace Meta.Shop
 {
     public class ShopWindow : MonoBehaviour
     {
+        [SerializeField] private RectTransform _shopWindow;
+        
         [SerializeField] private TextMeshProUGUI _walletText;
         
         [SerializeField] private GameObject _skillsHolder;
@@ -25,21 +27,26 @@ namespace Meta.Shop
         private Wallet _wallet;
         private OpenSkills _openSkills;
         private List<SkillView> _skillViews = new ();
-        
 
-        public void SetShopView(SaveSystem saveSystem, SkillConfig skillConfig)
+
+        public void Init(SaveSystem saveSystem, SkillConfig skillConfig, UnityAction onMapButtonClick)
         {
             _skillConfig = skillConfig;
             _saveSystem = saveSystem;
             _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _openSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
+            _mapButton.onClick.AddListener(onMapButtonClick);
+            _walletText.text = _wallet.Coins.ToString();
+            InitShopSkills();
         }
+        
+        public void ActivateShopView(bool activate) => _shopWindow.gameObject.SetActive(activate);
 
         private void InitShopSkills()
         {
             foreach (var openSkillsOpenedSkill in _openSkills.OpenedSkills)
             {
-                var skillView = _skillViews.FirstOrDefault(view => !view.gameObject.activeInHierarchy);
+                var skillView = _skillViews.FirstOrDefault(view => !view.gameObject.activeSelf);
                 if (skillView == null)
                 {
                     skillView ??= Instantiate(_skillViewPrefab, _skillsHolder.transform);
@@ -49,6 +56,15 @@ namespace Meta.Shop
                     skillView.gameObject.SetActive(true);
                 
                 SetSkill(openSkillsOpenedSkill, skillView);
+            }
+        }
+
+        public void ClearShopSkills()
+        {
+            foreach (var skillView in _skillViews)
+            {
+                skillView.gameObject.SetActive(false);
+                skillView.ClearSkill();
             }
         }
 
@@ -64,7 +80,9 @@ namespace Meta.Shop
             }
 
             _walletText.text = _wallet.Coins.ToString();
-            SetSkill(_openSkills.GetSkillWithLevel(skillId), _skillViews.Find(view => view.SkillId == skillId));
+            // SetSkill(_openSkills.GetSkillWithLevel(skillId), _skillViews.Find(view => view.SkillId == skillId));
+            ClearShopSkills();
+            InitShopSkills();
         }
 
         private void SetSkill(SkillWithLevel skill, SkillView skillView)

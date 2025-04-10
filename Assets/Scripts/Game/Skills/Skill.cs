@@ -8,4 +8,9 @@ namespace Game.Skills
         public virtual void OnSkillRegister(){}
         public virtual void SkillProcess(){}
     }
+    
+    public abstract class DamageSkill : Skill
+    {
+        public virtual void SkillProcess(Enemy.Enemy enemy){}
+    }
 }

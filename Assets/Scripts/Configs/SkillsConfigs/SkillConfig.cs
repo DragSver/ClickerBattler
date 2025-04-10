@@ -12,6 +12,9 @@ namespace Configs
 
         public bool NextLevelExist(string skillId, int level)
         {
+            if (_skillDataByLevelMap == null || _skillDataByLevelMap.Count == 0)
+                FillSkillDataMaps();
+            
             return _skillDataByLevelMap.TryGetValue(skillId, out var skillDataMap) && skillDataMap.TryGetValue(level, out var skillData);
         }        
         public SkillDataByLevel GetSkillDataByLevel(string skillId, int level)

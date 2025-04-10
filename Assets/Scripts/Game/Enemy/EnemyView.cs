@@ -39,6 +39,7 @@ namespace Game.Enemy
 
         public void SetEnemy(Enemy enemy, string enemyName, Sprite enemyImage, Elements element, float health, ref UnityAction<float, ElementsInfluence> onDamaged, ref UnityAction<ElementsInfluence> onDeath)
         {
+            _boxCollider.gameObject.SetActive(false);
             Enemy = enemy;
             
             gameObject.SetActive(true);
@@ -51,7 +52,7 @@ namespace Game.Enemy
             _healthBar.SetMaxValue(health);
 
             onDamaged += GetDamage;
-            onDeath += influence => Death(influence);
+            onDeath += influence => StartCoroutine(Death(influence));
         }
         public void ClearEnemy()
         {
@@ -101,17 +102,18 @@ namespace Game.Enemy
                 _ => ""
             };
             damageText.text = $"- {Math.Round(damage, 2).ToString(CultureInfo.InvariantCulture)}{text}";
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.15f);
             damageText.text = "";
             damageText.gameObject.SetActive(false);
         }
 
-        private void Death(ElementsInfluence influence)
+        private IEnumerator Death(ElementsInfluence influence)
         {
             _healthBar.DecreaseValue(_healthBar.CurrentValue);
-            // StartCoroutine(CallDamageInfo(_healthBar.CurrentValue, influence));
-            // DeathAnimation();
-            // yield return new WaitForSeconds(0.3f);
+            _boxCollider.gameObject.SetActive(false);
+            StartCoroutine(CallDamageInfo(_healthBar.CurrentValue, influence));
+            DeathAnimation();
+            yield return new WaitForSeconds(0.3f);
             gameObject.SetActive(false);
         }
         private void DeathAnimation()

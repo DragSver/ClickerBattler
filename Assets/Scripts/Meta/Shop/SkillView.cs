@@ -16,6 +16,7 @@ namespace Meta.Shop
         [SerializeField] private Image _skillIcon;
 
         [SerializeField] private Button _skillUpgradeButton;
+        [SerializeField] private Image _buyButtonImage;
         [SerializeField] private TextMeshProUGUI _skillUpgradeText;
         [SerializeField] private TextMeshProUGUI _priceSkillUpgrade;
         [SerializeField] private Image _priceImage;
@@ -30,12 +31,12 @@ namespace Meta.Shop
             _skillDescription.text = skillData.Description;
             _skillIcon.sprite = skillData.Icon;
             _skillIcon.preserveAspect = true;
+            _skillLevel.text = currentLevel.Level + " уровень";
             
             if (nextLevel != null)
             {
-                _skillLevel.text = nextLevel.Value.Level + " уровень";
                 _skillUpgrade.text = $"{currentLevel.Value} -> {nextLevel.Value.Value}";
-                _skillUpgrade.text = currentLevel.Level == 0 ? "Купить" : "Прокачать";
+                _skillUpgradeText.text = currentLevel.Level == 0 ? "Купить" : "Прокачать";
                 _priceSkillUpgrade.text = nextLevel.Value.Price.ToString();
                 _priceImage.gameObject.SetActive(true);
                 _priceSkillUpgrade.gameObject.SetActive(true);
@@ -43,24 +44,19 @@ namespace Meta.Shop
                 if (currentWallet < nextLevel.Value.Price)
                 {
                     _priceSkillUpgrade.color = Color.red;
-                    var block = _skillUpgradeButton.colors;
-                    block.normalColor = Color.gray;
-                    _skillUpgradeButton.colors = block;
+                    _buyButtonImage.color = Color.gray;
                     _skillUpgradeButton.enabled = false;
                 }
                 else
                 {
                     _priceSkillUpgrade.color = Color.white;
-                    var block = _skillUpgradeButton.colors;
-                    block.normalColor = Color.white;
-                    _skillUpgradeButton.colors = block;
+                    _buyButtonImage.color = Color.red;
                     _skillUpgradeButton.enabled = true;
                     _skillUpgradeButton.onClick.AddListener(onBuySkill);
                 }
             }
             else
             {
-                _skillLevel.text = currentLevel.Level + " уровень";
                 _skillUpgrade.text = currentLevel.Value.ToString(CultureInfo.InvariantCulture);
                 _skillUpgrade.text = "Макс.\nуровень";
                 _priceImage.gameObject.SetActive(false);

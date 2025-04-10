@@ -37,7 +37,7 @@ namespace Game.Enemy
 
             _currentEnemies = new List<Enemy>();
             _enemyViews = new[]
-                { _centralEnemy, _leftForwardEnemy, _leftBackEnemy, _rightForwardEnemy, _rightBackEnemy };
+                { _centralEnemy, _leftForwardEnemy, _leftBackEnemy, _rightForwardEnemy, _rightBackEnemy, _bossEnemyView };
             foreach (var enemyView in _enemyViews) enemyView.Init();
             
             _timerController = timerController;

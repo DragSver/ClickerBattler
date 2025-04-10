@@ -1,30 +1,32 @@
 using System.Collections.Generic;
 using Configs;
-using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Meta.Locations
 {
-    public class LocationManager : MonoBehaviour
+    public class LevelMap : MonoBehaviour
     {
+        [SerializeField] private RectTransform _map;
+        
         [SerializeField] private List<Location> _locations;
         
         [SerializeField] private LevelMapViewConfig _levelMapViewConfig;
         [SerializeField] private LevelMapViewController _levelMapViewController;
-
+        
         private int _currentLocation;
-        private SaveSystem _saveSystem;
+        
 
-        public void Init(Progress progress, UnityAction<int, int> startLevelCallback, SaveSystem saveSystem)
+        public void Init(Progress progress, int wallet, UnityAction<int, int> startLevelCallback, UnityAction onShop)
         {
-            _saveSystem = saveSystem;
-            _levelMapViewController.Init(ShowNextLocation, ShowPreviousLocation, null, null, null);
             _currentLocation = progress.CurrentLocation;
-            _levelMapViewConfig.Init();
+            
+            _levelMapViewController.Init(ShowNextLocation, ShowPreviousLocation, null, null, onShop, _currentLocation, _locations.Count, wallet);
+            
             FirstInitLocations(progress, startLevelCallback);
-            FirstInitButtons();
+            SetViewLocation(_currentLocation);
+            
         }
 
         private void ShowNextLocation()
@@ -51,36 +53,41 @@ namespace Meta.Locations
             if (_currentLocation == 0)
                 _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
         }
-
-        private void FirstInitButtons()
-        {
-            if (_currentLocation == _locations.Count-1)
-                _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
-            if (_currentLocation == 0)
-                _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
-        }
-        
         private void FirstInitLocations(Progress progress, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
                 var locationNum = i;
 
-                var isLocationCompleted = locationNum < progress.CurrentLocation
-                    ? ProgressState.Complete
-                    : (locationNum == progress.CurrentLocation ? ProgressState.Current : ProgressState.Closed);
+                ProgressState isLocationCompleted;
+                if (locationNum < progress.CurrentLocation)
+                    isLocationCompleted = ProgressState.Complete;
+                else if (locationNum == progress.CurrentLocation)
+                    isLocationCompleted = ProgressState.Current;
+                else 
+                    isLocationCompleted = ProgressState.Closed;
                 
                 _locations[locationNum].Init(isLocationCompleted, progress.CurrentLevel, level => startLevelCallback?.Invoke(locationNum, level));
                 _locations[locationNum].SetActive(progress.CurrentLocation == locationNum);
             }
-            SetViewLocation(_currentLocation);
         }
 
         private void SetViewLocation(int location)
         {
             var levelMapView = _levelMapViewConfig.GetLevelMapViewData(location);
-            var coinsAmount = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
-            _levelMapViewController.SetLocation(levelMapView, coinsAmount.Coins);
+            _levelMapViewController.SetLocation(levelMapView);
+        }
+
+        
+        public void ActivateLevelMap(int wallet)
+        {
+            SetViewLocation(_currentLocation);
+            _levelMapViewController.SetWallet(wallet);
+            _map.gameObject.SetActive(true);
+        }
+        public void HideLevelMap()
+        {
+            _map.gameObject.SetActive(false);
         }
     }
 }

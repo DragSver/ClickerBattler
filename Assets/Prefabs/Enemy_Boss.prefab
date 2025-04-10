@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480402421382502622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -234,10 +234,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7468539752300130436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -50}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &147745552783560966
 CanvasRenderer:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -45
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -347,6 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7468539752300130436}
+  - component: {fileID: 7091136369157317140}
   m_Layer: 0
   m_Name: Damage_Info_Holder
   m_TagString: Untagged
@@ -371,9 +372,35 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: -16.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -202.09961, y: -16.300003}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7091136369157317140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714736189276380676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 2
+  m_Spacing: 20
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &3758127772611603691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,9 +1060,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aff7ff4adca4b3dae5d22bc40802463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy:
+    _health: 0
   _enemyName: {fileID: 31308445755229673}
   _healthBar: {fileID: 9155271656004837679}
   _damageText: {fileID: 1401755364661494795}
+  _damageTextHolder: {fileID: 7468539752300130436}
   _image: {fileID: 7895620279115129654}
   _boxCollider: {fileID: 7204288244808674392}
   _elementViewDatas:

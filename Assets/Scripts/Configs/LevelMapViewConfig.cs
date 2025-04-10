@@ -10,13 +10,19 @@ namespace Configs
         [SerializeField] private List<LevelMapViewData> _levelMapViewDatas;
         private Dictionary<int, LevelMapViewData> _levelMapViewDictionary;
 
-        public void Init()
+
+        public LevelMapViewData GetLevelMapViewData(int locationId)
+        {
+            if (_levelMapViewDictionary == null || _levelMapViewDictionary.Count == 0)
+                FillDictionary();
+            
+            return _levelMapViewDictionary[locationId];  
+        } 
+        private void FillDictionary()
         {
             _levelMapViewDictionary = new Dictionary<int, LevelMapViewData>();
             foreach (var levelMapViewData in _levelMapViewDatas)
                 _levelMapViewDictionary.Add(levelMapViewData.Id, levelMapViewData);
         }
-        
-        public LevelMapViewData GetLevelMapViewData(int locationId) => _levelMapViewDictionary[locationId];
     }
 }

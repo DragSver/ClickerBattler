@@ -1,18 +1,30 @@
+using Configs;
 using Global.Audio;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.Locations;
+using Meta.Shop;
 using SceneManegement;
 using SceneManegement.EnterParams;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Meta
 {
     public class MetaEntryPoint : EntryPoint
     {
-        [SerializeField] private LocationManager _locationManager;
+        [FormerlySerializedAs("_levelMapController")]
+        [FormerlySerializedAs("_locationManager")]
+        [Header("Controllers")]
+        [SerializeField] private LevelMap _levelMap;
+        [SerializeField] private ShopWindow _shopWindow;
+        
+        [Header("Configs")]
+        [SerializeField] private SkillConfig _skillConfig;
+        
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
+        private Wallet _wallet;
 
         private const string SCENE_LOADER_TAG = "SceneLoader";
         
@@ -23,15 +35,28 @@ namespace Meta
             _audioManager.Play(AudioNames.Audio_Meta_BG, false);
 
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             
-            _locationManager.Init(progress, StartLevel, _saveSystem);
-            // _startLevelButton.onClick.AddListener(StartLevel);
+            _levelMap.Init(progress, _wallet.Coins, StartLevel, CallShop);
+            _shopWindow.Init(_saveSystem, _skillConfig, CallLevelMap);
         }
 
         private void StartLevel(int location, int level)
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
+        }
+
+        private void CallShop()
+        {
+            _shopWindow.ActivateShopView(true);
+            _levelMap.HideLevelMap();
+        }
+
+        private void CallLevelMap()
+        {
+            _levelMap.ActivateLevelMap(_wallet.Coins);
+            _shopWindow.ActivateShopView(false);
         }
     }
 }

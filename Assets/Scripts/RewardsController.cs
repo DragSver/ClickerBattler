@@ -16,7 +16,7 @@ public class RewardsController : MonoBehaviour
             if (index > _rewardViews.Length - 1) return;
             
             _rewardViews[index].gameObject.SetActive(true);
-            _rewardViews[index].SetReward(_itemsConfig.GetItemData(collectedItems[index].Id), collectedItems.Count);
+            _rewardViews[index].SetReward(_itemsConfig.GetItemData(collectedItems[index].Id), collectedItems[index].Count);
         }
     }
 

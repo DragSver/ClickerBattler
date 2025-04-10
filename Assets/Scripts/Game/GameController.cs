@@ -1,3 +1,4 @@
+using System;
 using Global.Audio;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
@@ -64,7 +65,7 @@ namespace Game {
             _enemyController.Init(_timerController);
             _enemyController.OnLevelComplete += EndLevel;
             
-            _skillSystem = new(openedSkills, _skillConfig, _enemyController);
+            _skillSystem = new(openedSkills, _skillConfig, _enemyController, _criticalHitController);
             
             _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
@@ -128,9 +129,28 @@ namespace Game {
         
         private void AttackClick(Enemy.Enemy enemy, Elements element, float damage)
         {
-            var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
-            DamageEnemy(enemy, element, multiplierDamage);
+            // var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
+            // DamageEnemy(enemy, element, multiplierDamage);
             _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
+            switch (element)
+            {
+                case Elements.Blood:
+                    _skillSystem.InvokeDamageTrigger(SkillTrigger.OnBloodDamage, enemy);
+                    break;
+                case Elements.Water:
+                    _skillSystem.InvokeDamageTrigger(SkillTrigger.OnWaterDamage, enemy);
+                    break;
+                case Elements.Sun:
+                    _skillSystem.InvokeDamageTrigger(SkillTrigger.OnSunDamage, enemy);
+                    break;
+                case Elements.Moon:
+                    _skillSystem.InvokeDamageTrigger(SkillTrigger.OnMoonDamage, enemy);
+                    break;
+                case Elements.None:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(element), element, null);
+            }
         }
         private void DamageEnemy(Enemy.Enemy enemy, Elements element, float damage) =>
             _enemyController.DamageEnemy(enemy, element, damage);

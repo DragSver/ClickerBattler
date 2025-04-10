@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Configs;
+using Game.CriticalHit;
 using Game.Enemy;
 using Global.SaveSystem.SavableObjects;
 
@@ -14,11 +15,12 @@ namespace Game.Skills
         private Dictionary<SkillTrigger, List<Skill>> _skillByTrigger;
         
         
-        public SkillSystem(OpenSkills openSkills, SkillConfig skillConfig, EnemyController enemyController)
+        public SkillSystem(OpenSkills openSkills, SkillConfig skillConfig, EnemyController enemyController, CriticalHitController criticalHitController)
         {
             _scope = new ()
             {
-                EnemyController = enemyController
+                EnemyController = enemyController,
+                CriticalHitController = criticalHitController,
             };
             _skillByTrigger = new();
             _skillConfig = skillConfig;
@@ -37,6 +39,17 @@ namespace Game.Skills
             foreach (var skill in skillToActivate)
             {
                 skill.SkillProcess();
+            }
+        }
+        public void InvokeDamageTrigger(SkillTrigger trigger, Enemy.Enemy enemy)
+        {
+            if (!_skillByTrigger.ContainsKey(trigger)) return;
+
+            var skillToActivate = _skillByTrigger[trigger];
+            foreach (var skill in skillToActivate)
+            {
+                if (skill is DamageSkill damageSkill)
+                    damageSkill.SkillProcess(enemy);
             }
         }
         

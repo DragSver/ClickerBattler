@@ -8,6 +8,7 @@ namespace Meta.Locations
 {
     public class LevelMapViewController : MonoBehaviour
     {
+        [Header("UI")]
         [SerializeField] private TextMeshProUGUI _locationName;
         [SerializeField] private TextMeshProUGUI _coins;
         [SerializeField] private Image _background;
@@ -22,31 +23,41 @@ namespace Meta.Locations
         [SerializeField] private Button _shopButton;
 
         
-        public void Init(UnityAction onNextLocation, UnityAction onPreviousLocation, UnityAction onCamp, UnityAction onAchievements, UnityAction onShop)
+        public void Init(UnityAction onNextLocation, UnityAction onPreviousLocation, UnityAction onCamp,
+            UnityAction onAchievements, UnityAction onShop, int currentLocation, int countLocations, int wallet)
         {
             InitButton(_nextLocationButton, onNextLocation);
             InitButton(_previousLocationButton, onPreviousLocation);
             InitButton(_campButton, onCamp);
             InitButton(_achievementsButton, onAchievements);
             InitButton(_shopButton, onShop);
+            
+            FirstInitNavigationButtons(currentLocation, countLocations);
+            SetWallet(wallet);
         }
         
-        public void SetLocation(LevelMapViewData levelMapViewData, int coinsAmount)
+        public void SetLocation(LevelMapViewData levelMapViewData)
         {
             _locationName.text = levelMapViewData.Name;
-            _coins.text = coinsAmount.ToString();
             _background.sprite = levelMapViewData.Background;
         }
-        public void SetCoinsAmount(int amount)
-        {
-            _coins.text = amount.ToString();
-        }
+        public void SetWallet(int amount) => _coins.text = amount.ToString();
+        
         
         private void InitButton(Button button, UnityAction action)
         {
             if (action != null)
                 button.onClick.AddListener(action);
-            button.enabled = action != null;
+            else
+                button.enabled = false;
+        }
+        
+        private void FirstInitNavigationButtons(int currentLocation, int countLocations)
+        {
+            if (currentLocation == countLocations-1)
+                _nextLocationButton.gameObject.SetActive(true);
+            if (currentLocation == 0)
+                _previousLocationButton.gameObject.SetActive(false);
         }
     }
 }

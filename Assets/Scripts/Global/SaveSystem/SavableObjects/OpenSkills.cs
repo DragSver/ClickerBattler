@@ -11,6 +11,26 @@ namespace Global.SaveSystem.SavableObjects
             {
                 Id = "AdditionalDamageSkill",
                 Level = 1,
+            },
+            new SkillWithLevel
+            {
+                Id = "MoonDamageSkill",
+                Level = 1,
+            },
+            new SkillWithLevel
+            {
+                Id = "BloodDamageSkill",
+                Level = 1,
+            },
+            new SkillWithLevel
+            {
+                Id = "WaterDamageSkill",
+                Level = 1,
+            },
+            new SkillWithLevel
+            {
+                Id = "SunDamageSkill",
+                Level = 1,
             }
         };
 

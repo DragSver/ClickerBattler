@@ -290,11 +290,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _skillName: {fileID: 4604130162178864553}
-  _skillDescription: {fileID: 4604130162178864553}
+  _skillDescription: {fileID: 6388065946077655941}
   _skillLevel: {fileID: 8949861280391676682}
   _skillUpgrade: {fileID: 3450686455284556717}
   _skillIcon: {fileID: 3987233544784659462}
   _skillUpgradeButton: {fileID: 9074536513625467946}
+  _buyButtonImage: {fileID: 1906681542681197257}
   _skillUpgradeText: {fileID: 4004440129593644227}
   _priceSkillUpgrade: {fileID: 120575384214818041}
   _priceImage: {fileID: 3259705734850380179}
@@ -951,7 +952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3790951999258753443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1068,7 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47318143, g: 0.40156642, b: 0.6037736, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

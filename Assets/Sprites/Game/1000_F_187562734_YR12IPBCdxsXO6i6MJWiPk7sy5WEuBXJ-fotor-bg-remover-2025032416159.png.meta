@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -142,12 +142,12 @@ TextureImporter:
       name: 1000_F_187562734_YR12IPBCdxsXO6i6MJWiPk7sy5WEuBXJ-fotor-bg-remover-2025032416159_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 19
-        width: 457
-        height: 460
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a7ccdfd9dbb7bfe40bf9192d96e2cb8e
     internalID: 0
     vertices: []
     indices: 

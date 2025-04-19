@@ -36,12 +36,14 @@ namespace SingularityGroup.HotReload {
     }
 
     class FieldHandler {
-        public readonly Action<Type, string, Type> storeField;
+        public readonly Action<Type, FieldInfo> storeField;
+        public readonly Action<Type, FieldInfo, FieldInfo> registerInspectorFieldAttributes;
         public readonly Func<Type, string, bool> hideField;
 
-        public FieldHandler(Action<Type, string, Type> storeField, Func<Type, string, bool> hideField) {
+        public FieldHandler(Action<Type, FieldInfo> storeField, Func<Type, string, bool> hideField, Action<Type, FieldInfo, FieldInfo> registerInspectorFieldAttributes) {
             this.storeField = storeField;
             this.hideField = hideField;
+            this.registerInspectorFieldAttributes = registerInspectorFieldAttributes;
         }
     }
     
@@ -142,6 +144,9 @@ namespace SingularityGroup.HotReload {
                     RegisterNewFieldInitializers(response);
                     HandleReshapedFields(response);
                     RemoveOldFieldInitializers(response);
+#if UNITY_EDITOR
+                    RegisterInspectorFieldAttributes(result, response);
+#endif
 
                     HandleMethodPatchResponse(response, result);
                     patchHistory.Add(response);
@@ -221,6 +226,7 @@ namespace SingularityGroup.HotReload {
                 } catch (Exception ex) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.Exception), new EditorExtraData {
                         { StatKey.PatchId, patch.patchId },
+                        { StatKey.Detailed_Exception, ex.ToString() },
                     }).Forget();
                     Log.Warning("Failed to apply patch with id: {0}\n{1}", patch.patchId, ex);
                 }
@@ -265,6 +271,7 @@ namespace SingularityGroup.HotReload {
                 } catch (Exception e) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.RegisterFieldInitializer), new EditorExtraData {
                         { StatKey.PatchId, resp.id },
+                        { StatKey.Detailed_Exception, e.ToString() },
                     }).Forget();
                     Log.Warning($"Failed registering initializer for field {sField.fieldName} in {sField.declaringType.typeName}. Field value might not be initialized correctly. Exception: {e.Message}");
                 }
@@ -280,6 +287,7 @@ namespace SingularityGroup.HotReload {
                 } catch (Exception e) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.RegisterFieldDefinition), new EditorExtraData {
                         { StatKey.PatchId, resp.id },
+                        { StatKey.Detailed_Exception, e.ToString() },
                     }).Forget();
                     Log.Warning($"Failed registering new field definitions for field {sField.fieldName} in {sField.declaringType.typeName}. Exception: {e.Message}");
                 }
@@ -297,6 +305,7 @@ namespace SingularityGroup.HotReload {
                 } catch (Exception e) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.UnregisterFieldInitializer), new EditorExtraData {
                         { StatKey.PatchId, resp.id },
+                        { StatKey.Detailed_Exception, e.ToString() },
                     }).Forget();
                     Log.Warning($"Failed removing initializer for field {sField.fieldName} in {sField.declaringType.typeName}. Field value might not be initialized correctly. Exception: {e.Message}");
                 }
@@ -319,6 +328,7 @@ namespace SingularityGroup.HotReload {
                     } catch (Exception e) {
                         RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.ClearHolders), new EditorExtraData {
                             { StatKey.PatchId, resp.id },
+                            { StatKey.Detailed_Exception, e.ToString() },
                         }).Forget();
                         Log.Warning($"Failed removing field value from {f.fieldName} in {f.declaringType.typeName}. Field value in code might not be up to date. Exception: {e.Message}");
                     }
@@ -341,6 +351,7 @@ namespace SingularityGroup.HotReload {
                     } catch (Exception e) {
                         RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.MoveHolders), new EditorExtraData {
                             { StatKey.PatchId, resp.id },
+                            { StatKey.Detailed_Exception, e.ToString() },
                         }).Forget();
                         Log.Warning($"Failed moving field value from {fromField} to {toField} in {toField.declaringType.typeName}. Field value in code might not be up to date. Exception: {e.Message}");
                     }
@@ -368,26 +379,47 @@ namespace SingularityGroup.HotReload {
         }
 
 #if UNITY_EDITOR
+        internal void RegisterInspectorFieldAttributes(RegisterPatchesResult result, MethodPatchResponse resp) {
+            foreach (var patch in resp.patches) {
+                var propertyAttributesFieldOriginal = patch.propertyAttributesFieldOriginal ?? Array.Empty<SField>();
+                var propertyAttributesFieldUpdated = patch.propertyAttributesFieldUpdated ?? Array.Empty<SField>();
+                for (var i = 0; i < propertyAttributesFieldOriginal.Length; i++) {
+                    var original = propertyAttributesFieldOriginal[i];
+                    var updated = propertyAttributesFieldUpdated[i];
+                    try {
+                        var declaringType = SymbolResolver.Resolve(original.declaringType);
+                        var originalField = SymbolResolver.Resolve(original);
+                        var updatedField = SymbolResolver.Resolve(updated);
+                        fieldHandler?.registerInspectorFieldAttributes?.Invoke(declaringType, originalField, updatedField);
+                        result.inspectorModified = true;
+                    } catch (Exception e) {
+                        RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.MoveHolders), new EditorExtraData {
+                            { StatKey.PatchId, resp.id },
+                            { StatKey.Detailed_Exception, e.ToString() },
+                        }).Forget();
+                        Log.Warning($"Failed updating field attributes of {original.fieldName} in {original.declaringType.typeName}. Updates might not reflect in the inspector. Exception: {e.Message}");
+                    }
+                }
+            }
+        }
+        
         internal void HandleNewFields(string patchId, RegisterPatchesResult result, SField[] sFields) {
-            bool fieldDrawerAdded = false;
             foreach (var sField in sFields) {
                 if (!sField.serializable) {
                     continue;
                 }
                 try {
                     var declaringType = SymbolResolver.Resolve(sField.declaringType);
-                    var fieldType = SymbolResolver.Resolve(sField).FieldType;
-                    fieldDrawerAdded = true;
-                    fieldHandler?.storeField?.Invoke(declaringType, sField.fieldName, fieldType);
+                    var field = SymbolResolver.Resolve(sField);
+                    fieldHandler?.storeField?.Invoke(declaringType, field);
+                    result.inspectorModified = true;
                 } catch (Exception e) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.AddInspectorField), new EditorExtraData {
                         { StatKey.PatchId, patchId },
+                        { StatKey.Detailed_Exception, e.ToString() },
                     }).Forget();
                     Log.Warning($"Failed adding field {sField.fieldName}:{sField.declaringType.typeName} to the inspector. Field will not be displayed. Exception: {e.Message}");
                 }
-            }
-            if (fieldDrawerAdded) {
-                result.inspectorModified = true;
             }
             result.addedFields.AddRange(sFields);
         }
@@ -407,6 +439,7 @@ namespace SingularityGroup.HotReload {
                 } catch(Exception e) {
                     RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.HideInspectorField), new EditorExtraData {
                         { StatKey.PatchId, patchId },
+                        { StatKey.Detailed_Exception, e.ToString() },
                     }).Forget();
                     Log.Warning($"Failed hiding field {sField.fieldName}:{sField.declaringType.typeName} from the inspector. Exception: {e.Message}");
                 }
@@ -470,11 +503,16 @@ namespace SingularityGroup.HotReload {
                     } else {
                         RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.Failure), new EditorExtraData {
                             { StatKey.PatchId, patchId },
+                            { StatKey.Detailed_Exception, result.exception.ToString() },
                         }).Forget();
                         return HandleMethodPatchFailure(sOriginalMethod, result.exception);
                     }
                 }
             } catch(Exception ex) {
+                RequestHelper.RequestEditorEventWithRetry(new Stat(StatSource.Client, StatLevel.Error, StatFeature.Patching, StatEventType.Exception), new EditorExtraData {
+                    { StatKey.PatchId, patchId },
+                    { StatKey.Detailed_Exception, ex.ToString() },
+                }).Forget();
                 return HandleMethodPatchFailure(sOriginalMethod, ex);
             }
         }

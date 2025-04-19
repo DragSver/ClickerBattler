@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pinViews: []
-  _locationName: {fileID: 0}
 --- !u!1001 &2511559669313644727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,11 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4492358076294994846, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4492358076294994846, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4492358076294994846, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
       propertyPath: m_LocalScale.x
@@ -318,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 5204156054721520497, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903705487518106937, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
+      propertyPath: m_fontSize
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7485849861945260479, guid: 0c046bff22289ea45a0906c422b3fbe3, type: 3}
       propertyPath: m_Name

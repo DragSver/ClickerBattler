@@ -48,6 +48,7 @@ namespace Game {
         
         private Progress _progress;
         private Wallet _wallet;
+        private Stats _stats;
 
 
         private const string SCENE_LOADER_TAG = "SceneLoader";
@@ -61,14 +62,14 @@ namespace Game {
             _gameEnterParams = ReceiveGameEnterParams(enterParams);
 
             var openedSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
+            _stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
+            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
-            _enemyController.Init(_timerController);
+            _enemyController.Init(_timerController, _stats);
             _enemyController.OnLevelComplete += EndLevel;
             
             _skillSystem = new(openedSkills, _skillConfig, _enemyController, _criticalHitController);
-            
-            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
-            _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _levelsViewConfig.Init();
 

@@ -24,6 +24,7 @@ namespace Game.Enemy
         [SerializeField] private Image _image;
         [SerializeField] private BoxCollider2D _boxCollider;
         [SerializeField] private ElementViewData[] _elementViewDatas;
+        [SerializeField] private ParticleSystem _damageParticleSystem;
         
         private Dictionary<Elements, Image> _elementsImages = new();
         private List<TextMeshProUGUI> _damageTexts = new();
@@ -56,6 +57,7 @@ namespace Game.Enemy
         }
         public void ClearEnemy()
         {
+            _boxCollider.enabled = true;
             _enemyName.text = "";
             _image.sprite = null;
             Enemy = null;
@@ -68,11 +70,14 @@ namespace Game.Enemy
         private void GetDamage(float damage, ElementsInfluence influence)
         {
             _healthBar.DecreaseValue(damage);
+            if (!gameObject.activeSelf) return;
             StartCoroutine(CallDamageInfo(damage, influence));
             StartCoroutine(DamageAnimation());
         }
         private IEnumerator DamageAnimation()
         {
+            _damageParticleSystem.Stop();
+            _damageParticleSystem.Play();
             _image.color = Color.red;
             yield return new WaitForSeconds(0.3f);
             _image.color = Color.white;
@@ -110,11 +115,12 @@ namespace Game.Enemy
         private IEnumerator Death(ElementsInfluence influence)
         {
             _healthBar.DecreaseValue(_healthBar.CurrentValue);
-            _boxCollider.gameObject.SetActive(false);
+            _boxCollider.enabled = false;
             StartCoroutine(CallDamageInfo(_healthBar.CurrentValue, influence));
             DeathAnimation();
             yield return new WaitForSeconds(0.3f);
             gameObject.SetActive(false);
+            StopAllCoroutines();
         }
         private void DeathAnimation()
         {

@@ -4,6 +4,7 @@ using Configs.EnemyConfigs;
 using Datas.Game.EnemiesData;
 using Datas.Global;
 using Game.Timer;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,12 +28,14 @@ namespace Game.Enemy
         private EnemyView[] _enemyViews;
 
         private LevelData _levelData;
+        private Stats _stats;
         private int _currentEnemyWiveIndex;
 
         private TimerController _timerController;
 
-        public void Init(TimerController timerController)
+        public void Init(TimerController timerController, Stats stats)
         {
+            _stats = stats;
             _enemiesConfig.Init();
 
             _currentEnemies = new List<Enemy>();
@@ -181,7 +184,7 @@ namespace Game.Enemy
         {
             var newEnemy = new Enemy(enemySpawnData.Hp, enemyView, _enemiesConfig.GetEnemy(enemySpawnData.Id));
             newEnemy.OnDamaged += OnDamaged;
-            newEnemy.OnDead += OnDead;
+            newEnemy.OnDead += e => { OnDead(e, enemySpawnData.IsBoss); }; 
             _currentEnemies.Add(newEnemy);
         }
         
@@ -210,9 +213,11 @@ namespace Game.Enemy
         {
             
         }
-        private void OnDead(ElementsInfluence influence)
+        private void OnDead(ElementsInfluence influence, bool isBoss)
         {
-            GameStats.AddKills();
+            _stats.KillsCount++;
+            if (isBoss) _stats.BossKillsCount++;
+            
             if (_currentEnemies.Any(enemy => enemy.GetHealth() != 0)) return;
             
             _timerController.Stop();

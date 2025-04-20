@@ -15,12 +15,15 @@ namespace Game.AttackButtons
         [SerializeField] private Button _button;
         [SerializeField] private float _currentDamage = 1;
         [SerializeField] private LayerMask _enemyLayer;
+        [SerializeField] private ParticleSystem _attackParticleSystem;
         
         private Canvas _canvas;
+        private Camera _camera;
 
         public void Init(Canvas screenCanvas)
         {
             _canvas = screenCanvas;
+            _camera = Camera.main;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -29,10 +32,13 @@ namespace Game.AttackButtons
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _canvas.transform as RectTransform, 
                 eventData.position, 
-                null, 
+                _camera, 
                 out var localPoint);
             
             var worldPoint = _canvas.transform.TransformPoint(localPoint);
+            _attackParticleSystem.transform.position = worldPoint;
+            _attackParticleSystem.Stop();
+            _attackParticleSystem.Play();
             var rayOrigin = new Vector2(worldPoint.x, worldPoint.y);
             
             Debug.DrawRay(rayOrigin, Vector2.up * 3000, Color.red, 2f);

@@ -19,15 +19,19 @@ namespace Game.AttackButtons
         
         private Canvas _canvas;
         private Camera _camera;
+        private AttackButtonController _attackButtonController;
 
-        public void Init(Canvas screenCanvas)
+        public void Init(Canvas screenCanvas, AttackButtonController attackButtonController)
         {
             _canvas = screenCanvas;
             _camera = Camera.main;
+            _attackButtonController = attackButtonController;
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!_attackButtonController.CanClick) return;
+            _attackButtonController.StartCoolDown();
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _canvas.transform as RectTransform, 
@@ -37,11 +41,14 @@ namespace Game.AttackButtons
             
             var worldPoint = _canvas.transform.TransformPoint(localPoint);
             _attackParticleSystem.transform.position = worldPoint;
-            _attackParticleSystem.Stop();
+            var vector3 = _attackParticleSystem.transform.localPosition;
+            vector3.z = -50;
+            _attackParticleSystem.transform.localPosition = vector3;
+            // _attackParticleSystem.Stop();
             _attackParticleSystem.Play();
             var rayOrigin = new Vector2(worldPoint.x, worldPoint.y);
             
-            Debug.DrawRay(rayOrigin, Vector2.up * 3000, Color.red, 2f);
+            // Debug.DrawRay(rayOrigin, Vector2.up * 3000, Color.red, 2f);
             
             var hit = Physics2D.Raycast(rayOrigin, Vector2.up, 3000, _enemyLayer);
             if (hit.collider != null)

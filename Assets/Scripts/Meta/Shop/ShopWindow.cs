@@ -93,7 +93,7 @@ namespace Meta.Shop
             {
                 nextLevel = _skillConfig.GetSkillDataByLevel(skill.Id,
                     skill.Level + 1);
-                onBuySkill = () => BuySkill(skill.Id, nextLevel.Value.Price);
+                onBuySkill = () => BuySkill(skill.Id, nextLevel.Price);
             }
 
             skillView.SetSkill(_skillConfig.GetSkillData(skill.Id),

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6320754, g: 0.5167526, b: 0.38461193, a: 1}
+  m_Color: {r: 0.5283019, g: 0.33603376, b: 0.22178711, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50.3, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 50.4671, y: 3.3017}
+  m_SizeDelta: {x: 68.6474, y: 70.133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4965646468816438360
 CanvasRenderer:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2187886320943066909, guid: 5801c7540f13af04c84913d0b35e2e49, type: 3}
+  m_Sprite: {fileID: 8003260396191338441, guid: 5801c7540f13af04c84913d0b35e2e49, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -323,8 +323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.3142}
-  m_SizeDelta: {x: 170, y: 160}
+  m_AnchoredPosition: {x: -0.5538025, y: 0.9908}
+  m_SizeDelta: {x: 181.078, y: 166.6467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2514169663929684451
 CanvasRenderer:
@@ -398,8 +398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 49.6, y: -2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 49.9867, y: 1.899}
+  m_SizeDelta: {x: 68.6474, y: 70.133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4480022325470459572
 CanvasRenderer:
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2187886320943066909, guid: 5801c7540f13af04c84913d0b35e2e49, type: 3}
+  m_Sprite: {fileID: 8003260396191338441, guid: 5801c7540f13af04c84913d0b35e2e49, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

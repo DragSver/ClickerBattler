@@ -10,16 +10,17 @@ namespace Game.AttackButtons
     {
         public UnityAction<Enemy.Enemy, Elements, float> OnClick;
         
-        [SerializeField] private float _cooldownTime = 0.05f;
+        [SerializeField] private float _cooldownTime = 0.03f;
         [SerializeField] private List<AttackButton> _attackButtons;
         
+        public bool CanClick => _canClick;
         private bool _canClick = true;
 
         public void Init(Canvas canvas)
         {
             foreach (var attackButton in _attackButtons)
             {
-                attackButton.Init(canvas);
+                attackButton.Init(canvas, this);
                 attackButton.OnClick += Click;
             }
         }
@@ -30,17 +31,18 @@ namespace Game.AttackButtons
                 attackButton.OnClick -= Click;
             }
         }
-        
-        private void Click(Enemy.Enemy enemy, Elements elements, float damage)
+
+        public void StartCoolDown()
         {
-            if (!_canClick) return;
-            
             if (_cooldownTime > 0)
                 _canClick = false;
             
-            OnClick.Invoke(enemy, elements, damage);
-            
             if (!_canClick) StartCoroutine(ClickCooldown());
+        }
+        
+        private void Click(Enemy.Enemy enemy, Elements elements, float damage)
+        {
+            OnClick.Invoke(enemy, elements, damage);
         }
         
         IEnumerator ClickCooldown()

@@ -34,7 +34,10 @@ namespace Game.Enemy
         {
             foreach (var elementViewData in _elementViewDatas)
                 _elementsImages.Add(elementViewData.Element, elementViewData.ElementImage);
-            
+
+            var vector3 = _damageParticleSystem.transform.localPosition;
+            vector3.z = -10;
+            _damageParticleSystem.transform.localPosition = vector3;
             gameObject.SetActive(false);
         }
 
@@ -63,6 +66,11 @@ namespace Game.Enemy
             Enemy = null;
             foreach (var elementViewData in _elementViewDatas)
                 elementViewData.ElementImage.gameObject.SetActive(false);
+            foreach (var textMeshProUGUI in _damageTexts)
+            {
+                textMeshProUGUI.text = "";
+                textMeshProUGUI.gameObject.SetActive(false);
+            }
             
             gameObject.SetActive(false);
         }
@@ -76,8 +84,8 @@ namespace Game.Enemy
         }
         private IEnumerator DamageAnimation()
         {
-            _damageParticleSystem.Stop();
-            _damageParticleSystem.Play();
+            // _damageParticleSystem.Stop();
+            // _damageParticleSystem.Play();
             _image.color = Color.red;
             yield return new WaitForSeconds(0.3f);
             _image.color = Color.white;
@@ -118,7 +126,7 @@ namespace Game.Enemy
             _boxCollider.enabled = false;
             StartCoroutine(CallDamageInfo(_healthBar.CurrentValue, influence));
             DeathAnimation();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.9f);
             gameObject.SetActive(false);
             StopAllCoroutines();
         }

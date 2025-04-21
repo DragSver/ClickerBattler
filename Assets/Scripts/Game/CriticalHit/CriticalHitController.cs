@@ -19,11 +19,13 @@ namespace Game.CriticalHit
         
         private CriticalHitPoint _criticalHitPoint;
         private bool _generateCriticalPoint;
+        private RectTransform _rectTransform;
 
         public void Init(RectTransform buttonAttackRectTransform)
         {
             _buttonAttackRectTransform = buttonAttackRectTransform;
             _criticalHitPoint = Instantiate(_criticalHitPointPrefab, _buttonAttackRectTransform);
+            _rectTransform = _criticalHitPoint.GetComponent<RectTransform>();
         }
 
         public void StartGenerateCriticalPoint() 
@@ -66,7 +68,15 @@ namespace Game.CriticalHit
         
         private float GetDamageMultiplier(float damage)
         {
-            var distance = Vector2.Distance(Input.mousePosition, _criticalHitPoint.transform.position);
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _rectTransform,
+                Input.mousePosition,
+                _camera,
+                out localPoint
+            );
+
+            var distance = localPoint.magnitude; // расстояние от центра (0,0)
 
             if (distance <= _perfectRadius) return damage * _criticalMultiplier;
             if (distance <= _maxRadius) return Mathf.Lerp(damage * _criticalMultiplier, damage, distance / _maxRadius);

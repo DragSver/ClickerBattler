@@ -82,6 +82,7 @@ namespace Game
             if (action != null)
                 button.onClick.AddListener(action);
             button.enabled = action != null;
+            button.gameObject.SetActive(action != null);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace Game {
             _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
-            _enemyController.Init(_timerController, _stats);
+            _enemyController.Init(_timerController, _stats, _saveSystem);
             _enemyController.OnLevelComplete += EndLevel;
             
             _skillSystem = new(openedSkills, _skillConfig, _enemyController, _criticalHitController);
@@ -116,12 +116,12 @@ namespace Game {
                 TrySaveEndLevelData();
                 AddAndSaveRewards(_levelData.Rewards[0].Count);
                 
-                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), LoadNextLevel, LoadMetaScene, _levelData.Rewards, _wallet.Coins, true);
+                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), (GetNextLevelGameEnterParams() != null? LoadNextLevel : null), LoadMetaScene, _levelData.Rewards, _wallet.Coins, true);
             }
             else
             {
                 var loseData = _loseScreenData;
-                var totalDeaths = GameStats.AddDeaths();
+                var totalDeaths = _stats.DeathCount;
                 loseData.FirstLabel = $"Вы погибли {totalDeaths} раз";
                 _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, null, _wallet.Coins, false);
             }
@@ -130,7 +130,7 @@ namespace Game {
         
         private void AttackClick(Enemy.Enemy enemy, Elements element, float damage)
         {
-            // var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
+            var multiplierDamage = _criticalHitController.GetDamageMultiplierPointerPosition(damage);
             // DamageEnemy(enemy, element, multiplierDamage);
             _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             switch (element)
@@ -194,10 +194,16 @@ namespace Game {
             var maxLevel = _levels.GetCountMainLevelOnLocation(currentLocation);
             if (currentLevel+1 >= maxLevel)
             {
-                currentLevel = 0;
-                currentLocation++;
+                if (currentLocation + 1 < _levels.Locations.Count)
+                {
+                    currentLevel = 0;
+                    currentLocation++;
+                }
+                else
+                    return null;
             }
-            currentLevel++;
+            else
+                currentLevel++;
             
             return new GameEnterParams(level: currentLevel, location: currentLocation);
         }
@@ -226,7 +232,7 @@ namespace Game {
         {
             var victoryData = _victoryScreenData;
             
-            var totalKills = GameStats.GetKills();
+            var totalKills = _stats.KillsCount;
             var currentTime = _timeOnLevel;
             var bestTime = GameStats.SaveBestTimeOnID(currentTime, $"{_levelData.Location}:{_levelData.LevelNumber}");
             victoryData.FirstLabel = $"Вы одолели {totalKills} врагов!";

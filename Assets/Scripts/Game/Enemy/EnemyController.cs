@@ -1,12 +1,15 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Configs.EnemyConfigs;
 using Datas.Game.EnemiesData;
 using Datas.Global;
 using Game.Timer;
+using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Game.Enemy
 {
@@ -28,13 +31,15 @@ namespace Game.Enemy
         private EnemyView[] _enemyViews;
 
         private LevelData _levelData;
+        private SaveSystem _saveSystem;
         private Stats _stats;
         private int _currentEnemyWiveIndex;
 
         private TimerController _timerController;
 
-        public void Init(TimerController timerController, Stats stats)
+        public void Init(TimerController timerController, Stats stats, SaveSystem saveSystem)
         {
+            _saveSystem = saveSystem;
             _stats = stats;
             _enemiesConfig.Init();
 
@@ -61,7 +66,7 @@ namespace Game.Enemy
             _currentEnemyWiveIndex++;
             if (_currentEnemyWiveIndex >= _levelData.EnemiesWives.Count)
             {
-                EndLevel();
+                EndLevel(true);
                 return;
             }
 
@@ -72,7 +77,7 @@ namespace Game.Enemy
                 InitBossEnemies(currentEnemyWiveSpawnData);
             else
             {
-                if (currentEnemyWiveSpawnData.Enemies.Length%2 == 0)
+                if (currentEnemyWiveSpawnData.Enemies.Count%2 == 0)
                     InitEvenEnemies(currentEnemyWiveSpawnData.Enemies);
                 else 
                     InitUnevenEnemies(currentEnemyWiveSpawnData.Enemies);
@@ -84,7 +89,7 @@ namespace Game.Enemy
         private void InitBossEnemies(EnemiesWiveData currentEnemyWiveSpawnData)
         {
             var bossInit = false;
-            for (var index = 0; index < currentEnemyWiveSpawnData.Enemies.Length; index++)
+            for (var index = 0; index < currentEnemyWiveSpawnData.Enemies.Count; index++)
             {
                 var enemySpawnData = currentEnemyWiveSpawnData.Enemies[index];
 
@@ -121,9 +126,9 @@ namespace Game.Enemy
                 CreateNewEnemy(enemySpawnData, enemyView);
             }
         }
-        private void InitUnevenEnemies(EnemySpawnData[] enemySpawnDatas)
+        private void InitUnevenEnemies(List<EnemySpawnData> enemySpawnDatas)
         {
-            for (var i = 0; i < enemySpawnDatas.Length; i++)
+            for (var i = 0; i < enemySpawnDatas.Count; i++)
             {
                 var enemySpawnData = enemySpawnDatas[i];
                 EnemyView enemyView;
@@ -152,9 +157,9 @@ namespace Game.Enemy
                 CreateNewEnemy(enemySpawnData, enemyView);
             }
         }
-        private void InitEvenEnemies(EnemySpawnData[] enemySpawnDatas)
+        private void InitEvenEnemies(List<EnemySpawnData> enemySpawnDatas)
         {
-            for (var i = 0; i < enemySpawnDatas.Length; i++)
+            for (var i = 0; i < enemySpawnDatas.Count; i++)
             {
                 var enemySpawnData = enemySpawnDatas[i];
                 EnemyView enemyView;
@@ -184,7 +189,7 @@ namespace Game.Enemy
         {
             var newEnemy = new Enemy(enemySpawnData.Hp, enemyView, _enemiesConfig.GetEnemy(enemySpawnData.Id));
             newEnemy.OnDamaged += OnDamaged;
-            newEnemy.OnDead += e => { OnDead(e, enemySpawnData.IsBoss); }; 
+            newEnemy.OnDead += e => { OnDead(e, enemySpawnData); }; 
             _currentEnemies.Add(newEnemy);
         }
         
@@ -194,7 +199,7 @@ namespace Game.Enemy
             {
                 _timerController.SetActive(true);
                 _timerController.SetMaxTime(time);
-                _timerController.OnTimerEnd += () => OnLevelComplete?.Invoke(false);
+                _timerController.OnTimerEnd += () => EndLevel(false);
                 _timerController.Play();
             }
             else _timerController.SetActive(false);
@@ -213,21 +218,52 @@ namespace Game.Enemy
         {
             
         }
-        private void OnDead(ElementsInfluence influence, bool isBoss)
+        private void OnDead(ElementsInfluence influence, EnemySpawnData enemySpawnData)
         {
-            _stats.KillsCount++;
-            if (isBoss) _stats.BossKillsCount++;
+            AddKillStats(enemySpawnData);
             
             if (_currentEnemies.Any(enemy => enemy.GetHealth() != 0)) return;
             
             _timerController.Stop();
             SpawnWiveEnemy();
         }
-
-        private void EndLevel()
+        private void AddKillStats(EnemySpawnData enemySpawnData)
+        {
+            _stats.KillsCount++;
+            if (enemySpawnData.IsBoss) _stats.BossKillsCount++;
+            if (_stats.EnemiesKillCount.TryGetValue(enemySpawnData.Id, out var killCount))
+                _stats.EnemiesKillCount[enemySpawnData.Id] = killCount + 1;
+            else
+                _stats.EnemiesKillCount.TryAdd(enemySpawnData.Id, 1);
+            var enemy = _enemiesConfig.GetEnemy(enemySpawnData.Id);
+            switch (enemy.Element)
+            {
+                case Elements.None:
+                    _stats.NoneElementKillsCount++;
+                    break;
+                case Elements.Blood:
+                    _stats.BloodKillsCount++;
+                    break;
+                case Elements.Water:
+                    _stats.WaterKillsCount++;
+                    break;
+                case Elements.Sun:
+                    _stats.SunKillsCount++;
+                    break;
+                case Elements.Moon:
+                    _stats.MoonKillsCount++;
+                    break;
+            }
+        }
+        
+        private void EndLevel(bool win)
         {
             _timerController.Stop();
-            OnLevelComplete?.Invoke(true);
+            
+            if (!win) _stats.DeathCount++;
+            
+            _saveSystem.SaveData(SavableObjectType.Stats);
+            OnLevelComplete?.Invoke(win);
         }
     }
 }

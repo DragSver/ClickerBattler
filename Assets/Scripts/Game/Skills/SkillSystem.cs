@@ -17,12 +17,12 @@ namespace Game.Skills
         
         public SkillSystem(OpenSkills openSkills, SkillConfig skillConfig, EnemyController enemyController, CriticalHitController criticalHitController)
         {
-            _scope = new ()
+            _scope = new SkillScope
             {
                 EnemyController = enemyController,
                 CriticalHitController = criticalHitController,
             };
-            _skillByTrigger = new();
+            _skillByTrigger = new Dictionary<SkillTrigger, List<Skill>>();
             _skillConfig = skillConfig;
             
             foreach (var openSkill in openSkills.OpenedSkills)
@@ -55,7 +55,8 @@ namespace Game.Skills
         
         private void RegisterSkill(SkillWithLevel skill)
         {
-            var skillData = _skillConfig.GetSkillDataByLevel(skill.Id, skill.Level);
+            var skillData = _skillConfig.GetSkillData(skill.Id);
+            var skillDataByLevel = _skillConfig.GetSkillDataByLevel(skill.Id, skill.Level);
 
             var skillType = Type.GetType($"Game.Skills.SkillVariants.{skill.Id}");
             if (skillType == null)
@@ -64,7 +65,7 @@ namespace Game.Skills
             if (Activator.CreateInstance(skillType) is not Skill skillInstance)
                 throw new Exception($"Can not create skill with id {skill.Id}");
                 
-            skillInstance.Init(_scope, skillData);
+            skillInstance.Init(_scope, skillDataByLevel);
 
             if (!_skillByTrigger.ContainsKey(skillData.Trigger))
             {

@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Datas.Global;
 using UnityEngine;
 
 namespace Configs.LevelConfigs 
 {
     [CreateAssetMenu(menuName="Configs/LevelsConfig", fileName = "LevelsConfig")]
-    public class LevelsConfig : ScriptableObject 
+    public class LevelsConfig : ScriptableObject
     {
+        public List<LocationLevelData> Locations => _locations;
         [SerializeField] private List<LocationLevelData> _locations;
         
         public LevelData GetLevel(int location, int level) {
@@ -20,10 +22,23 @@ namespace Configs.LevelConfigs
                 }
             }
             
-            Debug.LogError($"Not found Level data for location {location} and level {level}");
+            // Debug.LogError($"Not found Level data for location {location} and level {level}");
             return default;
         }
 
+        public LocationLevelData GetLocationLevelData(int location)
+        {
+            foreach (var locationLevelData in _locations.Where(locationLevelData => locationLevelData.Location == location)) return locationLevelData;
+            
+            // Debug.LogError($"Not found Level data for location {location}");
+            return default;
+        }
+
+        public void Clear()
+        {
+            _locations = new List<LocationLevelData>();
+        }
+        
         public int GetCountMainLevelOnLocation(int location)
         {
             foreach (var locationLevelData in _locations)

@@ -6,10 +6,16 @@ namespace Configs
     [CreateAssetMenu(menuName="Configs/SkillConfig", fileName = "SkillConfig")]
     public class SkillConfig : ScriptableObject
     {
+        public List<SkillData> SkillDatas => _skillDatas;
         [SerializeField] private List<SkillData> _skillDatas;
         private Dictionary<string, Dictionary<int, SkillDataByLevel>> _skillDataByLevelMap;
         private Dictionary<string, SkillData> _skillDataMap;
 
+        public void Clear()
+        {
+            _skillDatas = new List<SkillData>();
+        }
+        
         public bool NextLevelExist(string skillId, int level)
         {
             if (_skillDataByLevelMap == null || _skillDataByLevelMap.Count == 0)

@@ -35,13 +35,13 @@ namespace Meta.Shop
             
             if (nextLevel != null)
             {
-                _skillUpgrade.text = $"{currentLevel.Value} -> {nextLevel.Value.Value}";
+                _skillUpgrade.text = $"{currentLevel.Value} -> {nextLevel.Value}";
                 _skillUpgradeText.text = currentLevel.Level == 0 ? "Купить" : "Прокачать";
-                _priceSkillUpgrade.text = nextLevel.Value.Price.ToString();
+                _priceSkillUpgrade.text = nextLevel.Price.ToString();
                 _priceImage.gameObject.SetActive(true);
                 _priceSkillUpgrade.gameObject.SetActive(true);
                 
-                if (currentWallet < nextLevel.Value.Price)
+                if (currentWallet < nextLevel.Price)
                 {
                     _priceSkillUpgrade.color = Color.red;
                     _buyButtonImage.color = Color.gray;

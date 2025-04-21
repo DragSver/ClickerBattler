@@ -13,262 +13,4847 @@ MonoBehaviour:
   m_Name: SkillConfig
   m_EditorClassIdentifier: 
   _skillDatas:
-  - Id: AdditionalDamageSkill
-    Name: "\u0414\u043E\u043F \u0443\u0434\u0430\u0440"
-    Description: "\u0411\u044C\u0435\u0442 \u0432\u0440\u0430\u0433\u0430 \u043F\u0430\u043B\u043A\u043E\u0439"
-    Icon: {fileID: 3295243717992872476, guid: 6730922b98b0bc04d9926c1c5e8e074b, type: 3}
-    SkillsLevel:
-    - Level: 0
-      Value: 0
-      Trigger: 1
-      TriggerValue: 0
-      Price: 0
-    - Level: 1
-      Value: 0.5
-      Trigger: 1
-      TriggerValue: 0
-      Price: 5
-    - Level: 2
-      Value: 0.6
-      Trigger: 1
-      TriggerValue: 0
-      Price: 10
-    - Level: 3
-      Value: 0.7
-      Trigger: 1
-      TriggerValue: 0
-      Price: 20
-    - Level: 4
-      Value: 0.8
-      Trigger: 1
-      TriggerValue: 0
-      Price: 40
-    - Level: 5
-      Value: 0.9
-      Trigger: 1
-      TriggerValue: 0
-      Price: 80
-  - Id: SunDamageSkill
-    Name: "\u0421\u043E\u043B\u043D\u0435\u0447\u043D\u044B\u0439 \u0443\u0434\u0430\u0440"
-    Description: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0443\u0440\u043E\u043D
-      \u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u0439 \u0441\u0442\u0438\u0445\u0438\u0435\u0439"
+  - Id: BaseSunDamageSkill
+    Name: "\u041F\u0430\u043B\u044F\u0449\u0435\u0435 \u0421\u043B\u043E\u0432\u043E"
+    Description: "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u0441\u043E\u043B\u043D\u0435\u0447\u043D\u044B\u0439
+      \u0443\u0440\u043E\u043D"
     Icon: {fileID: 717664102412938848, guid: 7e7121713a0194a4b91c18ff423410cc, type: 3}
+    Trigger: 8
     SkillsLevel:
     - Level: 0
       Value: 0
-      Trigger: 8
       TriggerValue: 0
       Price: 0
     - Level: 1
       Value: 10
-      Trigger: 8
       TriggerValue: 0
       Price: 0
     - Level: 2
-      Value: 12
-      Trigger: 8
+      Value: 11.07
       TriggerValue: 0
-      Price: 10
+      Price: 9
     - Level: 3
-      Value: 14
-      Trigger: 8
+      Value: 12.26
       TriggerValue: 0
-      Price: 20
+      Price: 15
     - Level: 4
-      Value: 15
-      Trigger: 8
+      Value: 13.85
       TriggerValue: 0
-      Price: 30
+      Price: 22
     - Level: 5
-      Value: 16
-      Trigger: 8
+      Value: 15.8
+      TriggerValue: 0
+      Price: 31
+    - Level: 6
+      Value: 18.11
       TriggerValue: 0
       Price: 40
-    - Level: 6
-      Value: 16.5
-      Trigger: 8
+    - Level: 7
+      Value: 20.77
       TriggerValue: 0
       Price: 50
-    - Level: 7
-      Value: 17
-      Trigger: 8
-      TriggerValue: 0
-      Price: 60
     - Level: 8
-      Value: 17.5
-      Trigger: 8
+      Value: 23.77
       TriggerValue: 0
-      Price: 70
+      Price: 62
     - Level: 9
-      Value: 18
-      Trigger: 8
+      Value: 27.1
       TriggerValue: 0
-      Price: 80
-  - Id: MoonDamageSkill
-    Name: "\u0421\u043E\u043D \u0431\u0435\u0437 \u0434\u043D\u0430"
-    Description: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0443\u0440\u043E\u043D
-      \u0441\u0442\u0438\u0445\u0438\u0435\u0439 \u043B\u0443\u043D\u044B"
-    Icon: {fileID: 3815999123802065868, guid: 7a474f11208cc5549b527b879cb3ae98, type: 3}
-    SkillsLevel:
-    - Level: 0
-      Value: 0
-      Trigger: 6
+      Price: 74
+    - Level: 10
+      Value: 30.75
       TriggerValue: 0
-      Price: 0
-    - Level: 1
-      Value: 10
-      Trigger: 6
+      Price: 87
+    - Level: 11
+      Value: 34.73
       TriggerValue: 0
-      Price: 0
-    - Level: 2
-      Value: 12
-      Trigger: 6
+      Price: 100
+    - Level: 12
+      Value: 39.03
       TriggerValue: 0
-      Price: 10
-    - Level: 3
-      Value: 14
-      Trigger: 6
+      Price: 115
+    - Level: 13
+      Value: 43.63
       TriggerValue: 0
-      Price: 20
-    - Level: 4
-      Value: 15
-      Trigger: 6
+      Price: 130
+    - Level: 14
+      Value: 48.55
       TriggerValue: 0
-      Price: 30
-    - Level: 5
-      Value: 16
-      Trigger: 6
+      Price: 146
+    - Level: 15
+      Value: 53.77
       TriggerValue: 0
-      Price: 40
-    - Level: 6
-      Value: 16.5
-      Trigger: 6
+      Price: 163
+    - Level: 16
+      Value: 59.28
       TriggerValue: 0
-      Price: 50
-    - Level: 7
-      Value: 17
-      Trigger: 6
+      Price: 180
+    - Level: 17
+      Value: 65.1
       TriggerValue: 0
-      Price: 60
-    - Level: 8
-      Value: 17.5
-      Trigger: 6
+      Price: 198
+    - Level: 18
+      Value: 71.21
       TriggerValue: 0
-      Price: 70
-    - Level: 9
-      Value: 18
-      Trigger: 6
+      Price: 217
+    - Level: 19
+      Value: 77.61
       TriggerValue: 0
-      Price: 80
-  - Id: BloodDamageSkill
-    Name: "\u0416\u0438\u043B\u043E\u0440\u0435\u0437"
-    Description: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0443\u0440\u043E\u043D
-      \u0441\u0442\u0438\u0445\u0438\u0435\u0439 \u043A\u0440\u043E\u0432\u0438"
-    Icon: {fileID: 6248995660739951955, guid: 8bd9f894eb8557b4eb3dd3d4851fecd8, type: 3}
-    SkillsLevel:
-    - Level: 0
-      Value: 0
-      Trigger: 7
+      Price: 236
+    - Level: 20
+      Value: 84.3
       TriggerValue: 0
-      Price: 0
-    - Level: 1
-      Value: 10
-      Trigger: 7
+      Price: 256
+    - Level: 21
+      Value: 91.28
       TriggerValue: 0
-      Price: 0
-    - Level: 2
-      Value: 12
-      Trigger: 7
+      Price: 277
+    - Level: 22
+      Value: 98.55
       TriggerValue: 0
-      Price: 10
-    - Level: 3
-      Value: 14
-      Trigger: 7
+      Price: 298
+    - Level: 23
+      Value: 106.09
       TriggerValue: 0
-      Price: 20
-    - Level: 4
-      Value: 15
-      Trigger: 7
+      Price: 320
+    - Level: 24
+      Value: 113.92
       TriggerValue: 0
-      Price: 30
-    - Level: 5
-      Value: 16
-      Trigger: 7
+      Price: 342
+    - Level: 25
+      Value: 122.03
       TriggerValue: 0
-      Price: 40
-    - Level: 6
-      Value: 16.5
-      Trigger: 7
+      Price: 365
+    - Level: 26
+      Value: 130.41
       TriggerValue: 0
-      Price: 50
-    - Level: 7
-      Value: 17
-      Trigger: 7
+      Price: 389
+    - Level: 27
+      Value: 139.07
       TriggerValue: 0
-      Price: 60
-    - Level: 8
-      Value: 17.5
-      Trigger: 7
+      Price: 413
+    - Level: 28
+      Value: 148
       TriggerValue: 0
-      Price: 70
-    - Level: 9
-      Value: 18
-      Trigger: 7
+      Price: 437
+    - Level: 29
+      Value: 157.21
       TriggerValue: 0
-      Price: 80
-  - Id: WaterDamageSkill
-    Name: "\u0417\u0430\u0445\u043B\u0435\u0441\u0442"
-    Description: "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0443\u0440\u043E\u043D
-      \u0432\u043E\u0434\u044F\u043D\u043E\u0439 \u0441\u0442\u0438\u0445\u0438\u0435\u0439"
+      Price: 462
+    - Level: 30
+      Value: 166.68
+      TriggerValue: 0
+      Price: 488
+    - Level: 31
+      Value: 176.43
+      TriggerValue: 0
+      Price: 514
+    - Level: 32
+      Value: 186.44
+      TriggerValue: 0
+      Price: 541
+    - Level: 33
+      Value: 196.72
+      TriggerValue: 0
+      Price: 568
+    - Level: 34
+      Value: 207.26
+      TriggerValue: 0
+      Price: 595
+    - Level: 35
+      Value: 218.07
+      TriggerValue: 0
+      Price: 623
+    - Level: 36
+      Value: 229.14
+      TriggerValue: 0
+      Price: 652
+    - Level: 37
+      Value: 240.47
+      TriggerValue: 0
+      Price: 681
+    - Level: 38
+      Value: 252.06
+      TriggerValue: 0
+      Price: 711
+    - Level: 39
+      Value: 263.91
+      TriggerValue: 0
+      Price: 741
+    - Level: 40
+      Value: 276.02
+      TriggerValue: 0
+      Price: 771
+    - Level: 41
+      Value: 288.38
+      TriggerValue: 0
+      Price: 802
+    - Level: 42
+      Value: 301
+      TriggerValue: 0
+      Price: 834
+    - Level: 43
+      Value: 313.88
+      TriggerValue: 0
+      Price: 866
+    - Level: 44
+      Value: 327.01
+      TriggerValue: 0
+      Price: 898
+    - Level: 45
+      Value: 340.39
+      TriggerValue: 0
+      Price: 931
+    - Level: 46
+      Value: 354.03
+      TriggerValue: 0
+      Price: 964
+    - Level: 47
+      Value: 367.92
+      TriggerValue: 0
+      Price: 997
+    - Level: 48
+      Value: 382.05
+      TriggerValue: 0
+      Price: 1032
+    - Level: 49
+      Value: 396.44
+      TriggerValue: 0
+      Price: 1066
+    - Level: 50
+      Value: 411.08
+      TriggerValue: 0
+      Price: 1101
+    - Level: 51
+      Value: 425.96
+      TriggerValue: 0
+      Price: 1136
+    - Level: 52
+      Value: 441.09
+      TriggerValue: 0
+      Price: 1172
+    - Level: 53
+      Value: 456.47
+      TriggerValue: 0
+      Price: 1208
+    - Level: 54
+      Value: 472.09
+      TriggerValue: 0
+      Price: 1245
+    - Level: 55
+      Value: 487.96
+      TriggerValue: 0
+      Price: 1282
+    - Level: 56
+      Value: 504.07
+      TriggerValue: 0
+      Price: 1319
+    - Level: 57
+      Value: 520.42
+      TriggerValue: 0
+      Price: 1357
+    - Level: 58
+      Value: 537.02
+      TriggerValue: 0
+      Price: 1395
+    - Level: 59
+      Value: 553.86
+      TriggerValue: 0
+      Price: 1434
+    - Level: 60
+      Value: 570.94
+      TriggerValue: 0
+      Price: 1473
+    - Level: 61
+      Value: 588.27
+      TriggerValue: 0
+      Price: 1512
+    - Level: 62
+      Value: 605.83
+      TriggerValue: 0
+      Price: 1552
+    - Level: 63
+      Value: 623.63
+      TriggerValue: 0
+      Price: 1592
+    - Level: 64
+      Value: 641.67
+      TriggerValue: 0
+      Price: 1633
+    - Level: 65
+      Value: 659.95
+      TriggerValue: 0
+      Price: 1674
+    - Level: 66
+      Value: 678.47
+      TriggerValue: 0
+      Price: 1715
+    - Level: 67
+      Value: 697.22
+      TriggerValue: 0
+      Price: 1757
+    - Level: 68
+      Value: 716.22
+      TriggerValue: 0
+      Price: 1799
+    - Level: 69
+      Value: 735.44
+      TriggerValue: 0
+      Price: 1841
+    - Level: 70
+      Value: 754.91
+      TriggerValue: 0
+      Price: 1884
+    - Level: 71
+      Value: 774.6
+      TriggerValue: 0
+      Price: 1927
+    - Level: 72
+      Value: 794.54
+      TriggerValue: 0
+      Price: 1971
+    - Level: 73
+      Value: 814.7
+      TriggerValue: 0
+      Price: 2015
+    - Level: 74
+      Value: 835.1
+      TriggerValue: 0
+      Price: 2059
+    - Level: 75
+      Value: 855.73
+      TriggerValue: 0
+      Price: 2103
+    - Level: 76
+      Value: 876.6
+      TriggerValue: 0
+      Price: 2148
+    - Level: 77
+      Value: 897.7
+      TriggerValue: 0
+      Price: 2194
+    - Level: 78
+      Value: 919.02
+      TriggerValue: 0
+      Price: 2240
+    - Level: 79
+      Value: 940.58
+      TriggerValue: 0
+      Price: 2286
+    - Level: 80
+      Value: 962.37
+      TriggerValue: 0
+      Price: 2332
+    - Level: 81
+      Value: 984.39
+      TriggerValue: 0
+      Price: 2379
+    - Level: 82
+      Value: 1006.64
+      TriggerValue: 0
+      Price: 2426
+    - Level: 83
+      Value: 1029.12
+      TriggerValue: 0
+      Price: 2473
+    - Level: 84
+      Value: 1051.83
+      TriggerValue: 0
+      Price: 2521
+    - Level: 85
+      Value: 1074.76
+      TriggerValue: 0
+      Price: 2569
+    - Level: 86
+      Value: 1097.92
+      TriggerValue: 0
+      Price: 2618
+    - Level: 87
+      Value: 1121.31
+      TriggerValue: 0
+      Price: 2666
+    - Level: 88
+      Value: 1144.93
+      TriggerValue: 0
+      Price: 2716
+    - Level: 89
+      Value: 1168.77
+      TriggerValue: 0
+      Price: 2765
+    - Level: 90
+      Value: 1192.84
+      TriggerValue: 0
+      Price: 2815
+    - Level: 91
+      Value: 1217.14
+      TriggerValue: 0
+      Price: 2865
+    - Level: 92
+      Value: 1241.66
+      TriggerValue: 0
+      Price: 2916
+    - Level: 93
+      Value: 1266.41
+      TriggerValue: 0
+      Price: 2966
+    - Level: 94
+      Value: 1291.38
+      TriggerValue: 0
+      Price: 3018
+    - Level: 95
+      Value: 1316.57
+      TriggerValue: 0
+      Price: 3069
+    - Level: 96
+      Value: 1341.99
+      TriggerValue: 0
+      Price: 3121
+    - Level: 97
+      Value: 1367.63
+      TriggerValue: 0
+      Price: 3173
+    - Level: 98
+      Value: 1393.49
+      TriggerValue: 0
+      Price: 3225
+    - Level: 99
+      Value: 1419.58
+      TriggerValue: 0
+      Price: 3278
+    - Level: 100
+      Value: 1445.89
+      TriggerValue: 0
+      Price: 3331
+    - Level: 101
+      Value: 1472.42
+      TriggerValue: 0
+      Price: 3385
+    - Level: 102
+      Value: 1499.17
+      TriggerValue: 0
+      Price: 3438
+    - Level: 103
+      Value: 1526.15
+      TriggerValue: 0
+      Price: 3492
+    - Level: 104
+      Value: 1553.34
+      TriggerValue: 0
+      Price: 3547
+    - Level: 105
+      Value: 1580.76
+      TriggerValue: 0
+      Price: 3602
+    - Level: 106
+      Value: 1608.39
+      TriggerValue: 0
+      Price: 3656
+    - Level: 107
+      Value: 1636.25
+      TriggerValue: 0
+      Price: 3712
+    - Level: 108
+      Value: 1664.33
+      TriggerValue: 0
+      Price: 3767
+    - Level: 109
+      Value: 1692.62
+      TriggerValue: 0
+      Price: 3823
+    - Level: 110
+      Value: 1721.13
+      TriggerValue: 0
+      Price: 3880
+    - Level: 111
+      Value: 1749.86
+      TriggerValue: 0
+      Price: 3936
+    - Level: 112
+      Value: 1778.82
+      TriggerValue: 0
+      Price: 3993
+    - Level: 113
+      Value: 1807.98
+      TriggerValue: 0
+      Price: 4050
+    - Level: 114
+      Value: 1837.37
+      TriggerValue: 0
+      Price: 4108
+    - Level: 115
+      Value: 1866.97
+      TriggerValue: 0
+      Price: 4165
+    - Level: 116
+      Value: 1896.79
+      TriggerValue: 0
+      Price: 4223
+    - Level: 117
+      Value: 1926.83
+      TriggerValue: 0
+      Price: 4282
+    - Level: 118
+      Value: 1957.08
+      TriggerValue: 0
+      Price: 4340
+    - Level: 119
+      Value: 1987.55
+      TriggerValue: 0
+      Price: 4399
+    - Level: 120
+      Value: 2018.24
+      TriggerValue: 0
+      Price: 4459
+    - Level: 121
+      Value: 2049.14
+      TriggerValue: 0
+      Price: 4518
+    - Level: 122
+      Value: 2080.25
+      TriggerValue: 0
+      Price: 4578
+    - Level: 123
+      Value: 2111.58
+      TriggerValue: 0
+      Price: 4638
+    - Level: 124
+      Value: 2143.13
+      TriggerValue: 0
+      Price: 4699
+    - Level: 125
+      Value: 2174.89
+      TriggerValue: 0
+      Price: 4759
+    - Level: 126
+      Value: 2206.86
+      TriggerValue: 0
+      Price: 4820
+    - Level: 127
+      Value: 2239.05
+      TriggerValue: 0
+      Price: 4882
+    - Level: 128
+      Value: 2271.45
+      TriggerValue: 0
+      Price: 4943
+    - Level: 129
+      Value: 2304.07
+      TriggerValue: 0
+      Price: 5005
+    - Level: 130
+      Value: 2336.9
+      TriggerValue: 0
+      Price: 5067
+    - Level: 131
+      Value: 2369.94
+      TriggerValue: 0
+      Price: 5130
+    - Level: 132
+      Value: 2403.19
+      TriggerValue: 0
+      Price: 5193
+    - Level: 133
+      Value: 2436.66
+      TriggerValue: 0
+      Price: 5256
+    - Level: 134
+      Value: 2470.33
+      TriggerValue: 0
+      Price: 5319
+    - Level: 135
+      Value: 2504.22
+      TriggerValue: 0
+      Price: 5383
+    - Level: 136
+      Value: 2538.32
+      TriggerValue: 0
+      Price: 5447
+    - Level: 137
+      Value: 2572.64
+      TriggerValue: 0
+      Price: 5511
+    - Level: 138
+      Value: 2607.16
+      TriggerValue: 0
+      Price: 5575
+    - Level: 139
+      Value: 2641.89
+      TriggerValue: 0
+      Price: 5640
+    - Level: 140
+      Value: 2676.84
+      TriggerValue: 0
+      Price: 5705
+    - Level: 141
+      Value: 2711.99
+      TriggerValue: 0
+      Price: 5770
+    - Level: 142
+      Value: 2747.36
+      TriggerValue: 0
+      Price: 5836
+    - Level: 143
+      Value: 2782.93
+      TriggerValue: 0
+      Price: 5902
+    - Level: 144
+      Value: 2818.72
+      TriggerValue: 0
+      Price: 5968
+    - Level: 145
+      Value: 2854.71
+      TriggerValue: 0
+      Price: 6034
+    - Level: 146
+      Value: 2890.92
+      TriggerValue: 0
+      Price: 6101
+    - Level: 147
+      Value: 2927.33
+      TriggerValue: 0
+      Price: 6168
+    - Level: 148
+      Value: 2963.95
+      TriggerValue: 0
+      Price: 6235
+    - Level: 149
+      Value: 3000.78
+      TriggerValue: 0
+      Price: 6303
+    - Level: 150
+      Value: 3037.81
+      TriggerValue: 0
+      Price: 6370
+    - Level: 151
+      Value: 3075.06
+      TriggerValue: 0
+      Price: 6439
+    - Level: 152
+      Value: 3112.51
+      TriggerValue: 0
+      Price: 6507
+    - Level: 153
+      Value: 3150.17
+      TriggerValue: 0
+      Price: 6575
+    - Level: 154
+      Value: 3188.04
+      TriggerValue: 0
+      Price: 6644
+    - Level: 155
+      Value: 3226.12
+      TriggerValue: 0
+      Price: 6713
+    - Level: 156
+      Value: 3264.4
+      TriggerValue: 0
+      Price: 6783
+    - Level: 157
+      Value: 3302.89
+      TriggerValue: 0
+      Price: 6852
+    - Level: 158
+      Value: 3341.58
+      TriggerValue: 0
+      Price: 6922
+    - Level: 159
+      Value: 3380.48
+      TriggerValue: 0
+      Price: 6993
+    - Level: 160
+      Value: 3419.59
+      TriggerValue: 0
+      Price: 7063
+    - Level: 161
+      Value: 3458.9
+      TriggerValue: 0
+      Price: 7134
+    - Level: 162
+      Value: 3498.42
+      TriggerValue: 0
+      Price: 7205
+    - Level: 163
+      Value: 3538.15
+      TriggerValue: 0
+      Price: 7276
+    - Level: 164
+      Value: 3578.07
+      TriggerValue: 0
+      Price: 7348
+    - Level: 165
+      Value: 3618.21
+      TriggerValue: 0
+      Price: 7419
+    - Level: 166
+      Value: 3658.55
+      TriggerValue: 0
+      Price: 7491
+    - Level: 167
+      Value: 3699.09
+      TriggerValue: 0
+      Price: 7564
+    - Level: 168
+      Value: 3739.84
+      TriggerValue: 0
+      Price: 7636
+    - Level: 169
+      Value: 3780.79
+      TriggerValue: 0
+      Price: 7709
+    - Level: 170
+      Value: 3821.95
+      TriggerValue: 0
+      Price: 7782
+    - Level: 171
+      Value: 3863.31
+      TriggerValue: 0
+      Price: 7856
+    - Level: 172
+      Value: 3904.88
+      TriggerValue: 0
+      Price: 7929
+    - Level: 173
+      Value: 3946.64
+      TriggerValue: 0
+      Price: 8003
+    - Level: 174
+      Value: 3988.61
+      TriggerValue: 0
+      Price: 8077
+    - Level: 175
+      Value: 4030.79
+      TriggerValue: 0
+      Price: 8152
+    - Level: 176
+      Value: 4073.17
+      TriggerValue: 0
+      Price: 8226
+    - Level: 177
+      Value: 4115.75
+      TriggerValue: 0
+      Price: 8301
+    - Level: 178
+      Value: 4158.53
+      TriggerValue: 0
+      Price: 8376
+    - Level: 179
+      Value: 4201.51
+      TriggerValue: 0
+      Price: 8452
+    - Level: 180
+      Value: 4244.7
+      TriggerValue: 0
+      Price: 8527
+    - Level: 181
+      Value: 4288.09
+      TriggerValue: 0
+      Price: 8603
+    - Level: 182
+      Value: 4331.68
+      TriggerValue: 0
+      Price: 8679
+    - Level: 183
+      Value: 4375.47
+      TriggerValue: 0
+      Price: 8756
+    - Level: 184
+      Value: 4419.47
+      TriggerValue: 0
+      Price: 8832
+    - Level: 185
+      Value: 4463.66
+      TriggerValue: 0
+      Price: 8909
+    - Level: 186
+      Value: 4508.06
+      TriggerValue: 0
+      Price: 8986
+    - Level: 187
+      Value: 4552.66
+      TriggerValue: 0
+      Price: 9064
+    - Level: 188
+      Value: 4597.45
+      TriggerValue: 0
+      Price: 9141
+    - Level: 189
+      Value: 4642.45
+      TriggerValue: 0
+      Price: 9219
+    - Level: 190
+      Value: 4687.65
+      TriggerValue: 0
+      Price: 9297
+    - Level: 191
+      Value: 4733.05
+      TriggerValue: 0
+      Price: 9376
+    - Level: 192
+      Value: 4778.65
+      TriggerValue: 0
+      Price: 9455
+    - Level: 193
+      Value: 4824.45
+      TriggerValue: 0
+      Price: 9533
+    - Level: 194
+      Value: 4870.45
+      TriggerValue: 0
+      Price: 9613
+    - Level: 195
+      Value: 4916.65
+      TriggerValue: 0
+      Price: 9692
+    - Level: 196
+      Value: 4963.05
+      TriggerValue: 0
+      Price: 9772
+    - Level: 197
+      Value: 5009.64
+      TriggerValue: 0
+      Price: 9851
+    - Level: 198
+      Value: 5056.44
+      TriggerValue: 0
+      Price: 9931
+    - Level: 199
+      Value: 5103.44
+      TriggerValue: 0
+      Price: 10012
+    - Level: 200
+      Value: 5150.63
+      TriggerValue: 0
+      Price: 10092
+    - Level: 201
+      Value: 5198.02
+      TriggerValue: 0
+      Price: 10173
+    - Level: 202
+      Value: 5245.62
+      TriggerValue: 0
+      Price: 10254
+    - Level: 203
+      Value: 5293.41
+      TriggerValue: 0
+      Price: 10336
+    - Level: 204
+      Value: 5341.39
+      TriggerValue: 0
+      Price: 10417
+    - Level: 205
+      Value: 5389.58
+      TriggerValue: 0
+      Price: 10499
+    - Level: 206
+      Value: 5437.96
+      TriggerValue: 0
+      Price: 10581
+    - Level: 207
+      Value: 5486.55
+      TriggerValue: 0
+      Price: 10663
+    - Level: 208
+      Value: 5535.32
+      TriggerValue: 0
+      Price: 10746
+    - Level: 209
+      Value: 5584.3
+      TriggerValue: 0
+      Price: 10829
+    - Level: 210
+      Value: 5633.47
+      TriggerValue: 0
+      Price: 10912
+    - Level: 211
+      Value: 5682.85
+      TriggerValue: 0
+      Price: 10995
+    - Level: 212
+      Value: 5732.41
+      TriggerValue: 0
+      Price: 11078
+    - Level: 213
+      Value: 5782.18
+      TriggerValue: 0
+      Price: 11162
+    - Level: 214
+      Value: 5832.14
+      TriggerValue: 0
+      Price: 11246
+    - Level: 215
+      Value: 5882.3
+      TriggerValue: 0
+      Price: 11330
+    - Level: 216
+      Value: 5932.65
+      TriggerValue: 0
+      Price: 11415
+    - Level: 217
+      Value: 5983.2
+      TriggerValue: 0
+      Price: 11499
+    - Level: 218
+      Value: 6033.95
+      TriggerValue: 0
+      Price: 11584
+    - Level: 219
+      Value: 6084.89
+      TriggerValue: 0
+      Price: 11669
+    - Level: 220
+      Value: 6136.03
+      TriggerValue: 0
+      Price: 11755
+    - Level: 221
+      Value: 6187.36
+      TriggerValue: 0
+      Price: 11840
+    - Level: 222
+      Value: 6238.89
+      TriggerValue: 0
+      Price: 11926
+    - Level: 223
+      Value: 6290.62
+      TriggerValue: 0
+      Price: 12012
+    - Level: 224
+      Value: 6342.54
+      TriggerValue: 0
+      Price: 12098
+    - Level: 225
+      Value: 6394.65
+      TriggerValue: 0
+      Price: 12185
+    - Level: 226
+      Value: 6446.96
+      TriggerValue: 0
+      Price: 12272
+    - Level: 227
+      Value: 6499.46
+      TriggerValue: 0
+      Price: 12359
+    - Level: 228
+      Value: 6552.16
+      TriggerValue: 0
+      Price: 12446
+    - Level: 229
+      Value: 6605.06
+      TriggerValue: 0
+      Price: 12533
+    - Level: 230
+      Value: 6658.14
+      TriggerValue: 0
+      Price: 12621
+    - Level: 231
+      Value: 6711.43
+      TriggerValue: 0
+      Price: 12709
+    - Level: 232
+      Value: 6764.9
+      TriggerValue: 0
+      Price: 12797
+    - Level: 233
+      Value: 6818.57
+      TriggerValue: 0
+      Price: 12885
+    - Level: 234
+      Value: 6872.44
+      TriggerValue: 0
+      Price: 12974
+    - Level: 235
+      Value: 6926.5
+      TriggerValue: 0
+      Price: 13063
+    - Level: 236
+      Value: 6980.75
+      TriggerValue: 0
+      Price: 13152
+    - Level: 237
+      Value: 7035.19
+      TriggerValue: 0
+      Price: 13241
+    - Level: 238
+      Value: 7089.83
+      TriggerValue: 0
+      Price: 13330
+    - Level: 239
+      Value: 7144.66
+      TriggerValue: 0
+      Price: 13420
+    - Level: 240
+      Value: 7199.69
+      TriggerValue: 0
+      Price: 13510
+    - Level: 241
+      Value: 7254.9
+      TriggerValue: 0
+      Price: 13600
+    - Level: 242
+      Value: 7310.31
+      TriggerValue: 0
+      Price: 13690
+    - Level: 243
+      Value: 7365.92
+      TriggerValue: 0
+      Price: 13781
+    - Level: 244
+      Value: 7421.71
+      TriggerValue: 0
+      Price: 13872
+    - Level: 245
+      Value: 7477.7
+      TriggerValue: 0
+      Price: 13963
+    - Level: 246
+      Value: 7533.88
+      TriggerValue: 0
+      Price: 14054
+    - Level: 247
+      Value: 7590.25
+      TriggerValue: 0
+      Price: 14146
+    - Level: 248
+      Value: 7646.82
+      TriggerValue: 0
+      Price: 14237
+    - Level: 249
+      Value: 7703.57
+      TriggerValue: 0
+      Price: 14329
+    - Level: 250
+      Value: 7760.52
+      TriggerValue: 0
+      Price: 14422
+    - Level: 251
+      Value: 7817.66
+      TriggerValue: 0
+      Price: 14514
+    - Level: 252
+      Value: 7874.99
+      TriggerValue: 0
+      Price: 14607
+    - Level: 253
+      Value: 7932.51
+      TriggerValue: 0
+      Price: 14699
+    - Level: 254
+      Value: 7990.23
+      TriggerValue: 0
+      Price: 14792
+    - Level: 255
+      Value: 8048.13
+      TriggerValue: 0
+      Price: 14886
+    - Level: 256
+      Value: 8106.23
+      TriggerValue: 0
+      Price: 14979
+    - Level: 257
+      Value: 8164.52
+      TriggerValue: 0
+      Price: 15073
+    - Level: 258
+      Value: 8222.99
+      TriggerValue: 0
+      Price: 15167
+    - Level: 259
+      Value: 8281.66
+      TriggerValue: 0
+      Price: 15261
+    - Level: 260
+      Value: 8340.52
+      TriggerValue: 0
+      Price: 15355
+    - Level: 261
+      Value: 8399.57
+      TriggerValue: 0
+      Price: 15450
+    - Level: 262
+      Value: 8458.81
+      TriggerValue: 0
+      Price: 15545
+    - Level: 263
+      Value: 8518.24
+      TriggerValue: 0
+      Price: 15640
+    - Level: 264
+      Value: 8577.86
+      TriggerValue: 0
+      Price: 15735
+    - Level: 265
+      Value: 8637.67
+      TriggerValue: 0
+      Price: 15831
+    - Level: 266
+      Value: 8697.67
+      TriggerValue: 0
+      Price: 15926
+    - Level: 267
+      Value: 8757.86
+      TriggerValue: 0
+      Price: 16022
+    - Level: 268
+      Value: 8818.24
+      TriggerValue: 0
+      Price: 16118
+    - Level: 269
+      Value: 8878.81
+      TriggerValue: 0
+      Price: 16214
+    - Level: 270
+      Value: 8939.57
+      TriggerValue: 0
+      Price: 16311
+    - Level: 271
+      Value: 9000.52
+      TriggerValue: 0
+      Price: 16408
+    - Level: 272
+      Value: 9061.66
+      TriggerValue: 0
+      Price: 16505
+    - Level: 273
+      Value: 9122.98
+      TriggerValue: 0
+      Price: 16602
+    - Level: 274
+      Value: 9184.5
+      TriggerValue: 0
+      Price: 16699
+    - Level: 275
+      Value: 9246.2
+      TriggerValue: 0
+      Price: 16797
+    - Level: 276
+      Value: 9308.09
+      TriggerValue: 0
+      Price: 16895
+    - Level: 277
+      Value: 9370.18
+      TriggerValue: 0
+      Price: 16993
+    - Level: 278
+      Value: 9432.45
+      TriggerValue: 0
+      Price: 17091
+    - Level: 279
+      Value: 9494.91
+      TriggerValue: 0
+      Price: 17189
+    - Level: 280
+      Value: 9557.55
+      TriggerValue: 0
+      Price: 17288
+    - Level: 281
+      Value: 9620.39
+      TriggerValue: 0
+      Price: 17387
+    - Level: 282
+      Value: 9683.41
+      TriggerValue: 0
+      Price: 17486
+    - Level: 283
+      Value: 9746.62
+      TriggerValue: 0
+      Price: 17585
+    - Level: 284
+      Value: 9810.02
+      TriggerValue: 0
+      Price: 17685
+    - Level: 285
+      Value: 9873.61
+      TriggerValue: 0
+      Price: 17785
+    - Level: 286
+      Value: 9937.38
+      TriggerValue: 0
+      Price: 17885
+    - Level: 287
+      Value: 10001.34
+      TriggerValue: 0
+      Price: 17985
+    - Level: 288
+      Value: 10065.49
+      TriggerValue: 0
+      Price: 18085
+    - Level: 289
+      Value: 10129.83
+      TriggerValue: 0
+      Price: 18186
+    - Level: 290
+      Value: 10194.36
+      TriggerValue: 0
+      Price: 18286
+    - Level: 291
+      Value: 10259.07
+      TriggerValue: 0
+      Price: 18387
+    - Level: 292
+      Value: 10323.97
+      TriggerValue: 0
+      Price: 18489
+    - Level: 293
+      Value: 10389.05
+      TriggerValue: 0
+      Price: 18590
+    - Level: 294
+      Value: 10454.32
+      TriggerValue: 0
+      Price: 18692
+    - Level: 295
+      Value: 10519.78
+      TriggerValue: 0
+      Price: 18793
+    - Level: 296
+      Value: 10585.43
+      TriggerValue: 0
+      Price: 18895
+    - Level: 297
+      Value: 10651.26
+      TriggerValue: 0
+      Price: 18998
+    - Level: 298
+      Value: 10717.28
+      TriggerValue: 0
+      Price: 19100
+    - Level: 299
+      Value: 10783.49
+      TriggerValue: 0
+      Price: 19203
+    - Level: 300
+      Value: 10849.88
+      TriggerValue: 0
+      Price: 19305
+  - Id: BaseWaterDamageSkill
+    Name: "\u0428\u0451\u043F\u043E\u0442 \u0420\u0435\u043A"
+    Description: "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u0432\u043E\u0434\u043D\u044B\u0439
+      \u0443\u0440\u043E\u043D"
     Icon: {fileID: 5738704675951874409, guid: b645e8fa41acbe94b9ac5e504e642814, type: 3}
+    Trigger: 9
     SkillsLevel:
     - Level: 0
       Value: 0
-      Trigger: 9
       TriggerValue: 0
       Price: 0
     - Level: 1
       Value: 10
-      Trigger: 9
       TriggerValue: 0
       Price: 0
     - Level: 2
-      Value: 12
-      Trigger: 9
+      Value: 11.07
       TriggerValue: 0
-      Price: 10
+      Price: 9
     - Level: 3
-      Value: 14
-      Trigger: 9
+      Value: 12.26
       TriggerValue: 0
-      Price: 20
+      Price: 15
     - Level: 4
-      Value: 15
-      Trigger: 9
+      Value: 13.85
       TriggerValue: 0
-      Price: 30
+      Price: 22
     - Level: 5
-      Value: 16
-      Trigger: 9
+      Value: 15.8
+      TriggerValue: 0
+      Price: 31
+    - Level: 6
+      Value: 18.11
       TriggerValue: 0
       Price: 40
-    - Level: 6
-      Value: 16.5
-      Trigger: 9
+    - Level: 7
+      Value: 20.77
       TriggerValue: 0
       Price: 50
-    - Level: 7
-      Value: 17
-      Trigger: 9
-      TriggerValue: 0
-      Price: 60
     - Level: 8
-      Value: 17.5
-      Trigger: 9
+      Value: 23.77
       TriggerValue: 0
-      Price: 70
+      Price: 62
     - Level: 9
-      Value: 18
-      Trigger: 9
+      Value: 27.1
       TriggerValue: 0
-      Price: 80
+      Price: 74
+    - Level: 10
+      Value: 30.75
+      TriggerValue: 0
+      Price: 87
+    - Level: 11
+      Value: 34.73
+      TriggerValue: 0
+      Price: 100
+    - Level: 12
+      Value: 39.03
+      TriggerValue: 0
+      Price: 115
+    - Level: 13
+      Value: 43.63
+      TriggerValue: 0
+      Price: 130
+    - Level: 14
+      Value: 48.55
+      TriggerValue: 0
+      Price: 146
+    - Level: 15
+      Value: 53.77
+      TriggerValue: 0
+      Price: 163
+    - Level: 16
+      Value: 59.28
+      TriggerValue: 0
+      Price: 180
+    - Level: 17
+      Value: 65.1
+      TriggerValue: 0
+      Price: 198
+    - Level: 18
+      Value: 71.21
+      TriggerValue: 0
+      Price: 217
+    - Level: 19
+      Value: 77.61
+      TriggerValue: 0
+      Price: 236
+    - Level: 20
+      Value: 84.3
+      TriggerValue: 0
+      Price: 256
+    - Level: 21
+      Value: 91.28
+      TriggerValue: 0
+      Price: 277
+    - Level: 22
+      Value: 98.55
+      TriggerValue: 0
+      Price: 298
+    - Level: 23
+      Value: 106.09
+      TriggerValue: 0
+      Price: 320
+    - Level: 24
+      Value: 113.92
+      TriggerValue: 0
+      Price: 342
+    - Level: 25
+      Value: 122.03
+      TriggerValue: 0
+      Price: 365
+    - Level: 26
+      Value: 130.41
+      TriggerValue: 0
+      Price: 389
+    - Level: 27
+      Value: 139.07
+      TriggerValue: 0
+      Price: 413
+    - Level: 28
+      Value: 148
+      TriggerValue: 0
+      Price: 437
+    - Level: 29
+      Value: 157.21
+      TriggerValue: 0
+      Price: 462
+    - Level: 30
+      Value: 166.68
+      TriggerValue: 0
+      Price: 488
+    - Level: 31
+      Value: 176.43
+      TriggerValue: 0
+      Price: 514
+    - Level: 32
+      Value: 186.44
+      TriggerValue: 0
+      Price: 541
+    - Level: 33
+      Value: 196.72
+      TriggerValue: 0
+      Price: 568
+    - Level: 34
+      Value: 207.26
+      TriggerValue: 0
+      Price: 595
+    - Level: 35
+      Value: 218.07
+      TriggerValue: 0
+      Price: 623
+    - Level: 36
+      Value: 229.14
+      TriggerValue: 0
+      Price: 652
+    - Level: 37
+      Value: 240.47
+      TriggerValue: 0
+      Price: 681
+    - Level: 38
+      Value: 252.06
+      TriggerValue: 0
+      Price: 711
+    - Level: 39
+      Value: 263.91
+      TriggerValue: 0
+      Price: 741
+    - Level: 40
+      Value: 276.02
+      TriggerValue: 0
+      Price: 771
+    - Level: 41
+      Value: 288.38
+      TriggerValue: 0
+      Price: 802
+    - Level: 42
+      Value: 301
+      TriggerValue: 0
+      Price: 834
+    - Level: 43
+      Value: 313.88
+      TriggerValue: 0
+      Price: 866
+    - Level: 44
+      Value: 327.01
+      TriggerValue: 0
+      Price: 898
+    - Level: 45
+      Value: 340.39
+      TriggerValue: 0
+      Price: 931
+    - Level: 46
+      Value: 354.03
+      TriggerValue: 0
+      Price: 964
+    - Level: 47
+      Value: 367.92
+      TriggerValue: 0
+      Price: 997
+    - Level: 48
+      Value: 382.05
+      TriggerValue: 0
+      Price: 1032
+    - Level: 49
+      Value: 396.44
+      TriggerValue: 0
+      Price: 1066
+    - Level: 50
+      Value: 411.08
+      TriggerValue: 0
+      Price: 1101
+    - Level: 51
+      Value: 425.96
+      TriggerValue: 0
+      Price: 1136
+    - Level: 52
+      Value: 441.09
+      TriggerValue: 0
+      Price: 1172
+    - Level: 53
+      Value: 456.47
+      TriggerValue: 0
+      Price: 1208
+    - Level: 54
+      Value: 472.09
+      TriggerValue: 0
+      Price: 1245
+    - Level: 55
+      Value: 487.96
+      TriggerValue: 0
+      Price: 1282
+    - Level: 56
+      Value: 504.07
+      TriggerValue: 0
+      Price: 1319
+    - Level: 57
+      Value: 520.42
+      TriggerValue: 0
+      Price: 1357
+    - Level: 58
+      Value: 537.02
+      TriggerValue: 0
+      Price: 1395
+    - Level: 59
+      Value: 553.86
+      TriggerValue: 0
+      Price: 1434
+    - Level: 60
+      Value: 570.94
+      TriggerValue: 0
+      Price: 1473
+    - Level: 61
+      Value: 588.27
+      TriggerValue: 0
+      Price: 1512
+    - Level: 62
+      Value: 605.83
+      TriggerValue: 0
+      Price: 1552
+    - Level: 63
+      Value: 623.63
+      TriggerValue: 0
+      Price: 1592
+    - Level: 64
+      Value: 641.67
+      TriggerValue: 0
+      Price: 1633
+    - Level: 65
+      Value: 659.95
+      TriggerValue: 0
+      Price: 1674
+    - Level: 66
+      Value: 678.47
+      TriggerValue: 0
+      Price: 1715
+    - Level: 67
+      Value: 697.22
+      TriggerValue: 0
+      Price: 1757
+    - Level: 68
+      Value: 716.22
+      TriggerValue: 0
+      Price: 1799
+    - Level: 69
+      Value: 735.44
+      TriggerValue: 0
+      Price: 1841
+    - Level: 70
+      Value: 754.91
+      TriggerValue: 0
+      Price: 1884
+    - Level: 71
+      Value: 774.6
+      TriggerValue: 0
+      Price: 1927
+    - Level: 72
+      Value: 794.54
+      TriggerValue: 0
+      Price: 1971
+    - Level: 73
+      Value: 814.7
+      TriggerValue: 0
+      Price: 2015
+    - Level: 74
+      Value: 835.1
+      TriggerValue: 0
+      Price: 2059
+    - Level: 75
+      Value: 855.73
+      TriggerValue: 0
+      Price: 2103
+    - Level: 76
+      Value: 876.6
+      TriggerValue: 0
+      Price: 2148
+    - Level: 77
+      Value: 897.7
+      TriggerValue: 0
+      Price: 2194
+    - Level: 78
+      Value: 919.02
+      TriggerValue: 0
+      Price: 2240
+    - Level: 79
+      Value: 940.58
+      TriggerValue: 0
+      Price: 2286
+    - Level: 80
+      Value: 962.37
+      TriggerValue: 0
+      Price: 2332
+    - Level: 81
+      Value: 984.39
+      TriggerValue: 0
+      Price: 2379
+    - Level: 82
+      Value: 1006.64
+      TriggerValue: 0
+      Price: 2426
+    - Level: 83
+      Value: 1029.12
+      TriggerValue: 0
+      Price: 2473
+    - Level: 84
+      Value: 1051.83
+      TriggerValue: 0
+      Price: 2521
+    - Level: 85
+      Value: 1074.76
+      TriggerValue: 0
+      Price: 2569
+    - Level: 86
+      Value: 1097.92
+      TriggerValue: 0
+      Price: 2618
+    - Level: 87
+      Value: 1121.31
+      TriggerValue: 0
+      Price: 2666
+    - Level: 88
+      Value: 1144.93
+      TriggerValue: 0
+      Price: 2716
+    - Level: 89
+      Value: 1168.77
+      TriggerValue: 0
+      Price: 2765
+    - Level: 90
+      Value: 1192.84
+      TriggerValue: 0
+      Price: 2815
+    - Level: 91
+      Value: 1217.14
+      TriggerValue: 0
+      Price: 2865
+    - Level: 92
+      Value: 1241.66
+      TriggerValue: 0
+      Price: 2916
+    - Level: 93
+      Value: 1266.41
+      TriggerValue: 0
+      Price: 2966
+    - Level: 94
+      Value: 1291.38
+      TriggerValue: 0
+      Price: 3018
+    - Level: 95
+      Value: 1316.57
+      TriggerValue: 0
+      Price: 3069
+    - Level: 96
+      Value: 1341.99
+      TriggerValue: 0
+      Price: 3121
+    - Level: 97
+      Value: 1367.63
+      TriggerValue: 0
+      Price: 3173
+    - Level: 98
+      Value: 1393.49
+      TriggerValue: 0
+      Price: 3225
+    - Level: 99
+      Value: 1419.58
+      TriggerValue: 0
+      Price: 3278
+    - Level: 100
+      Value: 1445.89
+      TriggerValue: 0
+      Price: 3331
+    - Level: 101
+      Value: 1472.42
+      TriggerValue: 0
+      Price: 3385
+    - Level: 102
+      Value: 1499.17
+      TriggerValue: 0
+      Price: 3438
+    - Level: 103
+      Value: 1526.15
+      TriggerValue: 0
+      Price: 3492
+    - Level: 104
+      Value: 1553.34
+      TriggerValue: 0
+      Price: 3547
+    - Level: 105
+      Value: 1580.76
+      TriggerValue: 0
+      Price: 3602
+    - Level: 106
+      Value: 1608.39
+      TriggerValue: 0
+      Price: 3656
+    - Level: 107
+      Value: 1636.25
+      TriggerValue: 0
+      Price: 3712
+    - Level: 108
+      Value: 1664.33
+      TriggerValue: 0
+      Price: 3767
+    - Level: 109
+      Value: 1692.62
+      TriggerValue: 0
+      Price: 3823
+    - Level: 110
+      Value: 1721.13
+      TriggerValue: 0
+      Price: 3880
+    - Level: 111
+      Value: 1749.86
+      TriggerValue: 0
+      Price: 3936
+    - Level: 112
+      Value: 1778.82
+      TriggerValue: 0
+      Price: 3993
+    - Level: 113
+      Value: 1807.98
+      TriggerValue: 0
+      Price: 4050
+    - Level: 114
+      Value: 1837.37
+      TriggerValue: 0
+      Price: 4108
+    - Level: 115
+      Value: 1866.97
+      TriggerValue: 0
+      Price: 4165
+    - Level: 116
+      Value: 1896.79
+      TriggerValue: 0
+      Price: 4223
+    - Level: 117
+      Value: 1926.83
+      TriggerValue: 0
+      Price: 4282
+    - Level: 118
+      Value: 1957.08
+      TriggerValue: 0
+      Price: 4340
+    - Level: 119
+      Value: 1987.55
+      TriggerValue: 0
+      Price: 4399
+    - Level: 120
+      Value: 2018.24
+      TriggerValue: 0
+      Price: 4459
+    - Level: 121
+      Value: 2049.14
+      TriggerValue: 0
+      Price: 4518
+    - Level: 122
+      Value: 2080.25
+      TriggerValue: 0
+      Price: 4578
+    - Level: 123
+      Value: 2111.58
+      TriggerValue: 0
+      Price: 4638
+    - Level: 124
+      Value: 2143.13
+      TriggerValue: 0
+      Price: 4699
+    - Level: 125
+      Value: 2174.89
+      TriggerValue: 0
+      Price: 4759
+    - Level: 126
+      Value: 2206.86
+      TriggerValue: 0
+      Price: 4820
+    - Level: 127
+      Value: 2239.05
+      TriggerValue: 0
+      Price: 4882
+    - Level: 128
+      Value: 2271.45
+      TriggerValue: 0
+      Price: 4943
+    - Level: 129
+      Value: 2304.07
+      TriggerValue: 0
+      Price: 5005
+    - Level: 130
+      Value: 2336.9
+      TriggerValue: 0
+      Price: 5067
+    - Level: 131
+      Value: 2369.94
+      TriggerValue: 0
+      Price: 5130
+    - Level: 132
+      Value: 2403.19
+      TriggerValue: 0
+      Price: 5193
+    - Level: 133
+      Value: 2436.66
+      TriggerValue: 0
+      Price: 5256
+    - Level: 134
+      Value: 2470.33
+      TriggerValue: 0
+      Price: 5319
+    - Level: 135
+      Value: 2504.22
+      TriggerValue: 0
+      Price: 5383
+    - Level: 136
+      Value: 2538.32
+      TriggerValue: 0
+      Price: 5447
+    - Level: 137
+      Value: 2572.64
+      TriggerValue: 0
+      Price: 5511
+    - Level: 138
+      Value: 2607.16
+      TriggerValue: 0
+      Price: 5575
+    - Level: 139
+      Value: 2641.89
+      TriggerValue: 0
+      Price: 5640
+    - Level: 140
+      Value: 2676.84
+      TriggerValue: 0
+      Price: 5705
+    - Level: 141
+      Value: 2711.99
+      TriggerValue: 0
+      Price: 5770
+    - Level: 142
+      Value: 2747.36
+      TriggerValue: 0
+      Price: 5836
+    - Level: 143
+      Value: 2782.93
+      TriggerValue: 0
+      Price: 5902
+    - Level: 144
+      Value: 2818.72
+      TriggerValue: 0
+      Price: 5968
+    - Level: 145
+      Value: 2854.71
+      TriggerValue: 0
+      Price: 6034
+    - Level: 146
+      Value: 2890.92
+      TriggerValue: 0
+      Price: 6101
+    - Level: 147
+      Value: 2927.33
+      TriggerValue: 0
+      Price: 6168
+    - Level: 148
+      Value: 2963.95
+      TriggerValue: 0
+      Price: 6235
+    - Level: 149
+      Value: 3000.78
+      TriggerValue: 0
+      Price: 6303
+    - Level: 150
+      Value: 3037.81
+      TriggerValue: 0
+      Price: 6370
+    - Level: 151
+      Value: 3075.06
+      TriggerValue: 0
+      Price: 6439
+    - Level: 152
+      Value: 3112.51
+      TriggerValue: 0
+      Price: 6507
+    - Level: 153
+      Value: 3150.17
+      TriggerValue: 0
+      Price: 6575
+    - Level: 154
+      Value: 3188.04
+      TriggerValue: 0
+      Price: 6644
+    - Level: 155
+      Value: 3226.12
+      TriggerValue: 0
+      Price: 6713
+    - Level: 156
+      Value: 3264.4
+      TriggerValue: 0
+      Price: 6783
+    - Level: 157
+      Value: 3302.89
+      TriggerValue: 0
+      Price: 6852
+    - Level: 158
+      Value: 3341.58
+      TriggerValue: 0
+      Price: 6922
+    - Level: 159
+      Value: 3380.48
+      TriggerValue: 0
+      Price: 6993
+    - Level: 160
+      Value: 3419.59
+      TriggerValue: 0
+      Price: 7063
+    - Level: 161
+      Value: 3458.9
+      TriggerValue: 0
+      Price: 7134
+    - Level: 162
+      Value: 3498.42
+      TriggerValue: 0
+      Price: 7205
+    - Level: 163
+      Value: 3538.15
+      TriggerValue: 0
+      Price: 7276
+    - Level: 164
+      Value: 3578.07
+      TriggerValue: 0
+      Price: 7348
+    - Level: 165
+      Value: 3618.21
+      TriggerValue: 0
+      Price: 7419
+    - Level: 166
+      Value: 3658.55
+      TriggerValue: 0
+      Price: 7491
+    - Level: 167
+      Value: 3699.09
+      TriggerValue: 0
+      Price: 7564
+    - Level: 168
+      Value: 3739.84
+      TriggerValue: 0
+      Price: 7636
+    - Level: 169
+      Value: 3780.79
+      TriggerValue: 0
+      Price: 7709
+    - Level: 170
+      Value: 3821.95
+      TriggerValue: 0
+      Price: 7782
+    - Level: 171
+      Value: 3863.31
+      TriggerValue: 0
+      Price: 7856
+    - Level: 172
+      Value: 3904.88
+      TriggerValue: 0
+      Price: 7929
+    - Level: 173
+      Value: 3946.64
+      TriggerValue: 0
+      Price: 8003
+    - Level: 174
+      Value: 3988.61
+      TriggerValue: 0
+      Price: 8077
+    - Level: 175
+      Value: 4030.79
+      TriggerValue: 0
+      Price: 8152
+    - Level: 176
+      Value: 4073.17
+      TriggerValue: 0
+      Price: 8226
+    - Level: 177
+      Value: 4115.75
+      TriggerValue: 0
+      Price: 8301
+    - Level: 178
+      Value: 4158.53
+      TriggerValue: 0
+      Price: 8376
+    - Level: 179
+      Value: 4201.51
+      TriggerValue: 0
+      Price: 8452
+    - Level: 180
+      Value: 4244.7
+      TriggerValue: 0
+      Price: 8527
+    - Level: 181
+      Value: 4288.09
+      TriggerValue: 0
+      Price: 8603
+    - Level: 182
+      Value: 4331.68
+      TriggerValue: 0
+      Price: 8679
+    - Level: 183
+      Value: 4375.47
+      TriggerValue: 0
+      Price: 8756
+    - Level: 184
+      Value: 4419.47
+      TriggerValue: 0
+      Price: 8832
+    - Level: 185
+      Value: 4463.66
+      TriggerValue: 0
+      Price: 8909
+    - Level: 186
+      Value: 4508.06
+      TriggerValue: 0
+      Price: 8986
+    - Level: 187
+      Value: 4552.66
+      TriggerValue: 0
+      Price: 9064
+    - Level: 188
+      Value: 4597.45
+      TriggerValue: 0
+      Price: 9141
+    - Level: 189
+      Value: 4642.45
+      TriggerValue: 0
+      Price: 9219
+    - Level: 190
+      Value: 4687.65
+      TriggerValue: 0
+      Price: 9297
+    - Level: 191
+      Value: 4733.05
+      TriggerValue: 0
+      Price: 9376
+    - Level: 192
+      Value: 4778.65
+      TriggerValue: 0
+      Price: 9455
+    - Level: 193
+      Value: 4824.45
+      TriggerValue: 0
+      Price: 9533
+    - Level: 194
+      Value: 4870.45
+      TriggerValue: 0
+      Price: 9613
+    - Level: 195
+      Value: 4916.65
+      TriggerValue: 0
+      Price: 9692
+    - Level: 196
+      Value: 4963.05
+      TriggerValue: 0
+      Price: 9772
+    - Level: 197
+      Value: 5009.64
+      TriggerValue: 0
+      Price: 9851
+    - Level: 198
+      Value: 5056.44
+      TriggerValue: 0
+      Price: 9931
+    - Level: 199
+      Value: 5103.44
+      TriggerValue: 0
+      Price: 10012
+    - Level: 200
+      Value: 5150.63
+      TriggerValue: 0
+      Price: 10092
+    - Level: 201
+      Value: 5198.02
+      TriggerValue: 0
+      Price: 10173
+    - Level: 202
+      Value: 5245.62
+      TriggerValue: 0
+      Price: 10254
+    - Level: 203
+      Value: 5293.41
+      TriggerValue: 0
+      Price: 10336
+    - Level: 204
+      Value: 5341.39
+      TriggerValue: 0
+      Price: 10417
+    - Level: 205
+      Value: 5389.58
+      TriggerValue: 0
+      Price: 10499
+    - Level: 206
+      Value: 5437.96
+      TriggerValue: 0
+      Price: 10581
+    - Level: 207
+      Value: 5486.55
+      TriggerValue: 0
+      Price: 10663
+    - Level: 208
+      Value: 5535.32
+      TriggerValue: 0
+      Price: 10746
+    - Level: 209
+      Value: 5584.3
+      TriggerValue: 0
+      Price: 10829
+    - Level: 210
+      Value: 5633.47
+      TriggerValue: 0
+      Price: 10912
+    - Level: 211
+      Value: 5682.85
+      TriggerValue: 0
+      Price: 10995
+    - Level: 212
+      Value: 5732.41
+      TriggerValue: 0
+      Price: 11078
+    - Level: 213
+      Value: 5782.18
+      TriggerValue: 0
+      Price: 11162
+    - Level: 214
+      Value: 5832.14
+      TriggerValue: 0
+      Price: 11246
+    - Level: 215
+      Value: 5882.3
+      TriggerValue: 0
+      Price: 11330
+    - Level: 216
+      Value: 5932.65
+      TriggerValue: 0
+      Price: 11415
+    - Level: 217
+      Value: 5983.2
+      TriggerValue: 0
+      Price: 11499
+    - Level: 218
+      Value: 6033.95
+      TriggerValue: 0
+      Price: 11584
+    - Level: 219
+      Value: 6084.89
+      TriggerValue: 0
+      Price: 11669
+    - Level: 220
+      Value: 6136.03
+      TriggerValue: 0
+      Price: 11755
+    - Level: 221
+      Value: 6187.36
+      TriggerValue: 0
+      Price: 11840
+    - Level: 222
+      Value: 6238.89
+      TriggerValue: 0
+      Price: 11926
+    - Level: 223
+      Value: 6290.62
+      TriggerValue: 0
+      Price: 12012
+    - Level: 224
+      Value: 6342.54
+      TriggerValue: 0
+      Price: 12098
+    - Level: 225
+      Value: 6394.65
+      TriggerValue: 0
+      Price: 12185
+    - Level: 226
+      Value: 6446.96
+      TriggerValue: 0
+      Price: 12272
+    - Level: 227
+      Value: 6499.46
+      TriggerValue: 0
+      Price: 12359
+    - Level: 228
+      Value: 6552.16
+      TriggerValue: 0
+      Price: 12446
+    - Level: 229
+      Value: 6605.06
+      TriggerValue: 0
+      Price: 12533
+    - Level: 230
+      Value: 6658.14
+      TriggerValue: 0
+      Price: 12621
+    - Level: 231
+      Value: 6711.43
+      TriggerValue: 0
+      Price: 12709
+    - Level: 232
+      Value: 6764.9
+      TriggerValue: 0
+      Price: 12797
+    - Level: 233
+      Value: 6818.57
+      TriggerValue: 0
+      Price: 12885
+    - Level: 234
+      Value: 6872.44
+      TriggerValue: 0
+      Price: 12974
+    - Level: 235
+      Value: 6926.5
+      TriggerValue: 0
+      Price: 13063
+    - Level: 236
+      Value: 6980.75
+      TriggerValue: 0
+      Price: 13152
+    - Level: 237
+      Value: 7035.19
+      TriggerValue: 0
+      Price: 13241
+    - Level: 238
+      Value: 7089.83
+      TriggerValue: 0
+      Price: 13330
+    - Level: 239
+      Value: 7144.66
+      TriggerValue: 0
+      Price: 13420
+    - Level: 240
+      Value: 7199.69
+      TriggerValue: 0
+      Price: 13510
+    - Level: 241
+      Value: 7254.9
+      TriggerValue: 0
+      Price: 13600
+    - Level: 242
+      Value: 7310.31
+      TriggerValue: 0
+      Price: 13690
+    - Level: 243
+      Value: 7365.92
+      TriggerValue: 0
+      Price: 13781
+    - Level: 244
+      Value: 7421.71
+      TriggerValue: 0
+      Price: 13872
+    - Level: 245
+      Value: 7477.7
+      TriggerValue: 0
+      Price: 13963
+    - Level: 246
+      Value: 7533.88
+      TriggerValue: 0
+      Price: 14054
+    - Level: 247
+      Value: 7590.25
+      TriggerValue: 0
+      Price: 14146
+    - Level: 248
+      Value: 7646.82
+      TriggerValue: 0
+      Price: 14237
+    - Level: 249
+      Value: 7703.57
+      TriggerValue: 0
+      Price: 14329
+    - Level: 250
+      Value: 7760.52
+      TriggerValue: 0
+      Price: 14422
+    - Level: 251
+      Value: 7817.66
+      TriggerValue: 0
+      Price: 14514
+    - Level: 252
+      Value: 7874.99
+      TriggerValue: 0
+      Price: 14607
+    - Level: 253
+      Value: 7932.51
+      TriggerValue: 0
+      Price: 14699
+    - Level: 254
+      Value: 7990.23
+      TriggerValue: 0
+      Price: 14792
+    - Level: 255
+      Value: 8048.13
+      TriggerValue: 0
+      Price: 14886
+    - Level: 256
+      Value: 8106.23
+      TriggerValue: 0
+      Price: 14979
+    - Level: 257
+      Value: 8164.52
+      TriggerValue: 0
+      Price: 15073
+    - Level: 258
+      Value: 8222.99
+      TriggerValue: 0
+      Price: 15167
+    - Level: 259
+      Value: 8281.66
+      TriggerValue: 0
+      Price: 15261
+    - Level: 260
+      Value: 8340.52
+      TriggerValue: 0
+      Price: 15355
+    - Level: 261
+      Value: 8399.57
+      TriggerValue: 0
+      Price: 15450
+    - Level: 262
+      Value: 8458.81
+      TriggerValue: 0
+      Price: 15545
+    - Level: 263
+      Value: 8518.24
+      TriggerValue: 0
+      Price: 15640
+    - Level: 264
+      Value: 8577.86
+      TriggerValue: 0
+      Price: 15735
+    - Level: 265
+      Value: 8637.67
+      TriggerValue: 0
+      Price: 15831
+    - Level: 266
+      Value: 8697.67
+      TriggerValue: 0
+      Price: 15926
+    - Level: 267
+      Value: 8757.86
+      TriggerValue: 0
+      Price: 16022
+    - Level: 268
+      Value: 8818.24
+      TriggerValue: 0
+      Price: 16118
+    - Level: 269
+      Value: 8878.81
+      TriggerValue: 0
+      Price: 16214
+    - Level: 270
+      Value: 8939.57
+      TriggerValue: 0
+      Price: 16311
+    - Level: 271
+      Value: 9000.52
+      TriggerValue: 0
+      Price: 16408
+    - Level: 272
+      Value: 9061.66
+      TriggerValue: 0
+      Price: 16505
+    - Level: 273
+      Value: 9122.98
+      TriggerValue: 0
+      Price: 16602
+    - Level: 274
+      Value: 9184.5
+      TriggerValue: 0
+      Price: 16699
+    - Level: 275
+      Value: 9246.2
+      TriggerValue: 0
+      Price: 16797
+    - Level: 276
+      Value: 9308.09
+      TriggerValue: 0
+      Price: 16895
+    - Level: 277
+      Value: 9370.18
+      TriggerValue: 0
+      Price: 16993
+    - Level: 278
+      Value: 9432.45
+      TriggerValue: 0
+      Price: 17091
+    - Level: 279
+      Value: 9494.91
+      TriggerValue: 0
+      Price: 17189
+    - Level: 280
+      Value: 9557.55
+      TriggerValue: 0
+      Price: 17288
+    - Level: 281
+      Value: 9620.39
+      TriggerValue: 0
+      Price: 17387
+    - Level: 282
+      Value: 9683.41
+      TriggerValue: 0
+      Price: 17486
+    - Level: 283
+      Value: 9746.62
+      TriggerValue: 0
+      Price: 17585
+    - Level: 284
+      Value: 9810.02
+      TriggerValue: 0
+      Price: 17685
+    - Level: 285
+      Value: 9873.61
+      TriggerValue: 0
+      Price: 17785
+    - Level: 286
+      Value: 9937.38
+      TriggerValue: 0
+      Price: 17885
+    - Level: 287
+      Value: 10001.34
+      TriggerValue: 0
+      Price: 17985
+    - Level: 288
+      Value: 10065.49
+      TriggerValue: 0
+      Price: 18085
+    - Level: 289
+      Value: 10129.83
+      TriggerValue: 0
+      Price: 18186
+    - Level: 290
+      Value: 10194.36
+      TriggerValue: 0
+      Price: 18286
+    - Level: 291
+      Value: 10259.07
+      TriggerValue: 0
+      Price: 18387
+    - Level: 292
+      Value: 10323.97
+      TriggerValue: 0
+      Price: 18489
+    - Level: 293
+      Value: 10389.05
+      TriggerValue: 0
+      Price: 18590
+    - Level: 294
+      Value: 10454.32
+      TriggerValue: 0
+      Price: 18692
+    - Level: 295
+      Value: 10519.78
+      TriggerValue: 0
+      Price: 18793
+    - Level: 296
+      Value: 10585.43
+      TriggerValue: 0
+      Price: 18895
+    - Level: 297
+      Value: 10651.26
+      TriggerValue: 0
+      Price: 18998
+    - Level: 298
+      Value: 10717.28
+      TriggerValue: 0
+      Price: 19100
+    - Level: 299
+      Value: 10783.49
+      TriggerValue: 0
+      Price: 19203
+    - Level: 300
+      Value: 10849.88
+      TriggerValue: 0
+      Price: 19305
+  - Id: BaseBloodDamageSkill
+    Name: "\u041F\u0435\u0441\u043D\u044C \u041A\u0440\u043E\u0432\u0438"
+    Description: "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u043D
+      \u043A\u0440\u043E\u0432\u0438"
+    Icon: {fileID: 6248995660739951955, guid: 8bd9f894eb8557b4eb3dd3d4851fecd8, type: 3}
+    Trigger: 7
+    SkillsLevel:
+    - Level: 0
+      Value: 0
+      TriggerValue: 0
+      Price: 0
+    - Level: 1
+      Value: 10
+      TriggerValue: 0
+      Price: 0
+    - Level: 2
+      Value: 11.07
+      TriggerValue: 0
+      Price: 9
+    - Level: 3
+      Value: 12.26
+      TriggerValue: 0
+      Price: 15
+    - Level: 4
+      Value: 13.85
+      TriggerValue: 0
+      Price: 22
+    - Level: 5
+      Value: 15.8
+      TriggerValue: 0
+      Price: 31
+    - Level: 6
+      Value: 18.11
+      TriggerValue: 0
+      Price: 40
+    - Level: 7
+      Value: 20.77
+      TriggerValue: 0
+      Price: 50
+    - Level: 8
+      Value: 23.77
+      TriggerValue: 0
+      Price: 62
+    - Level: 9
+      Value: 27.1
+      TriggerValue: 0
+      Price: 74
+    - Level: 10
+      Value: 30.75
+      TriggerValue: 0
+      Price: 87
+    - Level: 11
+      Value: 34.73
+      TriggerValue: 0
+      Price: 100
+    - Level: 12
+      Value: 39.03
+      TriggerValue: 0
+      Price: 115
+    - Level: 13
+      Value: 43.63
+      TriggerValue: 0
+      Price: 130
+    - Level: 14
+      Value: 48.55
+      TriggerValue: 0
+      Price: 146
+    - Level: 15
+      Value: 53.77
+      TriggerValue: 0
+      Price: 163
+    - Level: 16
+      Value: 59.28
+      TriggerValue: 0
+      Price: 180
+    - Level: 17
+      Value: 65.1
+      TriggerValue: 0
+      Price: 198
+    - Level: 18
+      Value: 71.21
+      TriggerValue: 0
+      Price: 217
+    - Level: 19
+      Value: 77.61
+      TriggerValue: 0
+      Price: 236
+    - Level: 20
+      Value: 84.3
+      TriggerValue: 0
+      Price: 256
+    - Level: 21
+      Value: 91.28
+      TriggerValue: 0
+      Price: 277
+    - Level: 22
+      Value: 98.55
+      TriggerValue: 0
+      Price: 298
+    - Level: 23
+      Value: 106.09
+      TriggerValue: 0
+      Price: 320
+    - Level: 24
+      Value: 113.92
+      TriggerValue: 0
+      Price: 342
+    - Level: 25
+      Value: 122.03
+      TriggerValue: 0
+      Price: 365
+    - Level: 26
+      Value: 130.41
+      TriggerValue: 0
+      Price: 389
+    - Level: 27
+      Value: 139.07
+      TriggerValue: 0
+      Price: 413
+    - Level: 28
+      Value: 148
+      TriggerValue: 0
+      Price: 437
+    - Level: 29
+      Value: 157.21
+      TriggerValue: 0
+      Price: 462
+    - Level: 30
+      Value: 166.68
+      TriggerValue: 0
+      Price: 488
+    - Level: 31
+      Value: 176.43
+      TriggerValue: 0
+      Price: 514
+    - Level: 32
+      Value: 186.44
+      TriggerValue: 0
+      Price: 541
+    - Level: 33
+      Value: 196.72
+      TriggerValue: 0
+      Price: 568
+    - Level: 34
+      Value: 207.26
+      TriggerValue: 0
+      Price: 595
+    - Level: 35
+      Value: 218.07
+      TriggerValue: 0
+      Price: 623
+    - Level: 36
+      Value: 229.14
+      TriggerValue: 0
+      Price: 652
+    - Level: 37
+      Value: 240.47
+      TriggerValue: 0
+      Price: 681
+    - Level: 38
+      Value: 252.06
+      TriggerValue: 0
+      Price: 711
+    - Level: 39
+      Value: 263.91
+      TriggerValue: 0
+      Price: 741
+    - Level: 40
+      Value: 276.02
+      TriggerValue: 0
+      Price: 771
+    - Level: 41
+      Value: 288.38
+      TriggerValue: 0
+      Price: 802
+    - Level: 42
+      Value: 301
+      TriggerValue: 0
+      Price: 834
+    - Level: 43
+      Value: 313.88
+      TriggerValue: 0
+      Price: 866
+    - Level: 44
+      Value: 327.01
+      TriggerValue: 0
+      Price: 898
+    - Level: 45
+      Value: 340.39
+      TriggerValue: 0
+      Price: 931
+    - Level: 46
+      Value: 354.03
+      TriggerValue: 0
+      Price: 964
+    - Level: 47
+      Value: 367.92
+      TriggerValue: 0
+      Price: 997
+    - Level: 48
+      Value: 382.05
+      TriggerValue: 0
+      Price: 1032
+    - Level: 49
+      Value: 396.44
+      TriggerValue: 0
+      Price: 1066
+    - Level: 50
+      Value: 411.08
+      TriggerValue: 0
+      Price: 1101
+    - Level: 51
+      Value: 425.96
+      TriggerValue: 0
+      Price: 1136
+    - Level: 52
+      Value: 441.09
+      TriggerValue: 0
+      Price: 1172
+    - Level: 53
+      Value: 456.47
+      TriggerValue: 0
+      Price: 1208
+    - Level: 54
+      Value: 472.09
+      TriggerValue: 0
+      Price: 1245
+    - Level: 55
+      Value: 487.96
+      TriggerValue: 0
+      Price: 1282
+    - Level: 56
+      Value: 504.07
+      TriggerValue: 0
+      Price: 1319
+    - Level: 57
+      Value: 520.42
+      TriggerValue: 0
+      Price: 1357
+    - Level: 58
+      Value: 537.02
+      TriggerValue: 0
+      Price: 1395
+    - Level: 59
+      Value: 553.86
+      TriggerValue: 0
+      Price: 1434
+    - Level: 60
+      Value: 570.94
+      TriggerValue: 0
+      Price: 1473
+    - Level: 61
+      Value: 588.27
+      TriggerValue: 0
+      Price: 1512
+    - Level: 62
+      Value: 605.83
+      TriggerValue: 0
+      Price: 1552
+    - Level: 63
+      Value: 623.63
+      TriggerValue: 0
+      Price: 1592
+    - Level: 64
+      Value: 641.67
+      TriggerValue: 0
+      Price: 1633
+    - Level: 65
+      Value: 659.95
+      TriggerValue: 0
+      Price: 1674
+    - Level: 66
+      Value: 678.47
+      TriggerValue: 0
+      Price: 1715
+    - Level: 67
+      Value: 697.22
+      TriggerValue: 0
+      Price: 1757
+    - Level: 68
+      Value: 716.22
+      TriggerValue: 0
+      Price: 1799
+    - Level: 69
+      Value: 735.44
+      TriggerValue: 0
+      Price: 1841
+    - Level: 70
+      Value: 754.91
+      TriggerValue: 0
+      Price: 1884
+    - Level: 71
+      Value: 774.6
+      TriggerValue: 0
+      Price: 1927
+    - Level: 72
+      Value: 794.54
+      TriggerValue: 0
+      Price: 1971
+    - Level: 73
+      Value: 814.7
+      TriggerValue: 0
+      Price: 2015
+    - Level: 74
+      Value: 835.1
+      TriggerValue: 0
+      Price: 2059
+    - Level: 75
+      Value: 855.73
+      TriggerValue: 0
+      Price: 2103
+    - Level: 76
+      Value: 876.6
+      TriggerValue: 0
+      Price: 2148
+    - Level: 77
+      Value: 897.7
+      TriggerValue: 0
+      Price: 2194
+    - Level: 78
+      Value: 919.02
+      TriggerValue: 0
+      Price: 2240
+    - Level: 79
+      Value: 940.58
+      TriggerValue: 0
+      Price: 2286
+    - Level: 80
+      Value: 962.37
+      TriggerValue: 0
+      Price: 2332
+    - Level: 81
+      Value: 984.39
+      TriggerValue: 0
+      Price: 2379
+    - Level: 82
+      Value: 1006.64
+      TriggerValue: 0
+      Price: 2426
+    - Level: 83
+      Value: 1029.12
+      TriggerValue: 0
+      Price: 2473
+    - Level: 84
+      Value: 1051.83
+      TriggerValue: 0
+      Price: 2521
+    - Level: 85
+      Value: 1074.76
+      TriggerValue: 0
+      Price: 2569
+    - Level: 86
+      Value: 1097.92
+      TriggerValue: 0
+      Price: 2618
+    - Level: 87
+      Value: 1121.31
+      TriggerValue: 0
+      Price: 2666
+    - Level: 88
+      Value: 1144.93
+      TriggerValue: 0
+      Price: 2716
+    - Level: 89
+      Value: 1168.77
+      TriggerValue: 0
+      Price: 2765
+    - Level: 90
+      Value: 1192.84
+      TriggerValue: 0
+      Price: 2815
+    - Level: 91
+      Value: 1217.14
+      TriggerValue: 0
+      Price: 2865
+    - Level: 92
+      Value: 1241.66
+      TriggerValue: 0
+      Price: 2916
+    - Level: 93
+      Value: 1266.41
+      TriggerValue: 0
+      Price: 2966
+    - Level: 94
+      Value: 1291.38
+      TriggerValue: 0
+      Price: 3018
+    - Level: 95
+      Value: 1316.57
+      TriggerValue: 0
+      Price: 3069
+    - Level: 96
+      Value: 1341.99
+      TriggerValue: 0
+      Price: 3121
+    - Level: 97
+      Value: 1367.63
+      TriggerValue: 0
+      Price: 3173
+    - Level: 98
+      Value: 1393.49
+      TriggerValue: 0
+      Price: 3225
+    - Level: 99
+      Value: 1419.58
+      TriggerValue: 0
+      Price: 3278
+    - Level: 100
+      Value: 1445.89
+      TriggerValue: 0
+      Price: 3331
+    - Level: 101
+      Value: 1472.42
+      TriggerValue: 0
+      Price: 3385
+    - Level: 102
+      Value: 1499.17
+      TriggerValue: 0
+      Price: 3438
+    - Level: 103
+      Value: 1526.15
+      TriggerValue: 0
+      Price: 3492
+    - Level: 104
+      Value: 1553.34
+      TriggerValue: 0
+      Price: 3547
+    - Level: 105
+      Value: 1580.76
+      TriggerValue: 0
+      Price: 3602
+    - Level: 106
+      Value: 1608.39
+      TriggerValue: 0
+      Price: 3656
+    - Level: 107
+      Value: 1636.25
+      TriggerValue: 0
+      Price: 3712
+    - Level: 108
+      Value: 1664.33
+      TriggerValue: 0
+      Price: 3767
+    - Level: 109
+      Value: 1692.62
+      TriggerValue: 0
+      Price: 3823
+    - Level: 110
+      Value: 1721.13
+      TriggerValue: 0
+      Price: 3880
+    - Level: 111
+      Value: 1749.86
+      TriggerValue: 0
+      Price: 3936
+    - Level: 112
+      Value: 1778.82
+      TriggerValue: 0
+      Price: 3993
+    - Level: 113
+      Value: 1807.98
+      TriggerValue: 0
+      Price: 4050
+    - Level: 114
+      Value: 1837.37
+      TriggerValue: 0
+      Price: 4108
+    - Level: 115
+      Value: 1866.97
+      TriggerValue: 0
+      Price: 4165
+    - Level: 116
+      Value: 1896.79
+      TriggerValue: 0
+      Price: 4223
+    - Level: 117
+      Value: 1926.83
+      TriggerValue: 0
+      Price: 4282
+    - Level: 118
+      Value: 1957.08
+      TriggerValue: 0
+      Price: 4340
+    - Level: 119
+      Value: 1987.55
+      TriggerValue: 0
+      Price: 4399
+    - Level: 120
+      Value: 2018.24
+      TriggerValue: 0
+      Price: 4459
+    - Level: 121
+      Value: 2049.14
+      TriggerValue: 0
+      Price: 4518
+    - Level: 122
+      Value: 2080.25
+      TriggerValue: 0
+      Price: 4578
+    - Level: 123
+      Value: 2111.58
+      TriggerValue: 0
+      Price: 4638
+    - Level: 124
+      Value: 2143.13
+      TriggerValue: 0
+      Price: 4699
+    - Level: 125
+      Value: 2174.89
+      TriggerValue: 0
+      Price: 4759
+    - Level: 126
+      Value: 2206.86
+      TriggerValue: 0
+      Price: 4820
+    - Level: 127
+      Value: 2239.05
+      TriggerValue: 0
+      Price: 4882
+    - Level: 128
+      Value: 2271.45
+      TriggerValue: 0
+      Price: 4943
+    - Level: 129
+      Value: 2304.07
+      TriggerValue: 0
+      Price: 5005
+    - Level: 130
+      Value: 2336.9
+      TriggerValue: 0
+      Price: 5067
+    - Level: 131
+      Value: 2369.94
+      TriggerValue: 0
+      Price: 5130
+    - Level: 132
+      Value: 2403.19
+      TriggerValue: 0
+      Price: 5193
+    - Level: 133
+      Value: 2436.66
+      TriggerValue: 0
+      Price: 5256
+    - Level: 134
+      Value: 2470.33
+      TriggerValue: 0
+      Price: 5319
+    - Level: 135
+      Value: 2504.22
+      TriggerValue: 0
+      Price: 5383
+    - Level: 136
+      Value: 2538.32
+      TriggerValue: 0
+      Price: 5447
+    - Level: 137
+      Value: 2572.64
+      TriggerValue: 0
+      Price: 5511
+    - Level: 138
+      Value: 2607.16
+      TriggerValue: 0
+      Price: 5575
+    - Level: 139
+      Value: 2641.89
+      TriggerValue: 0
+      Price: 5640
+    - Level: 140
+      Value: 2676.84
+      TriggerValue: 0
+      Price: 5705
+    - Level: 141
+      Value: 2711.99
+      TriggerValue: 0
+      Price: 5770
+    - Level: 142
+      Value: 2747.36
+      TriggerValue: 0
+      Price: 5836
+    - Level: 143
+      Value: 2782.93
+      TriggerValue: 0
+      Price: 5902
+    - Level: 144
+      Value: 2818.72
+      TriggerValue: 0
+      Price: 5968
+    - Level: 145
+      Value: 2854.71
+      TriggerValue: 0
+      Price: 6034
+    - Level: 146
+      Value: 2890.92
+      TriggerValue: 0
+      Price: 6101
+    - Level: 147
+      Value: 2927.33
+      TriggerValue: 0
+      Price: 6168
+    - Level: 148
+      Value: 2963.95
+      TriggerValue: 0
+      Price: 6235
+    - Level: 149
+      Value: 3000.78
+      TriggerValue: 0
+      Price: 6303
+    - Level: 150
+      Value: 3037.81
+      TriggerValue: 0
+      Price: 6370
+    - Level: 151
+      Value: 3075.06
+      TriggerValue: 0
+      Price: 6439
+    - Level: 152
+      Value: 3112.51
+      TriggerValue: 0
+      Price: 6507
+    - Level: 153
+      Value: 3150.17
+      TriggerValue: 0
+      Price: 6575
+    - Level: 154
+      Value: 3188.04
+      TriggerValue: 0
+      Price: 6644
+    - Level: 155
+      Value: 3226.12
+      TriggerValue: 0
+      Price: 6713
+    - Level: 156
+      Value: 3264.4
+      TriggerValue: 0
+      Price: 6783
+    - Level: 157
+      Value: 3302.89
+      TriggerValue: 0
+      Price: 6852
+    - Level: 158
+      Value: 3341.58
+      TriggerValue: 0
+      Price: 6922
+    - Level: 159
+      Value: 3380.48
+      TriggerValue: 0
+      Price: 6993
+    - Level: 160
+      Value: 3419.59
+      TriggerValue: 0
+      Price: 7063
+    - Level: 161
+      Value: 3458.9
+      TriggerValue: 0
+      Price: 7134
+    - Level: 162
+      Value: 3498.42
+      TriggerValue: 0
+      Price: 7205
+    - Level: 163
+      Value: 3538.15
+      TriggerValue: 0
+      Price: 7276
+    - Level: 164
+      Value: 3578.07
+      TriggerValue: 0
+      Price: 7348
+    - Level: 165
+      Value: 3618.21
+      TriggerValue: 0
+      Price: 7419
+    - Level: 166
+      Value: 3658.55
+      TriggerValue: 0
+      Price: 7491
+    - Level: 167
+      Value: 3699.09
+      TriggerValue: 0
+      Price: 7564
+    - Level: 168
+      Value: 3739.84
+      TriggerValue: 0
+      Price: 7636
+    - Level: 169
+      Value: 3780.79
+      TriggerValue: 0
+      Price: 7709
+    - Level: 170
+      Value: 3821.95
+      TriggerValue: 0
+      Price: 7782
+    - Level: 171
+      Value: 3863.31
+      TriggerValue: 0
+      Price: 7856
+    - Level: 172
+      Value: 3904.88
+      TriggerValue: 0
+      Price: 7929
+    - Level: 173
+      Value: 3946.64
+      TriggerValue: 0
+      Price: 8003
+    - Level: 174
+      Value: 3988.61
+      TriggerValue: 0
+      Price: 8077
+    - Level: 175
+      Value: 4030.79
+      TriggerValue: 0
+      Price: 8152
+    - Level: 176
+      Value: 4073.17
+      TriggerValue: 0
+      Price: 8226
+    - Level: 177
+      Value: 4115.75
+      TriggerValue: 0
+      Price: 8301
+    - Level: 178
+      Value: 4158.53
+      TriggerValue: 0
+      Price: 8376
+    - Level: 179
+      Value: 4201.51
+      TriggerValue: 0
+      Price: 8452
+    - Level: 180
+      Value: 4244.7
+      TriggerValue: 0
+      Price: 8527
+    - Level: 181
+      Value: 4288.09
+      TriggerValue: 0
+      Price: 8603
+    - Level: 182
+      Value: 4331.68
+      TriggerValue: 0
+      Price: 8679
+    - Level: 183
+      Value: 4375.47
+      TriggerValue: 0
+      Price: 8756
+    - Level: 184
+      Value: 4419.47
+      TriggerValue: 0
+      Price: 8832
+    - Level: 185
+      Value: 4463.66
+      TriggerValue: 0
+      Price: 8909
+    - Level: 186
+      Value: 4508.06
+      TriggerValue: 0
+      Price: 8986
+    - Level: 187
+      Value: 4552.66
+      TriggerValue: 0
+      Price: 9064
+    - Level: 188
+      Value: 4597.45
+      TriggerValue: 0
+      Price: 9141
+    - Level: 189
+      Value: 4642.45
+      TriggerValue: 0
+      Price: 9219
+    - Level: 190
+      Value: 4687.65
+      TriggerValue: 0
+      Price: 9297
+    - Level: 191
+      Value: 4733.05
+      TriggerValue: 0
+      Price: 9376
+    - Level: 192
+      Value: 4778.65
+      TriggerValue: 0
+      Price: 9455
+    - Level: 193
+      Value: 4824.45
+      TriggerValue: 0
+      Price: 9533
+    - Level: 194
+      Value: 4870.45
+      TriggerValue: 0
+      Price: 9613
+    - Level: 195
+      Value: 4916.65
+      TriggerValue: 0
+      Price: 9692
+    - Level: 196
+      Value: 4963.05
+      TriggerValue: 0
+      Price: 9772
+    - Level: 197
+      Value: 5009.64
+      TriggerValue: 0
+      Price: 9851
+    - Level: 198
+      Value: 5056.44
+      TriggerValue: 0
+      Price: 9931
+    - Level: 199
+      Value: 5103.44
+      TriggerValue: 0
+      Price: 10012
+    - Level: 200
+      Value: 5150.63
+      TriggerValue: 0
+      Price: 10092
+    - Level: 201
+      Value: 5198.02
+      TriggerValue: 0
+      Price: 10173
+    - Level: 202
+      Value: 5245.62
+      TriggerValue: 0
+      Price: 10254
+    - Level: 203
+      Value: 5293.41
+      TriggerValue: 0
+      Price: 10336
+    - Level: 204
+      Value: 5341.39
+      TriggerValue: 0
+      Price: 10417
+    - Level: 205
+      Value: 5389.58
+      TriggerValue: 0
+      Price: 10499
+    - Level: 206
+      Value: 5437.96
+      TriggerValue: 0
+      Price: 10581
+    - Level: 207
+      Value: 5486.55
+      TriggerValue: 0
+      Price: 10663
+    - Level: 208
+      Value: 5535.32
+      TriggerValue: 0
+      Price: 10746
+    - Level: 209
+      Value: 5584.3
+      TriggerValue: 0
+      Price: 10829
+    - Level: 210
+      Value: 5633.47
+      TriggerValue: 0
+      Price: 10912
+    - Level: 211
+      Value: 5682.85
+      TriggerValue: 0
+      Price: 10995
+    - Level: 212
+      Value: 5732.41
+      TriggerValue: 0
+      Price: 11078
+    - Level: 213
+      Value: 5782.18
+      TriggerValue: 0
+      Price: 11162
+    - Level: 214
+      Value: 5832.14
+      TriggerValue: 0
+      Price: 11246
+    - Level: 215
+      Value: 5882.3
+      TriggerValue: 0
+      Price: 11330
+    - Level: 216
+      Value: 5932.65
+      TriggerValue: 0
+      Price: 11415
+    - Level: 217
+      Value: 5983.2
+      TriggerValue: 0
+      Price: 11499
+    - Level: 218
+      Value: 6033.95
+      TriggerValue: 0
+      Price: 11584
+    - Level: 219
+      Value: 6084.89
+      TriggerValue: 0
+      Price: 11669
+    - Level: 220
+      Value: 6136.03
+      TriggerValue: 0
+      Price: 11755
+    - Level: 221
+      Value: 6187.36
+      TriggerValue: 0
+      Price: 11840
+    - Level: 222
+      Value: 6238.89
+      TriggerValue: 0
+      Price: 11926
+    - Level: 223
+      Value: 6290.62
+      TriggerValue: 0
+      Price: 12012
+    - Level: 224
+      Value: 6342.54
+      TriggerValue: 0
+      Price: 12098
+    - Level: 225
+      Value: 6394.65
+      TriggerValue: 0
+      Price: 12185
+    - Level: 226
+      Value: 6446.96
+      TriggerValue: 0
+      Price: 12272
+    - Level: 227
+      Value: 6499.46
+      TriggerValue: 0
+      Price: 12359
+    - Level: 228
+      Value: 6552.16
+      TriggerValue: 0
+      Price: 12446
+    - Level: 229
+      Value: 6605.06
+      TriggerValue: 0
+      Price: 12533
+    - Level: 230
+      Value: 6658.14
+      TriggerValue: 0
+      Price: 12621
+    - Level: 231
+      Value: 6711.43
+      TriggerValue: 0
+      Price: 12709
+    - Level: 232
+      Value: 6764.9
+      TriggerValue: 0
+      Price: 12797
+    - Level: 233
+      Value: 6818.57
+      TriggerValue: 0
+      Price: 12885
+    - Level: 234
+      Value: 6872.44
+      TriggerValue: 0
+      Price: 12974
+    - Level: 235
+      Value: 6926.5
+      TriggerValue: 0
+      Price: 13063
+    - Level: 236
+      Value: 6980.75
+      TriggerValue: 0
+      Price: 13152
+    - Level: 237
+      Value: 7035.19
+      TriggerValue: 0
+      Price: 13241
+    - Level: 238
+      Value: 7089.83
+      TriggerValue: 0
+      Price: 13330
+    - Level: 239
+      Value: 7144.66
+      TriggerValue: 0
+      Price: 13420
+    - Level: 240
+      Value: 7199.69
+      TriggerValue: 0
+      Price: 13510
+    - Level: 241
+      Value: 7254.9
+      TriggerValue: 0
+      Price: 13600
+    - Level: 242
+      Value: 7310.31
+      TriggerValue: 0
+      Price: 13690
+    - Level: 243
+      Value: 7365.92
+      TriggerValue: 0
+      Price: 13781
+    - Level: 244
+      Value: 7421.71
+      TriggerValue: 0
+      Price: 13872
+    - Level: 245
+      Value: 7477.7
+      TriggerValue: 0
+      Price: 13963
+    - Level: 246
+      Value: 7533.88
+      TriggerValue: 0
+      Price: 14054
+    - Level: 247
+      Value: 7590.25
+      TriggerValue: 0
+      Price: 14146
+    - Level: 248
+      Value: 7646.82
+      TriggerValue: 0
+      Price: 14237
+    - Level: 249
+      Value: 7703.57
+      TriggerValue: 0
+      Price: 14329
+    - Level: 250
+      Value: 7760.52
+      TriggerValue: 0
+      Price: 14422
+    - Level: 251
+      Value: 7817.66
+      TriggerValue: 0
+      Price: 14514
+    - Level: 252
+      Value: 7874.99
+      TriggerValue: 0
+      Price: 14607
+    - Level: 253
+      Value: 7932.51
+      TriggerValue: 0
+      Price: 14699
+    - Level: 254
+      Value: 7990.23
+      TriggerValue: 0
+      Price: 14792
+    - Level: 255
+      Value: 8048.13
+      TriggerValue: 0
+      Price: 14886
+    - Level: 256
+      Value: 8106.23
+      TriggerValue: 0
+      Price: 14979
+    - Level: 257
+      Value: 8164.52
+      TriggerValue: 0
+      Price: 15073
+    - Level: 258
+      Value: 8222.99
+      TriggerValue: 0
+      Price: 15167
+    - Level: 259
+      Value: 8281.66
+      TriggerValue: 0
+      Price: 15261
+    - Level: 260
+      Value: 8340.52
+      TriggerValue: 0
+      Price: 15355
+    - Level: 261
+      Value: 8399.57
+      TriggerValue: 0
+      Price: 15450
+    - Level: 262
+      Value: 8458.81
+      TriggerValue: 0
+      Price: 15545
+    - Level: 263
+      Value: 8518.24
+      TriggerValue: 0
+      Price: 15640
+    - Level: 264
+      Value: 8577.86
+      TriggerValue: 0
+      Price: 15735
+    - Level: 265
+      Value: 8637.67
+      TriggerValue: 0
+      Price: 15831
+    - Level: 266
+      Value: 8697.67
+      TriggerValue: 0
+      Price: 15926
+    - Level: 267
+      Value: 8757.86
+      TriggerValue: 0
+      Price: 16022
+    - Level: 268
+      Value: 8818.24
+      TriggerValue: 0
+      Price: 16118
+    - Level: 269
+      Value: 8878.81
+      TriggerValue: 0
+      Price: 16214
+    - Level: 270
+      Value: 8939.57
+      TriggerValue: 0
+      Price: 16311
+    - Level: 271
+      Value: 9000.52
+      TriggerValue: 0
+      Price: 16408
+    - Level: 272
+      Value: 9061.66
+      TriggerValue: 0
+      Price: 16505
+    - Level: 273
+      Value: 9122.98
+      TriggerValue: 0
+      Price: 16602
+    - Level: 274
+      Value: 9184.5
+      TriggerValue: 0
+      Price: 16699
+    - Level: 275
+      Value: 9246.2
+      TriggerValue: 0
+      Price: 16797
+    - Level: 276
+      Value: 9308.09
+      TriggerValue: 0
+      Price: 16895
+    - Level: 277
+      Value: 9370.18
+      TriggerValue: 0
+      Price: 16993
+    - Level: 278
+      Value: 9432.45
+      TriggerValue: 0
+      Price: 17091
+    - Level: 279
+      Value: 9494.91
+      TriggerValue: 0
+      Price: 17189
+    - Level: 280
+      Value: 9557.55
+      TriggerValue: 0
+      Price: 17288
+    - Level: 281
+      Value: 9620.39
+      TriggerValue: 0
+      Price: 17387
+    - Level: 282
+      Value: 9683.41
+      TriggerValue: 0
+      Price: 17486
+    - Level: 283
+      Value: 9746.62
+      TriggerValue: 0
+      Price: 17585
+    - Level: 284
+      Value: 9810.02
+      TriggerValue: 0
+      Price: 17685
+    - Level: 285
+      Value: 9873.61
+      TriggerValue: 0
+      Price: 17785
+    - Level: 286
+      Value: 9937.38
+      TriggerValue: 0
+      Price: 17885
+    - Level: 287
+      Value: 10001.34
+      TriggerValue: 0
+      Price: 17985
+    - Level: 288
+      Value: 10065.49
+      TriggerValue: 0
+      Price: 18085
+    - Level: 289
+      Value: 10129.83
+      TriggerValue: 0
+      Price: 18186
+    - Level: 290
+      Value: 10194.36
+      TriggerValue: 0
+      Price: 18286
+    - Level: 291
+      Value: 10259.07
+      TriggerValue: 0
+      Price: 18387
+    - Level: 292
+      Value: 10323.97
+      TriggerValue: 0
+      Price: 18489
+    - Level: 293
+      Value: 10389.05
+      TriggerValue: 0
+      Price: 18590
+    - Level: 294
+      Value: 10454.32
+      TriggerValue: 0
+      Price: 18692
+    - Level: 295
+      Value: 10519.78
+      TriggerValue: 0
+      Price: 18793
+    - Level: 296
+      Value: 10585.43
+      TriggerValue: 0
+      Price: 18895
+    - Level: 297
+      Value: 10651.26
+      TriggerValue: 0
+      Price: 18998
+    - Level: 298
+      Value: 10717.28
+      TriggerValue: 0
+      Price: 19100
+    - Level: 299
+      Value: 10783.49
+      TriggerValue: 0
+      Price: 19203
+    - Level: 300
+      Value: 10849.88
+      TriggerValue: 0
+      Price: 19305
+  - Id: BaseMoonDamageSkill
+    Name: "\u041B\u0443\u043D\u044B\u0439 \u0413\u043B\u0430\u0441"
+    Description: "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u043B\u0443\u043D\u043D\u044B\u0439
+      \u0443\u0440\u043E\u043D"
+    Icon: {fileID: 3815999123802065868, guid: 7a474f11208cc5549b527b879cb3ae98, type: 3}
+    Trigger: 6
+    SkillsLevel:
+    - Level: 0
+      Value: 0
+      TriggerValue: 0
+      Price: 0
+    - Level: 1
+      Value: 10
+      TriggerValue: 0
+      Price: 0
+    - Level: 2
+      Value: 11.07
+      TriggerValue: 0
+      Price: 9
+    - Level: 3
+      Value: 12.26
+      TriggerValue: 0
+      Price: 15
+    - Level: 4
+      Value: 13.85
+      TriggerValue: 0
+      Price: 22
+    - Level: 5
+      Value: 15.8
+      TriggerValue: 0
+      Price: 31
+    - Level: 6
+      Value: 18.11
+      TriggerValue: 0
+      Price: 40
+    - Level: 7
+      Value: 20.77
+      TriggerValue: 0
+      Price: 50
+    - Level: 8
+      Value: 23.77
+      TriggerValue: 0
+      Price: 62
+    - Level: 9
+      Value: 27.1
+      TriggerValue: 0
+      Price: 74
+    - Level: 10
+      Value: 30.75
+      TriggerValue: 0
+      Price: 87
+    - Level: 11
+      Value: 34.73
+      TriggerValue: 0
+      Price: 100
+    - Level: 12
+      Value: 39.03
+      TriggerValue: 0
+      Price: 115
+    - Level: 13
+      Value: 43.63
+      TriggerValue: 0
+      Price: 130
+    - Level: 14
+      Value: 48.55
+      TriggerValue: 0
+      Price: 146
+    - Level: 15
+      Value: 53.77
+      TriggerValue: 0
+      Price: 163
+    - Level: 16
+      Value: 59.28
+      TriggerValue: 0
+      Price: 180
+    - Level: 17
+      Value: 65.1
+      TriggerValue: 0
+      Price: 198
+    - Level: 18
+      Value: 71.21
+      TriggerValue: 0
+      Price: 217
+    - Level: 19
+      Value: 77.61
+      TriggerValue: 0
+      Price: 236
+    - Level: 20
+      Value: 84.3
+      TriggerValue: 0
+      Price: 256
+    - Level: 21
+      Value: 91.28
+      TriggerValue: 0
+      Price: 277
+    - Level: 22
+      Value: 98.55
+      TriggerValue: 0
+      Price: 298
+    - Level: 23
+      Value: 106.09
+      TriggerValue: 0
+      Price: 320
+    - Level: 24
+      Value: 113.92
+      TriggerValue: 0
+      Price: 342
+    - Level: 25
+      Value: 122.03
+      TriggerValue: 0
+      Price: 365
+    - Level: 26
+      Value: 130.41
+      TriggerValue: 0
+      Price: 389
+    - Level: 27
+      Value: 139.07
+      TriggerValue: 0
+      Price: 413
+    - Level: 28
+      Value: 148
+      TriggerValue: 0
+      Price: 437
+    - Level: 29
+      Value: 157.21
+      TriggerValue: 0
+      Price: 462
+    - Level: 30
+      Value: 166.68
+      TriggerValue: 0
+      Price: 488
+    - Level: 31
+      Value: 176.43
+      TriggerValue: 0
+      Price: 514
+    - Level: 32
+      Value: 186.44
+      TriggerValue: 0
+      Price: 541
+    - Level: 33
+      Value: 196.72
+      TriggerValue: 0
+      Price: 568
+    - Level: 34
+      Value: 207.26
+      TriggerValue: 0
+      Price: 595
+    - Level: 35
+      Value: 218.07
+      TriggerValue: 0
+      Price: 623
+    - Level: 36
+      Value: 229.14
+      TriggerValue: 0
+      Price: 652
+    - Level: 37
+      Value: 240.47
+      TriggerValue: 0
+      Price: 681
+    - Level: 38
+      Value: 252.06
+      TriggerValue: 0
+      Price: 711
+    - Level: 39
+      Value: 263.91
+      TriggerValue: 0
+      Price: 741
+    - Level: 40
+      Value: 276.02
+      TriggerValue: 0
+      Price: 771
+    - Level: 41
+      Value: 288.38
+      TriggerValue: 0
+      Price: 802
+    - Level: 42
+      Value: 301
+      TriggerValue: 0
+      Price: 834
+    - Level: 43
+      Value: 313.88
+      TriggerValue: 0
+      Price: 866
+    - Level: 44
+      Value: 327.01
+      TriggerValue: 0
+      Price: 898
+    - Level: 45
+      Value: 340.39
+      TriggerValue: 0
+      Price: 931
+    - Level: 46
+      Value: 354.03
+      TriggerValue: 0
+      Price: 964
+    - Level: 47
+      Value: 367.92
+      TriggerValue: 0
+      Price: 997
+    - Level: 48
+      Value: 382.05
+      TriggerValue: 0
+      Price: 1032
+    - Level: 49
+      Value: 396.44
+      TriggerValue: 0
+      Price: 1066
+    - Level: 50
+      Value: 411.08
+      TriggerValue: 0
+      Price: 1101
+    - Level: 51
+      Value: 425.96
+      TriggerValue: 0
+      Price: 1136
+    - Level: 52
+      Value: 441.09
+      TriggerValue: 0
+      Price: 1172
+    - Level: 53
+      Value: 456.47
+      TriggerValue: 0
+      Price: 1208
+    - Level: 54
+      Value: 472.09
+      TriggerValue: 0
+      Price: 1245
+    - Level: 55
+      Value: 487.96
+      TriggerValue: 0
+      Price: 1282
+    - Level: 56
+      Value: 504.07
+      TriggerValue: 0
+      Price: 1319
+    - Level: 57
+      Value: 520.42
+      TriggerValue: 0
+      Price: 1357
+    - Level: 58
+      Value: 537.02
+      TriggerValue: 0
+      Price: 1395
+    - Level: 59
+      Value: 553.86
+      TriggerValue: 0
+      Price: 1434
+    - Level: 60
+      Value: 570.94
+      TriggerValue: 0
+      Price: 1473
+    - Level: 61
+      Value: 588.27
+      TriggerValue: 0
+      Price: 1512
+    - Level: 62
+      Value: 605.83
+      TriggerValue: 0
+      Price: 1552
+    - Level: 63
+      Value: 623.63
+      TriggerValue: 0
+      Price: 1592
+    - Level: 64
+      Value: 641.67
+      TriggerValue: 0
+      Price: 1633
+    - Level: 65
+      Value: 659.95
+      TriggerValue: 0
+      Price: 1674
+    - Level: 66
+      Value: 678.47
+      TriggerValue: 0
+      Price: 1715
+    - Level: 67
+      Value: 697.22
+      TriggerValue: 0
+      Price: 1757
+    - Level: 68
+      Value: 716.22
+      TriggerValue: 0
+      Price: 1799
+    - Level: 69
+      Value: 735.44
+      TriggerValue: 0
+      Price: 1841
+    - Level: 70
+      Value: 754.91
+      TriggerValue: 0
+      Price: 1884
+    - Level: 71
+      Value: 774.6
+      TriggerValue: 0
+      Price: 1927
+    - Level: 72
+      Value: 794.54
+      TriggerValue: 0
+      Price: 1971
+    - Level: 73
+      Value: 814.7
+      TriggerValue: 0
+      Price: 2015
+    - Level: 74
+      Value: 835.1
+      TriggerValue: 0
+      Price: 2059
+    - Level: 75
+      Value: 855.73
+      TriggerValue: 0
+      Price: 2103
+    - Level: 76
+      Value: 876.6
+      TriggerValue: 0
+      Price: 2148
+    - Level: 77
+      Value: 897.7
+      TriggerValue: 0
+      Price: 2194
+    - Level: 78
+      Value: 919.02
+      TriggerValue: 0
+      Price: 2240
+    - Level: 79
+      Value: 940.58
+      TriggerValue: 0
+      Price: 2286
+    - Level: 80
+      Value: 962.37
+      TriggerValue: 0
+      Price: 2332
+    - Level: 81
+      Value: 984.39
+      TriggerValue: 0
+      Price: 2379
+    - Level: 82
+      Value: 1006.64
+      TriggerValue: 0
+      Price: 2426
+    - Level: 83
+      Value: 1029.12
+      TriggerValue: 0
+      Price: 2473
+    - Level: 84
+      Value: 1051.83
+      TriggerValue: 0
+      Price: 2521
+    - Level: 85
+      Value: 1074.76
+      TriggerValue: 0
+      Price: 2569
+    - Level: 86
+      Value: 1097.92
+      TriggerValue: 0
+      Price: 2618
+    - Level: 87
+      Value: 1121.31
+      TriggerValue: 0
+      Price: 2666
+    - Level: 88
+      Value: 1144.93
+      TriggerValue: 0
+      Price: 2716
+    - Level: 89
+      Value: 1168.77
+      TriggerValue: 0
+      Price: 2765
+    - Level: 90
+      Value: 1192.84
+      TriggerValue: 0
+      Price: 2815
+    - Level: 91
+      Value: 1217.14
+      TriggerValue: 0
+      Price: 2865
+    - Level: 92
+      Value: 1241.66
+      TriggerValue: 0
+      Price: 2916
+    - Level: 93
+      Value: 1266.41
+      TriggerValue: 0
+      Price: 2966
+    - Level: 94
+      Value: 1291.38
+      TriggerValue: 0
+      Price: 3018
+    - Level: 95
+      Value: 1316.57
+      TriggerValue: 0
+      Price: 3069
+    - Level: 96
+      Value: 1341.99
+      TriggerValue: 0
+      Price: 3121
+    - Level: 97
+      Value: 1367.63
+      TriggerValue: 0
+      Price: 3173
+    - Level: 98
+      Value: 1393.49
+      TriggerValue: 0
+      Price: 3225
+    - Level: 99
+      Value: 1419.58
+      TriggerValue: 0
+      Price: 3278
+    - Level: 100
+      Value: 1445.89
+      TriggerValue: 0
+      Price: 3331
+    - Level: 101
+      Value: 1472.42
+      TriggerValue: 0
+      Price: 3385
+    - Level: 102
+      Value: 1499.17
+      TriggerValue: 0
+      Price: 3438
+    - Level: 103
+      Value: 1526.15
+      TriggerValue: 0
+      Price: 3492
+    - Level: 104
+      Value: 1553.34
+      TriggerValue: 0
+      Price: 3547
+    - Level: 105
+      Value: 1580.76
+      TriggerValue: 0
+      Price: 3602
+    - Level: 106
+      Value: 1608.39
+      TriggerValue: 0
+      Price: 3656
+    - Level: 107
+      Value: 1636.25
+      TriggerValue: 0
+      Price: 3712
+    - Level: 108
+      Value: 1664.33
+      TriggerValue: 0
+      Price: 3767
+    - Level: 109
+      Value: 1692.62
+      TriggerValue: 0
+      Price: 3823
+    - Level: 110
+      Value: 1721.13
+      TriggerValue: 0
+      Price: 3880
+    - Level: 111
+      Value: 1749.86
+      TriggerValue: 0
+      Price: 3936
+    - Level: 112
+      Value: 1778.82
+      TriggerValue: 0
+      Price: 3993
+    - Level: 113
+      Value: 1807.98
+      TriggerValue: 0
+      Price: 4050
+    - Level: 114
+      Value: 1837.37
+      TriggerValue: 0
+      Price: 4108
+    - Level: 115
+      Value: 1866.97
+      TriggerValue: 0
+      Price: 4165
+    - Level: 116
+      Value: 1896.79
+      TriggerValue: 0
+      Price: 4223
+    - Level: 117
+      Value: 1926.83
+      TriggerValue: 0
+      Price: 4282
+    - Level: 118
+      Value: 1957.08
+      TriggerValue: 0
+      Price: 4340
+    - Level: 119
+      Value: 1987.55
+      TriggerValue: 0
+      Price: 4399
+    - Level: 120
+      Value: 2018.24
+      TriggerValue: 0
+      Price: 4459
+    - Level: 121
+      Value: 2049.14
+      TriggerValue: 0
+      Price: 4518
+    - Level: 122
+      Value: 2080.25
+      TriggerValue: 0
+      Price: 4578
+    - Level: 123
+      Value: 2111.58
+      TriggerValue: 0
+      Price: 4638
+    - Level: 124
+      Value: 2143.13
+      TriggerValue: 0
+      Price: 4699
+    - Level: 125
+      Value: 2174.89
+      TriggerValue: 0
+      Price: 4759
+    - Level: 126
+      Value: 2206.86
+      TriggerValue: 0
+      Price: 4820
+    - Level: 127
+      Value: 2239.05
+      TriggerValue: 0
+      Price: 4882
+    - Level: 128
+      Value: 2271.45
+      TriggerValue: 0
+      Price: 4943
+    - Level: 129
+      Value: 2304.07
+      TriggerValue: 0
+      Price: 5005
+    - Level: 130
+      Value: 2336.9
+      TriggerValue: 0
+      Price: 5067
+    - Level: 131
+      Value: 2369.94
+      TriggerValue: 0
+      Price: 5130
+    - Level: 132
+      Value: 2403.19
+      TriggerValue: 0
+      Price: 5193
+    - Level: 133
+      Value: 2436.66
+      TriggerValue: 0
+      Price: 5256
+    - Level: 134
+      Value: 2470.33
+      TriggerValue: 0
+      Price: 5319
+    - Level: 135
+      Value: 2504.22
+      TriggerValue: 0
+      Price: 5383
+    - Level: 136
+      Value: 2538.32
+      TriggerValue: 0
+      Price: 5447
+    - Level: 137
+      Value: 2572.64
+      TriggerValue: 0
+      Price: 5511
+    - Level: 138
+      Value: 2607.16
+      TriggerValue: 0
+      Price: 5575
+    - Level: 139
+      Value: 2641.89
+      TriggerValue: 0
+      Price: 5640
+    - Level: 140
+      Value: 2676.84
+      TriggerValue: 0
+      Price: 5705
+    - Level: 141
+      Value: 2711.99
+      TriggerValue: 0
+      Price: 5770
+    - Level: 142
+      Value: 2747.36
+      TriggerValue: 0
+      Price: 5836
+    - Level: 143
+      Value: 2782.93
+      TriggerValue: 0
+      Price: 5902
+    - Level: 144
+      Value: 2818.72
+      TriggerValue: 0
+      Price: 5968
+    - Level: 145
+      Value: 2854.71
+      TriggerValue: 0
+      Price: 6034
+    - Level: 146
+      Value: 2890.92
+      TriggerValue: 0
+      Price: 6101
+    - Level: 147
+      Value: 2927.33
+      TriggerValue: 0
+      Price: 6168
+    - Level: 148
+      Value: 2963.95
+      TriggerValue: 0
+      Price: 6235
+    - Level: 149
+      Value: 3000.78
+      TriggerValue: 0
+      Price: 6303
+    - Level: 150
+      Value: 3037.81
+      TriggerValue: 0
+      Price: 6370
+    - Level: 151
+      Value: 3075.06
+      TriggerValue: 0
+      Price: 6439
+    - Level: 152
+      Value: 3112.51
+      TriggerValue: 0
+      Price: 6507
+    - Level: 153
+      Value: 3150.17
+      TriggerValue: 0
+      Price: 6575
+    - Level: 154
+      Value: 3188.04
+      TriggerValue: 0
+      Price: 6644
+    - Level: 155
+      Value: 3226.12
+      TriggerValue: 0
+      Price: 6713
+    - Level: 156
+      Value: 3264.4
+      TriggerValue: 0
+      Price: 6783
+    - Level: 157
+      Value: 3302.89
+      TriggerValue: 0
+      Price: 6852
+    - Level: 158
+      Value: 3341.58
+      TriggerValue: 0
+      Price: 6922
+    - Level: 159
+      Value: 3380.48
+      TriggerValue: 0
+      Price: 6993
+    - Level: 160
+      Value: 3419.59
+      TriggerValue: 0
+      Price: 7063
+    - Level: 161
+      Value: 3458.9
+      TriggerValue: 0
+      Price: 7134
+    - Level: 162
+      Value: 3498.42
+      TriggerValue: 0
+      Price: 7205
+    - Level: 163
+      Value: 3538.15
+      TriggerValue: 0
+      Price: 7276
+    - Level: 164
+      Value: 3578.07
+      TriggerValue: 0
+      Price: 7348
+    - Level: 165
+      Value: 3618.21
+      TriggerValue: 0
+      Price: 7419
+    - Level: 166
+      Value: 3658.55
+      TriggerValue: 0
+      Price: 7491
+    - Level: 167
+      Value: 3699.09
+      TriggerValue: 0
+      Price: 7564
+    - Level: 168
+      Value: 3739.84
+      TriggerValue: 0
+      Price: 7636
+    - Level: 169
+      Value: 3780.79
+      TriggerValue: 0
+      Price: 7709
+    - Level: 170
+      Value: 3821.95
+      TriggerValue: 0
+      Price: 7782
+    - Level: 171
+      Value: 3863.31
+      TriggerValue: 0
+      Price: 7856
+    - Level: 172
+      Value: 3904.88
+      TriggerValue: 0
+      Price: 7929
+    - Level: 173
+      Value: 3946.64
+      TriggerValue: 0
+      Price: 8003
+    - Level: 174
+      Value: 3988.61
+      TriggerValue: 0
+      Price: 8077
+    - Level: 175
+      Value: 4030.79
+      TriggerValue: 0
+      Price: 8152
+    - Level: 176
+      Value: 4073.17
+      TriggerValue: 0
+      Price: 8226
+    - Level: 177
+      Value: 4115.75
+      TriggerValue: 0
+      Price: 8301
+    - Level: 178
+      Value: 4158.53
+      TriggerValue: 0
+      Price: 8376
+    - Level: 179
+      Value: 4201.51
+      TriggerValue: 0
+      Price: 8452
+    - Level: 180
+      Value: 4244.7
+      TriggerValue: 0
+      Price: 8527
+    - Level: 181
+      Value: 4288.09
+      TriggerValue: 0
+      Price: 8603
+    - Level: 182
+      Value: 4331.68
+      TriggerValue: 0
+      Price: 8679
+    - Level: 183
+      Value: 4375.47
+      TriggerValue: 0
+      Price: 8756
+    - Level: 184
+      Value: 4419.47
+      TriggerValue: 0
+      Price: 8832
+    - Level: 185
+      Value: 4463.66
+      TriggerValue: 0
+      Price: 8909
+    - Level: 186
+      Value: 4508.06
+      TriggerValue: 0
+      Price: 8986
+    - Level: 187
+      Value: 4552.66
+      TriggerValue: 0
+      Price: 9064
+    - Level: 188
+      Value: 4597.45
+      TriggerValue: 0
+      Price: 9141
+    - Level: 189
+      Value: 4642.45
+      TriggerValue: 0
+      Price: 9219
+    - Level: 190
+      Value: 4687.65
+      TriggerValue: 0
+      Price: 9297
+    - Level: 191
+      Value: 4733.05
+      TriggerValue: 0
+      Price: 9376
+    - Level: 192
+      Value: 4778.65
+      TriggerValue: 0
+      Price: 9455
+    - Level: 193
+      Value: 4824.45
+      TriggerValue: 0
+      Price: 9533
+    - Level: 194
+      Value: 4870.45
+      TriggerValue: 0
+      Price: 9613
+    - Level: 195
+      Value: 4916.65
+      TriggerValue: 0
+      Price: 9692
+    - Level: 196
+      Value: 4963.05
+      TriggerValue: 0
+      Price: 9772
+    - Level: 197
+      Value: 5009.64
+      TriggerValue: 0
+      Price: 9851
+    - Level: 198
+      Value: 5056.44
+      TriggerValue: 0
+      Price: 9931
+    - Level: 199
+      Value: 5103.44
+      TriggerValue: 0
+      Price: 10012
+    - Level: 200
+      Value: 5150.63
+      TriggerValue: 0
+      Price: 10092
+    - Level: 201
+      Value: 5198.02
+      TriggerValue: 0
+      Price: 10173
+    - Level: 202
+      Value: 5245.62
+      TriggerValue: 0
+      Price: 10254
+    - Level: 203
+      Value: 5293.41
+      TriggerValue: 0
+      Price: 10336
+    - Level: 204
+      Value: 5341.39
+      TriggerValue: 0
+      Price: 10417
+    - Level: 205
+      Value: 5389.58
+      TriggerValue: 0
+      Price: 10499
+    - Level: 206
+      Value: 5437.96
+      TriggerValue: 0
+      Price: 10581
+    - Level: 207
+      Value: 5486.55
+      TriggerValue: 0
+      Price: 10663
+    - Level: 208
+      Value: 5535.32
+      TriggerValue: 0
+      Price: 10746
+    - Level: 209
+      Value: 5584.3
+      TriggerValue: 0
+      Price: 10829
+    - Level: 210
+      Value: 5633.47
+      TriggerValue: 0
+      Price: 10912
+    - Level: 211
+      Value: 5682.85
+      TriggerValue: 0
+      Price: 10995
+    - Level: 212
+      Value: 5732.41
+      TriggerValue: 0
+      Price: 11078
+    - Level: 213
+      Value: 5782.18
+      TriggerValue: 0
+      Price: 11162
+    - Level: 214
+      Value: 5832.14
+      TriggerValue: 0
+      Price: 11246
+    - Level: 215
+      Value: 5882.3
+      TriggerValue: 0
+      Price: 11330
+    - Level: 216
+      Value: 5932.65
+      TriggerValue: 0
+      Price: 11415
+    - Level: 217
+      Value: 5983.2
+      TriggerValue: 0
+      Price: 11499
+    - Level: 218
+      Value: 6033.95
+      TriggerValue: 0
+      Price: 11584
+    - Level: 219
+      Value: 6084.89
+      TriggerValue: 0
+      Price: 11669
+    - Level: 220
+      Value: 6136.03
+      TriggerValue: 0
+      Price: 11755
+    - Level: 221
+      Value: 6187.36
+      TriggerValue: 0
+      Price: 11840
+    - Level: 222
+      Value: 6238.89
+      TriggerValue: 0
+      Price: 11926
+    - Level: 223
+      Value: 6290.62
+      TriggerValue: 0
+      Price: 12012
+    - Level: 224
+      Value: 6342.54
+      TriggerValue: 0
+      Price: 12098
+    - Level: 225
+      Value: 6394.65
+      TriggerValue: 0
+      Price: 12185
+    - Level: 226
+      Value: 6446.96
+      TriggerValue: 0
+      Price: 12272
+    - Level: 227
+      Value: 6499.46
+      TriggerValue: 0
+      Price: 12359
+    - Level: 228
+      Value: 6552.16
+      TriggerValue: 0
+      Price: 12446
+    - Level: 229
+      Value: 6605.06
+      TriggerValue: 0
+      Price: 12533
+    - Level: 230
+      Value: 6658.14
+      TriggerValue: 0
+      Price: 12621
+    - Level: 231
+      Value: 6711.43
+      TriggerValue: 0
+      Price: 12709
+    - Level: 232
+      Value: 6764.9
+      TriggerValue: 0
+      Price: 12797
+    - Level: 233
+      Value: 6818.57
+      TriggerValue: 0
+      Price: 12885
+    - Level: 234
+      Value: 6872.44
+      TriggerValue: 0
+      Price: 12974
+    - Level: 235
+      Value: 6926.5
+      TriggerValue: 0
+      Price: 13063
+    - Level: 236
+      Value: 6980.75
+      TriggerValue: 0
+      Price: 13152
+    - Level: 237
+      Value: 7035.19
+      TriggerValue: 0
+      Price: 13241
+    - Level: 238
+      Value: 7089.83
+      TriggerValue: 0
+      Price: 13330
+    - Level: 239
+      Value: 7144.66
+      TriggerValue: 0
+      Price: 13420
+    - Level: 240
+      Value: 7199.69
+      TriggerValue: 0
+      Price: 13510
+    - Level: 241
+      Value: 7254.9
+      TriggerValue: 0
+      Price: 13600
+    - Level: 242
+      Value: 7310.31
+      TriggerValue: 0
+      Price: 13690
+    - Level: 243
+      Value: 7365.92
+      TriggerValue: 0
+      Price: 13781
+    - Level: 244
+      Value: 7421.71
+      TriggerValue: 0
+      Price: 13872
+    - Level: 245
+      Value: 7477.7
+      TriggerValue: 0
+      Price: 13963
+    - Level: 246
+      Value: 7533.88
+      TriggerValue: 0
+      Price: 14054
+    - Level: 247
+      Value: 7590.25
+      TriggerValue: 0
+      Price: 14146
+    - Level: 248
+      Value: 7646.82
+      TriggerValue: 0
+      Price: 14237
+    - Level: 249
+      Value: 7703.57
+      TriggerValue: 0
+      Price: 14329
+    - Level: 250
+      Value: 7760.52
+      TriggerValue: 0
+      Price: 14422
+    - Level: 251
+      Value: 7817.66
+      TriggerValue: 0
+      Price: 14514
+    - Level: 252
+      Value: 7874.99
+      TriggerValue: 0
+      Price: 14607
+    - Level: 253
+      Value: 7932.51
+      TriggerValue: 0
+      Price: 14699
+    - Level: 254
+      Value: 7990.23
+      TriggerValue: 0
+      Price: 14792
+    - Level: 255
+      Value: 8048.13
+      TriggerValue: 0
+      Price: 14886
+    - Level: 256
+      Value: 8106.23
+      TriggerValue: 0
+      Price: 14979
+    - Level: 257
+      Value: 8164.52
+      TriggerValue: 0
+      Price: 15073
+    - Level: 258
+      Value: 8222.99
+      TriggerValue: 0
+      Price: 15167
+    - Level: 259
+      Value: 8281.66
+      TriggerValue: 0
+      Price: 15261
+    - Level: 260
+      Value: 8340.52
+      TriggerValue: 0
+      Price: 15355
+    - Level: 261
+      Value: 8399.57
+      TriggerValue: 0
+      Price: 15450
+    - Level: 262
+      Value: 8458.81
+      TriggerValue: 0
+      Price: 15545
+    - Level: 263
+      Value: 8518.24
+      TriggerValue: 0
+      Price: 15640
+    - Level: 264
+      Value: 8577.86
+      TriggerValue: 0
+      Price: 15735
+    - Level: 265
+      Value: 8637.67
+      TriggerValue: 0
+      Price: 15831
+    - Level: 266
+      Value: 8697.67
+      TriggerValue: 0
+      Price: 15926
+    - Level: 267
+      Value: 8757.86
+      TriggerValue: 0
+      Price: 16022
+    - Level: 268
+      Value: 8818.24
+      TriggerValue: 0
+      Price: 16118
+    - Level: 269
+      Value: 8878.81
+      TriggerValue: 0
+      Price: 16214
+    - Level: 270
+      Value: 8939.57
+      TriggerValue: 0
+      Price: 16311
+    - Level: 271
+      Value: 9000.52
+      TriggerValue: 0
+      Price: 16408
+    - Level: 272
+      Value: 9061.66
+      TriggerValue: 0
+      Price: 16505
+    - Level: 273
+      Value: 9122.98
+      TriggerValue: 0
+      Price: 16602
+    - Level: 274
+      Value: 9184.5
+      TriggerValue: 0
+      Price: 16699
+    - Level: 275
+      Value: 9246.2
+      TriggerValue: 0
+      Price: 16797
+    - Level: 276
+      Value: 9308.09
+      TriggerValue: 0
+      Price: 16895
+    - Level: 277
+      Value: 9370.18
+      TriggerValue: 0
+      Price: 16993
+    - Level: 278
+      Value: 9432.45
+      TriggerValue: 0
+      Price: 17091
+    - Level: 279
+      Value: 9494.91
+      TriggerValue: 0
+      Price: 17189
+    - Level: 280
+      Value: 9557.55
+      TriggerValue: 0
+      Price: 17288
+    - Level: 281
+      Value: 9620.39
+      TriggerValue: 0
+      Price: 17387
+    - Level: 282
+      Value: 9683.41
+      TriggerValue: 0
+      Price: 17486
+    - Level: 283
+      Value: 9746.62
+      TriggerValue: 0
+      Price: 17585
+    - Level: 284
+      Value: 9810.02
+      TriggerValue: 0
+      Price: 17685
+    - Level: 285
+      Value: 9873.61
+      TriggerValue: 0
+      Price: 17785
+    - Level: 286
+      Value: 9937.38
+      TriggerValue: 0
+      Price: 17885
+    - Level: 287
+      Value: 10001.34
+      TriggerValue: 0
+      Price: 17985
+    - Level: 288
+      Value: 10065.49
+      TriggerValue: 0
+      Price: 18085
+    - Level: 289
+      Value: 10129.83
+      TriggerValue: 0
+      Price: 18186
+    - Level: 290
+      Value: 10194.36
+      TriggerValue: 0
+      Price: 18286
+    - Level: 291
+      Value: 10259.07
+      TriggerValue: 0
+      Price: 18387
+    - Level: 292
+      Value: 10323.97
+      TriggerValue: 0
+      Price: 18489
+    - Level: 293
+      Value: 10389.05
+      TriggerValue: 0
+      Price: 18590
+    - Level: 294
+      Value: 10454.32
+      TriggerValue: 0
+      Price: 18692
+    - Level: 295
+      Value: 10519.78
+      TriggerValue: 0
+      Price: 18793
+    - Level: 296
+      Value: 10585.43
+      TriggerValue: 0
+      Price: 18895
+    - Level: 297
+      Value: 10651.26
+      TriggerValue: 0
+      Price: 18998
+    - Level: 298
+      Value: 10717.28
+      TriggerValue: 0
+      Price: 19100
+    - Level: 299
+      Value: 10783.49
+      TriggerValue: 0
+      Price: 19203
+    - Level: 300
+      Value: 10849.88
+      TriggerValue: 0
+      Price: 19305

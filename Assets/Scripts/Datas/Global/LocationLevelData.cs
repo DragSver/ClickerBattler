@@ -9,5 +9,11 @@ namespace Datas.Global
     {
         public int Location;
         public List<LevelData> Levels;
+
+        public LocationLevelData(int location, List<LevelData> levels)
+        {
+            Location = location;
+            Levels = levels;
+        }
     }
 }

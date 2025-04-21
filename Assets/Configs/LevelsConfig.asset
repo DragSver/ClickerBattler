@@ -19,312 +19,1315 @@ MonoBehaviour:
       LevelNumber: 0
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 0
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: mouse_1_m
-          Hp: 50
+        - Location: 0
+          LevelNumber: 0
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 600
           AutoHP: 0
           IsBoss: 0
-        - Id: mouse_1_m
-          Hp: 50
-          AutoHP: 0
-          IsBoss: 0
-      - Time: 0
+      - Location: 0
+        LevelNumber: 0
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: mouse_1_m
-          Hp: 55
+        - Location: 0
+          LevelNumber: 0
+          Wive: 1
+          Id: mouse_1_m
+          Hp: 650
           AutoHP: 0
           IsBoss: 0
-        - Id: mouse_2_m
-          Hp: 55
-          AutoHP: 0
-          IsBoss: 0
-        - Id: mouse_2_m
-          Hp: 55
+        - Location: 0
+          LevelNumber: 0
+          Wive: 1
+          Id: mouse_1_m
+          Hp: 650
           AutoHP: 0
           IsBoss: 0
       Rewards:
-      - Id: 
-        Count: 0
+      - Id: coin
+        Count: 10
     - Location: 0
       LevelNumber: 1
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 1
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: bird_2_s
-          Hp: 60
+        - Location: 0
+          LevelNumber: 1
+          Wive: 0
+          Id: bird_1_s
+          Hp: 750
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
+      - Location: 0
+        LevelNumber: 1
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: bird_2_s
-          Hp: 65
+        - Location: 0
+          LevelNumber: 1
+          Wive: 1
+          Id: bird_1_s
+          Hp: 800
           AutoHP: 0
           IsBoss: 0
-        - Id: bird_2_s
-          Hp: 65
+        - Location: 0
+          LevelNumber: 1
+          Wive: 1
+          Id: bird_2_s
+          Hp: 800
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
-        Enemies:
-        - Id: bird_1_s
-          Hp: 70
+        - Location: 0
+          LevelNumber: 1
+          Wive: 1
+          Id: bird_2_s
+          Hp: 800
           AutoHP: 0
           IsBoss: 0
-        - Id: bird_2_s
-          Hp: 70
-          AutoHP: 0
-          IsBoss: 0
-        - Id: bird_2_s
-          Hp: 70
-          AutoHP: 0
-          IsBoss: 0
-      Rewards: []
+      Rewards:
+      - Id: coin
+        Count: 30
     - Location: 0
       LevelNumber: 2
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 2
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: lizard_1_s
-          Hp: 70
+        - Location: 0
+          LevelNumber: 2
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 900
           AutoHP: 0
           IsBoss: 0
-      - Time: 3
-        Enemies:
-        - Id: snake_3_b
-          Hp: 30
+        - Location: 0
+          LevelNumber: 2
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 900
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+        - Location: 0
+          LevelNumber: 2
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 900
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 2
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 2
+          Wive: 1
+          Id: lizard_1_s
+          Hp: 950
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 2
+          Wive: 1
+          Id: lizard_1_s
+          Hp: 950
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 40
     - Location: 0
       LevelNumber: 3
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 3
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: frog_1_w
-          Hp: 80
+        - Location: 0
+          LevelNumber: 3
+          Wive: 0
+          Id: lizard_1_s
+          Hp: 1050
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+        - Location: 0
+          LevelNumber: 3
+          Wive: 0
+          Id: lizard_1_s
+          Hp: 1050
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 3
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 3
+          Wive: 1
+          Id: lizard_1_s
+          Hp: 1100
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 3
+          Wive: 1
+          Id: lizard_1_s
+          Hp: 1100
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 3
+        Wive: 2
+        Time: 7
+        Enemies:
+        - Location: 0
+          LevelNumber: 3
+          Wive: 2
+          Id: snake_3_b
+          Hp: 1150
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 50
     - Location: 0
       LevelNumber: 4
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 4
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: rabbit_1_s
-          Hp: 150
+        - Location: 0
+          LevelNumber: 4
+          Wive: 0
+          Id: lizard_1_s
+          Hp: 1200
           AutoHP: 0
           IsBoss: 0
-      - Time: 15
-        Enemies:
-        - Id: rabbit_2_s
-          Hp: 150
+        - Location: 0
+          LevelNumber: 4
+          Wive: 0
+          Id: lizard_1_s
+          Hp: 1200
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+      - Location: 0
+        LevelNumber: 4
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 4
+          Wive: 1
+          Id: mouse_2_m
+          Hp: 1250
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 4
+          Wive: 1
+          Id: mouse_1_m
+          Hp: 1250
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 4
+          Wive: 1
+          Id: mouse_1_m
+          Hp: 1250
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 60
     - Location: 0
       LevelNumber: 5
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 0
+        LevelNumber: 5
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: fox_2_b
-          Hp: 260
+        - Location: 0
+          LevelNumber: 5
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 1350
           AutoHP: 0
           IsBoss: 0
-        - Id: fox_1_b
-          Hp: 260
+        - Location: 0
+          LevelNumber: 5
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 1350
           AutoHP: 0
           IsBoss: 0
-      - Time: 40
+      - Location: 0
+        LevelNumber: 5
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: fox_boss_s
-          Hp: 450
+        - Location: 0
+          LevelNumber: 5
+          Wive: 1
+          Id: rabbit_1_s
+          Hp: 2000
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 5
+          Wive: 1
+          Id: rabbit_1_s
+          Hp: 2000
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 60
+    - Location: 0
+      LevelNumber: 6
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 6
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 6
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 1500
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 6
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 1500
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 6
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 6
+          Wive: 1
+          Id: snake_3_b
+          Hp: 1550
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 6
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 6
+          Wive: 2
+          Id: bird_2_s
+          Hp: 1600
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 6
+          Wive: 2
+          Id: bird_2_s
+          Hp: 1600
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 70
+    - Location: 0
+      LevelNumber: 7
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 7
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 7
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 2250
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 7
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 2250
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 7
+        Wive: 1
+        Time: 16
+        Enemies:
+        - Location: 0
+          LevelNumber: 7
+          Wive: 1
+          Id: rabbit_2_s
+          Hp: 2300
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 7
+          Wive: 1
+          Id: rabbit_2_s
+          Hp: 2300
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 90
+    - Location: 0
+      LevelNumber: 8
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 8
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 8
+          Wive: 0
+          Id: mouse_2_m
+          Hp: 1800
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 8
+          Wive: 0
+          Id: mouse_1_m
+          Hp: 1800
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 8
+          Wive: 0
+          Id: mouse_1_m
+          Hp: 1800
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 8
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 8
+          Wive: 1
+          Id: rabbit_1_s
+          Hp: 2450
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 8
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 8
+          Wive: 2
+          Id: fox_1_b
+          Hp: 3700
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 110
+    - Location: 0
+      LevelNumber: 9
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 9
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 9
+          Wive: 0
+          Id: frog_1_w
+          Hp: 1950
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 9
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 9
+          Wive: 1
+          Id: frog_1_w
+          Hp: 2000
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 9
+          Wive: 1
+          Id: frog_1_w
+          Hp: 2000
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 9
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 9
+          Wive: 2
+          Id: frog_1_w
+          Hp: 2050
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 9
+          Wive: 2
+          Id: frog_1_w
+          Hp: 2050
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 9
+          Wive: 2
+          Id: frog_1_w
+          Hp: 2050
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 120
+    - Location: 0
+      LevelNumber: 10
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 10
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 10
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 2700
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 10
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 2700
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 10
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 10
+          Wive: 1
+          Id: fox_1_b
+          Hp: 3950
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 10
+          Wive: 1
+          Id: fox_2_b
+          Hp: 3950
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 130
+    - Location: 0
+      LevelNumber: 11
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 0
+        LevelNumber: 11
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 0
+          LevelNumber: 11
+          Wive: 0
+          Id: fox_1_b
+          Hp: 4050
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 0
+          LevelNumber: 11
+          Wive: 0
+          Id: fox_2_b
+          Hp: 4050
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 0
+        LevelNumber: 11
+        Wive: 1
+        Time: 10
+        Enemies:
+        - Location: 0
+          LevelNumber: 11
+          Wive: 1
+          Id: fox_boss_s
+          Hp: 8900
           AutoHP: 0
           IsBoss: 1
-      Rewards: []
+      Rewards:
+      - Id: coin
+        Count: 170
   - Location: 1
     Levels:
     - Location: 1
       LevelNumber: 0
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 1
+        LevelNumber: 0
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: frog_1_w
-          Hp: 110
+        - Location: 1
+          LevelNumber: 0
+          Wive: 0
+          Id: hedgehog_1_m
+          Hp: 4200
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
+        - Location: 1
+          LevelNumber: 0
+          Wive: 0
+          Id: hedgehog_1_m
+          Hp: 4200
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 0
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: frog_1_w
-          Hp: 115
+        - Location: 1
+          LevelNumber: 0
+          Wive: 1
+          Id: squirrel_1_s
+          Hp: 4255
           AutoHP: 0
           IsBoss: 0
-        - Id: frog_1_w
-          Hp: 115
+        - Location: 1
+          LevelNumber: 0
+          Wive: 1
+          Id: squirrel_1_s
+          Hp: 4255
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+      Rewards:
+      - Id: coin
+        Count: 160
     - Location: 1
       LevelNumber: 1
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 1
+        LevelNumber: 1
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: rabbit_1_s
-          Hp: 120
+        - Location: 1
+          LevelNumber: 1
+          Wive: 0
+          Id: raven_1_m
+          Hp: 5555
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
+      - Location: 1
+        LevelNumber: 1
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: hare_1_m
-          Hp: 175
+        - Location: 1
+          LevelNumber: 1
+          Wive: 1
+          Id: raven_1_m
+          Hp: 5610
           AutoHP: 0
           IsBoss: 0
-        - Id: hare_2_m
-          Hp: 175
+        - Location: 1
+          LevelNumber: 1
+          Wive: 1
+          Id: raven_1_m
+          Hp: 5610
           AutoHP: 0
           IsBoss: 0
-        - Id: hare_2_m
-          Hp: 175
+        - Location: 1
+          LevelNumber: 1
+          Wive: 1
+          Id: raven_1_m
+          Hp: 5610
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+      Rewards:
+      - Id: coin
+        Count: 220
     - Location: 1
       LevelNumber: 2
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 1
+        LevelNumber: 2
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: fox_2_b
-          Hp: 280
+        - Location: 1
+          LevelNumber: 2
+          Wive: 0
+          Id: squirrel_1_s
+          Hp: 4510
           AutoHP: 0
           IsBoss: 0
-        - Id: fox_1_b
-          Hp: 280
+      - Location: 1
+        LevelNumber: 2
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 2
+          Wive: 1
+          Id: marten_1_b
+          Hp: 4565
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+        - Location: 1
+          LevelNumber: 2
+          Wive: 1
+          Id: marten_1_b
+          Hp: 4565
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 2
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 2
+          Wive: 2
+          Id: e_owl_2_m
+          Hp: 5820
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 2
+          Wive: 2
+          Id: e_owl_2_m
+          Hp: 5820
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 250
     - Location: 1
       LevelNumber: 3
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 18
+      - Location: 1
+        LevelNumber: 3
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: raven_1_m
-          Hp: 190
+        - Location: 1
+          LevelNumber: 3
+          Wive: 0
+          Id: raven_1_m
+          Hp: 5865
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
+      - Location: 1
+        LevelNumber: 3
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: snake_1_b
-          Hp: 145
+        - Location: 1
+          LevelNumber: 3
+          Wive: 1
+          Id: e_owl_1_m
+          Hp: 5920
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+      - Location: 1
+        LevelNumber: 3
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 3
+          Wive: 2
+          Id: flyingSquirrel_1_m
+          Hp: 4775
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 3
+          Wive: 2
+          Id: flyingSquirrel_1_m
+          Hp: 4775
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 3
+          Wive: 2
+          Id: flyingSquirrel_1_m
+          Hp: 4775
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 260
     - Location: 1
       LevelNumber: 4
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 20
+      - Location: 1
+        LevelNumber: 4
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: e_owl_1_m
-          Hp: 200
+        - Location: 1
+          LevelNumber: 4
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 4820
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
+        - Location: 1
+          LevelNumber: 4
+          Wive: 0
+          Id: rabbit_1_s
+          Hp: 4820
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 4
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 4
+          Wive: 1
+          Id: hare_1_m
+          Hp: 6075
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 4
+        Wive: 2
+        Time: 15
+        Enemies:
+        - Location: 1
+          LevelNumber: 4
+          Wive: 2
+          Id: hare_2_m
+          Hp: 6130
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 4
+          Wive: 2
+          Id: hare_2_m
+          Hp: 6130
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 270
     - Location: 1
       LevelNumber: 5
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 1
+        LevelNumber: 5
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: log_1_n
-          Hp: 210
+        - Location: 1
+          LevelNumber: 5
+          Wive: 0
+          Id: hare_1_m
+          Hp: 6175
           AutoHP: 0
           IsBoss: 0
-        - Id: log_1_n
-          Hp: 210
+        - Location: 1
+          LevelNumber: 5
+          Wive: 0
+          Id: hare_1_m
+          Hp: 6175
           AutoHP: 0
           IsBoss: 0
-        - Id: log_1_n
-          Hp: 210
-          AutoHP: 0
-          IsBoss: 0
-      - Time: 0
+      - Location: 1
+        LevelNumber: 5
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: sundew_1_b
-          Hp: 215
+        - Location: 1
+          LevelNumber: 5
+          Wive: 1
+          Id: fox_2_b
+          Hp: 8630
           AutoHP: 0
           IsBoss: 0
-      - Time: 0
-        Enemies:
-        - Id: frog_1_w
-          Hp: 170
+        - Location: 1
+          LevelNumber: 5
+          Wive: 1
+          Id: fox_1_b
+          Hp: 8630
           AutoHP: 0
           IsBoss: 0
-        - Id: frog_1_w
-          Hp: 170
-          AutoHP: 0
-          IsBoss: 0
-      Rewards: []
+      Rewards:
+      - Id: coin
+        Count: 290
     - Location: 1
       LevelNumber: 6
       ExtraLevel: 0
       EnemiesWives:
-      - Time: 0
+      - Location: 1
+        LevelNumber: 6
+        Wive: 0
+        Time: 0
         Enemies:
-        - Id: wolf_1_m
-          Hp: 330
+        - Location: 1
+          LevelNumber: 6
+          Wive: 0
+          Id: log_1_n
+          Hp: 6330
           AutoHP: 0
           IsBoss: 0
-        - Id: wolf_1_m
-          Hp: 330
+        - Location: 1
+          LevelNumber: 6
+          Wive: 0
+          Id: log_1_n
+          Hp: 6330
           AutoHP: 0
           IsBoss: 0
-      - Time: 120
+      - Location: 1
+        LevelNumber: 6
+        Wive: 1
+        Time: 0
         Enemies:
-        - Id: wolf_1_m
-          Hp: 335
+        - Location: 1
+          LevelNumber: 6
+          Wive: 1
+          Id: log_1_n
+          Hp: 6385
           AutoHP: 0
           IsBoss: 0
-        - Id: wolf_1_m
-          Hp: 335
+        - Location: 1
+          LevelNumber: 6
+          Wive: 1
+          Id: log_1_n
+          Hp: 6385
           AutoHP: 0
           IsBoss: 0
-        - Id: wolf_1_m
-          Hp: 335
+        - Location: 1
+          LevelNumber: 6
+          Wive: 1
+          Id: log_1_n
+          Hp: 6385
           AutoHP: 0
           IsBoss: 0
-        - Id: wolf_1_m
-          Hp: 335
+      Rewards:
+      - Id: coin
+        Count: 310
+    - Location: 1
+      LevelNumber: 7
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 7
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 7
+          Wive: 0
+          Id: squirrel_1_s
+          Hp: 5285
           AutoHP: 0
           IsBoss: 0
-      Rewards: []
-  - Location: 2
-    Levels:
-    - Location: 0
-      LevelNumber: 0
+        - Location: 1
+          LevelNumber: 7
+          Wive: 0
+          Id: squirrel_1_s
+          Hp: 5285
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 7
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 7
+          Wive: 2
+          Id: squirrel_1_s
+          Hp: 5395
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 7
+          Wive: 2
+          Id: e_owl_2_m
+          Hp: 6595
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 7
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 7
+          Wive: 1
+          Id: marten_1_b
+          Hp: 5340
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 7
+          Wive: 1
+          Id: marten_1_b
+          Hp: 5340
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 330
+    - Location: 1
+      LevelNumber: 8
       ExtraLevel: 0
-      EnemiesWives: []
-      Rewards: []
-    - Location: 0
-      LevelNumber: 0
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 8
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 8
+          Wive: 0
+          Id: raven_1_m
+          Hp: 6640
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 8
+          Wive: 0
+          Id: raven_1_m
+          Hp: 6640
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 8
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 8
+          Wive: 1
+          Id: snake_1_b
+          Hp: 5495
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 8
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 8
+          Wive: 2
+          Id: snake_2_b
+          Hp: 5550
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 8
+        Wive: 3
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 8
+          Wive: 3
+          Id: hedgehog_1_m
+          Hp: 5605
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 8
+          Wive: 3
+          Id: hedgehog_1_m
+          Hp: 5605
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 350
+    - Location: 1
+      LevelNumber: 9
       ExtraLevel: 0
-      EnemiesWives: []
-      Rewards: []
-    - Location: 0
-      LevelNumber: 0
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 9
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 9
+          Wive: 0
+          Id: marten_1_b
+          Hp: 5595
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 9
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 9
+          Wive: 1
+          Id: hare_2_m
+          Hp: 6850
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 9
+          Wive: 1
+          Id: hare_2_m
+          Hp: 6850
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 9
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 9
+          Wive: 2
+          Id: wolf_1_m
+          Hp: 9305
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 9
+          Wive: 2
+          Id: wolf_2_m
+          Hp: 9305
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 370
+    - Location: 1
+      LevelNumber: 10
       ExtraLevel: 0
-      EnemiesWives: []
-      Rewards: []
-    - Location: 0
-      LevelNumber: 0
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 10
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 10
+          Wive: 0
+          Id: e_owl_1_m
+          Hp: 6950
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 10
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 10
+          Wive: 1
+          Id: raven_1_m
+          Hp: 7005
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 10
+          Wive: 1
+          Id: raven_1_m
+          Hp: 7005
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 10
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 10
+          Wive: 2
+          Id: wolf_1_m
+          Hp: 9460
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 10
+          Wive: 2
+          Id: wolf_2_m
+          Hp: 9460
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 390
+    - Location: 1
+      LevelNumber: 11
       ExtraLevel: 0
-      EnemiesWives: []
-      Rewards: []
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 11
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 11
+          Wive: 0
+          Id: marten_1_b
+          Hp: 5905
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 11
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 11
+          Wive: 1
+          Id: fox_2_b
+          Hp: 9560
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 11
+        Wive: 2
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 11
+          Wive: 2
+          Id: wolf_1_m
+          Hp: 9615
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 11
+          Wive: 2
+          Id: wolf_1_m
+          Hp: 9615
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 11
+          Wive: 2
+          Id: wolf_1_m
+          Hp: 9615
+          AutoHP: 0
+          IsBoss: 0
+      Rewards:
+      - Id: coin
+        Count: 440
+    - Location: 1
+      LevelNumber: 12
+      ExtraLevel: 0
+      EnemiesWives:
+      - Location: 1
+        LevelNumber: 12
+        Wive: 0
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 12
+          Wive: 0
+          Id: raven_1_m
+          Hp: 7260
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 12
+          Wive: 0
+          Id: raven_1_m
+          Hp: 7260
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 12
+        Wive: 1
+        Time: 0
+        Enemies:
+        - Location: 1
+          LevelNumber: 12
+          Wive: 1
+          Id: wolf_1_m
+          Hp: 9715
+          AutoHP: 0
+          IsBoss: 0
+        - Location: 1
+          LevelNumber: 12
+          Wive: 1
+          Id: wolf_2_m
+          Hp: 9715
+          AutoHP: 0
+          IsBoss: 0
+      - Location: 1
+        LevelNumber: 12
+        Wive: 2
+        Time: 12
+        Enemies:
+        - Location: 1
+          LevelNumber: 12
+          Wive: 2
+          Id: wolf_boss_b
+          Hp: 19370
+          AutoHP: 0
+          IsBoss: 1
+      Rewards:
+      - Id: coin
+        Count: 530

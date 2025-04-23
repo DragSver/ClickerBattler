@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Configs;
-using Game.Skills;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using Meta.RewardedAd;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,27 +21,66 @@ namespace Meta.Shop
         [SerializeField] private SkillView _skillViewPrefab;
 
         [SerializeField] private Button _mapButton;
+        [SerializeField] private Button _rewardAdButton;
+        
+        [SerializeField] private RewardedAdController _rewardedAdController;
         
         private SkillConfig _skillConfig;
         private SaveSystem _saveSystem;
         private Wallet _wallet;
         private OpenSkills _openSkills;
         private List<SkillView> _skillViews = new ();
+        private int _minSkillPrice;
 
 
         public void Init(SaveSystem saveSystem, SkillConfig skillConfig, UnityAction onMapButtonClick)
         {
             _skillConfig = skillConfig;
             _saveSystem = saveSystem;
-            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _openSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
+            _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _mapButton.onClick.AddListener(onMapButtonClick);
             _walletText.text = _wallet.Coins.ToString();
+
+            _minSkillPrice = GetMinSkillPrice();
+            _rewardedAdController.Init(ShowRewardButton, HideRewardButton, _saveSystem, _minSkillPrice/2, RewardAdUpdate);
+            
             InitShopSkills();
+        }
+
+        private int GetMinSkillPrice()
+        {
+            var minPrice = int.MaxValue;
+            foreach (var openSkillsOpenedSkill in _openSkills.OpenedSkills)
+            {
+                var skillDataByLevel = _skillConfig.GetSkillDataByLevel(openSkillsOpenedSkill.Id, openSkillsOpenedSkill.Level+1);
+                if (skillDataByLevel is not null && skillDataByLevel.Price < minPrice)
+                    minPrice = skillDataByLevel.Price;
+            }
+            return minPrice;
         }
         
         public void ActivateShopView(bool activate) => _shopWindow.gameObject.SetActive(activate);
 
+        private void ShowRewardButton(UnityAction callback)
+        {
+            _rewardAdButton.onClick.RemoveAllListeners();
+            _rewardAdButton.onClick.AddListener(() => callback?.Invoke());
+            _rewardAdButton.gameObject.SetActive(true);
+        }
+        private void HideRewardButton()
+        {
+            _rewardAdButton.onClick.RemoveAllListeners();
+            _rewardAdButton.gameObject.SetActive(false);
+        }
+
+        private void RewardAdUpdate()
+        {
+            ClearShopSkills();
+            InitShopSkills();
+            UpdateWalletValue();
+        }
+        
         private void InitShopSkills()
         {
             foreach (var openSkillsOpenedSkill in _openSkills.OpenedSkills)
@@ -68,6 +107,10 @@ namespace Meta.Shop
             }
         }
 
+        public void UpdateWalletValue()
+        {
+            _walletText.text = _wallet.Coins.ToString();
+        }
         private void BuySkill(string skillId, int price)
         {
             if (price <= _wallet.Coins)
@@ -79,7 +122,14 @@ namespace Meta.Shop
                 _saveSystem.SaveData(SavableObjectType.OpenSkills);
             }
 
-            _walletText.text = _wallet.Coins.ToString();
+            UpdateWalletValue();
+            
+            var minSkillPrice = GetMinSkillPrice();
+            if (minSkillPrice > _minSkillPrice)
+            {
+                _minSkillPrice = minSkillPrice;
+                _rewardedAdController.SetReward(_minSkillPrice / 2);
+            }
             // SetSkill(_openSkills.GetSkillWithLevel(skillId), _skillViews.Find(view => view.SkillId == skillId));
             ClearShopSkills();
             InitShopSkills();

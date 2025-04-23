@@ -1331,3 +1331,5 @@ MonoBehaviour:
       Rewards:
       - Id: coin
         Count: 530
+  - Location: 3
+    Levels: []

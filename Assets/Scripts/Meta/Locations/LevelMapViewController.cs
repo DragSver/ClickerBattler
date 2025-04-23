@@ -32,7 +32,6 @@ namespace Meta.Locations
             InitButton(_achievementsButton, onAchievements);
             InitButton(_shopButton, onShop);
             
-            FirstInitNavigationButtons(currentLocation, countLocations);
             SetWallet(wallet);
         }
         
@@ -50,14 +49,6 @@ namespace Meta.Locations
                 button.onClick.AddListener(action);
             else
                 button.enabled = false;
-        }
-        
-        private void FirstInitNavigationButtons(int currentLocation, int countLocations)
-        {
-            if (currentLocation == countLocations-1)
-                _nextLocationButton.gameObject.SetActive(true);
-            if (currentLocation == 0)
-                _previousLocationButton.gameObject.SetActive(false);
         }
     }
 }

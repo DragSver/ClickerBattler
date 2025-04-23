@@ -7,14 +7,12 @@ using Meta.Shop;
 using SceneManegement;
 using SceneManegement.EnterParams;
 using UnityEngine;
-using UnityEngine.Serialization;
+using YG;
 
 namespace Meta
 {
     public class MetaEntryPoint : EntryPoint
     {
-        [FormerlySerializedAs("_levelMapController")]
-        [FormerlySerializedAs("_locationManager")]
         [Header("Controllers")]
         [SerializeField] private LevelMap _levelMap;
         [SerializeField] private ShopWindow _shopWindow;
@@ -30,6 +28,8 @@ namespace Meta
         
         
         public override void Run(SceneEnterParams enterParams){
+            YG2.InterstitialAdvShow();
+            
             _saveSystem = FindFirstObjectByType<SaveSystem>();
             _audioManager = FindFirstObjectByType<AudioManager>();
             _audioManager.Play(AudioNames.Audio_Meta_BG, false);

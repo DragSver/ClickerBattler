@@ -23,12 +23,19 @@ namespace Meta.Locations
             _currentLocation = progress.CurrentLocation;
             
             _levelMapViewController.Init(ShowNextLocation, ShowPreviousLocation, null, null, onShop, _currentLocation, _locations.Count, wallet);
-            
+            FirstInitNavigationButtons();
             FirstInitLocations(progress, startLevelCallback);
             SetViewLocation(_currentLocation);
             
         }
 
+        private void FirstInitNavigationButtons()
+        {
+            if (_currentLocation == _locations.Count-1 || _locations[_currentLocation+1].ProgressState == ProgressState.Closed)
+                _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
+            if (_currentLocation == 0)
+                _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
+        }
         private void ShowNextLocation()
         {
             _locations[_currentLocation].SetActive(false);
@@ -38,7 +45,7 @@ namespace Meta.Locations
             
             if (_currentLocation == _locations.Count-1 || _locations[_currentLocation+1].ProgressState == ProgressState.Closed)
                 _levelMapViewController.NextLocationButton.gameObject.SetActive(false);
-            if (_currentLocation == 1)
+            if (_currentLocation >= 1)
                 _levelMapViewController.PreviousLocationButton.gameObject.SetActive(true);
         }
         private void ShowPreviousLocation()
@@ -48,7 +55,7 @@ namespace Meta.Locations
             SetViewLocation(_currentLocation);
             _locations[_currentLocation].SetActive(true);
             
-            if (_currentLocation == _locations.Count-2)
+            if (_currentLocation <= _locations.Count-2)
                 _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
             if (_currentLocation == 0)
                 _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);

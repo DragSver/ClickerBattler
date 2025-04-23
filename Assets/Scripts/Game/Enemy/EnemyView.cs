@@ -50,7 +50,6 @@ namespace Game.Enemy
             
             _enemyName.text = enemyName;
             _image.sprite = enemyImage;
-            _image.SetNativeSize();
             _elementsImages[element].gameObject.SetActive(true);
             
             _healthBar.SetMaxValue(health);

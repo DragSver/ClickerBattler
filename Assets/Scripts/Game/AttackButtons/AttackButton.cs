@@ -16,6 +16,8 @@ namespace Game.AttackButtons
         [SerializeField] private float _currentDamage = 1;
         [SerializeField] private LayerMask _enemyLayer;
         [SerializeField] private ParticleSystem _attackParticleSystem;
+        [SerializeField] private ParticleSystemPool _particleSystemPool;
+        [SerializeField] private RectTransform _rectTransform;
         
         private Canvas _canvas;
         private Camera _camera;
@@ -25,6 +27,7 @@ namespace Game.AttackButtons
         {
             _canvas = screenCanvas;
             _camera = Camera.main;
+            _particleSystemPool.Init(_rectTransform);
             _attackButtonController = attackButtonController;
         }
 

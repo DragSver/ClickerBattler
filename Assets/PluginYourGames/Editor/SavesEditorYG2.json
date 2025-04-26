@@ -1,13 +1,15 @@
 {
     "stringKeys": [
         "Wallet",
+        "OpenSkills",
         "Stats",
-        "OpenSkills"
+        "Progress"
     ],
     "stringValues": [
-        "{\"Coins\":10}",
-        "{\"KillsCount\":18,\"DeathCount\":2,\"ClickCount\":0,\"BossKillsCount\":0,\"NoneElementKillsCount\":0,\"MoonKillsCount\":6,\"SunKillsCount\":10,\"WaterKillsCount\":0,\"BloodKillsCount\":2}",
-        "{\"OpenedSkills\":[{\"Id\":\"BaseMoonDamageSkill\",\"Level\":1},{\"Id\":\"BaseBloodDamageSkill\",\"Level\":2},{\"Id\":\"BaseWaterDamageSkill\",\"Level\":5},{\"Id\":\"BaseSunDamageSkill\",\"Level\":1}]}"
+        "{\"Coins\":485389}",
+        "{\"OpenedSkills\":[{\"Id\":\"BaseMoonDamageSkill\",\"Level\":100},{\"Id\":\"BaseBloodDamageSkill\",\"Level\":100},{\"Id\":\"BaseWaterDamageSkill\",\"Level\":100},{\"Id\":\"BaseSunDamageSkill\",\"Level\":100}]}",
+        "{\"KillsCount\":126,\"DeathCount\":0,\"ClickCount\":0,\"BossKillsCount\":2,\"NoneElementKillsCount\":5,\"MoonKillsCount\":64,\"SunKillsCount\":32,\"WaterKillsCount\":6,\"BloodKillsCount\":19}",
+        "{\"CurrentLocation\":2,\"CurrentLevel\":0}"
     ],
     "floatKeys": [],
     "floatValues": [],
@@ -21,5 +23,5 @@
         false,
         false
     ],
-    "idSave": 29
+    "idSave": 874
 }

@@ -32,7 +32,7 @@ namespace Meta.Locations
         private void FirstInitNavigationButtons()
         {
             if (_currentLocation == _locations.Count-1 || _locations[_currentLocation+1].ProgressState == ProgressState.Closed)
-                _levelMapViewController.NextLocationButton.gameObject.SetActive(true);
+                _levelMapViewController.NextLocationButton.gameObject.SetActive(false);
             if (_currentLocation == 0)
                 _levelMapViewController.PreviousLocationButton.gameObject.SetActive(false);
         }

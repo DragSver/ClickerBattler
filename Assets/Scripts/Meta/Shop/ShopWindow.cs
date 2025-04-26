@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Configs;
+using Global;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.RewardedAd;
@@ -15,7 +16,7 @@ namespace Meta.Shop
     {
         [SerializeField] private RectTransform _shopWindow;
         
-        [SerializeField] private TextMeshProUGUI _walletText;
+        [SerializeField] private WalletViewController _walletController;
         
         [SerializeField] private GameObject _skillsHolder;
         [SerializeField] private SkillView _skillViewPrefab;
@@ -40,7 +41,7 @@ namespace Meta.Shop
             _openSkills = (OpenSkills)_saveSystem.GetData(SavableObjectType.OpenSkills);
             _wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             _mapButton.onClick.AddListener(onMapButtonClick);
-            _walletText.text = _wallet.Coins.ToString();
+            _walletController.UpdateWallet(_wallet.Coins);
 
             _minSkillPrice = GetMinSkillPrice();
             _rewardedAdController.Init(ShowRewardButton, HideRewardButton, _saveSystem, _minSkillPrice/2, RewardAdUpdate);
@@ -78,7 +79,7 @@ namespace Meta.Shop
         {
             ClearShopSkills();
             InitShopSkills();
-            UpdateWalletValue();
+            _walletController.UpdateWallet(_wallet.Coins);
         }
         
         private void InitShopSkills()
@@ -107,10 +108,6 @@ namespace Meta.Shop
             }
         }
 
-        public void UpdateWalletValue()
-        {
-            _walletText.text = _wallet.Coins.ToString();
-        }
         private void BuySkill(string skillId, int price)
         {
             if (price <= _wallet.Coins)
@@ -122,7 +119,7 @@ namespace Meta.Shop
                 _saveSystem.SaveData(SavableObjectType.OpenSkills);
             }
 
-            UpdateWalletValue();
+            _walletController.UpdateWallet(_wallet.Coins);
             
             var minSkillPrice = GetMinSkillPrice();
             if (minSkillPrice > _minSkillPrice)

@@ -318,6 +318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5298624658517852149}
+  - component: {fileID: 5110213629647333859}
   m_Layer: 0
   m_Name: Coins_Area
   m_TagString: Untagged
@@ -347,6 +348,19 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5110213629647333859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496285491652344238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f6f63739744c4fb952cbc3b44f524b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _walletText: {fileID: 2929906954829767926}
 --- !u!1 &4517662077360034156
 GameObject:
   m_ObjectHideFlags: 0

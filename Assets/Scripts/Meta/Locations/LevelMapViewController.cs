@@ -1,4 +1,5 @@
 ﻿using Datas.Meta;
+using Global;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +11,7 @@ namespace Meta.Locations
     {
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI _locationName;
-        [SerializeField] private TextMeshProUGUI _coins;
+        [SerializeField] private WalletViewController _walletController;
         [SerializeField] private Image _background;
 
         public Button NextLocationButton => _nextLocationButton;
@@ -40,7 +41,7 @@ namespace Meta.Locations
             _locationName.text = levelMapViewData.Name;
             _background.sprite = levelMapViewData.Background;
         }
-        public void SetWallet(int amount) => _coins.text = amount.ToString();
+        public void SetWallet(int amount) => _walletController.UpdateWallet(amount);
         
         
         private void InitButton(Button button, UnityAction action)

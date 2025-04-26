@@ -15,7 +15,7 @@ namespace Game
             _parent = parent;
             _pool.Add(Instantiate(_particleSystemPrefab, _parent));
         }
-        public void StartParticle(Vector3 position)
+        public void Play(Vector3 position)
         {
             var particle = _pool.Find(particle => particle.isPlaying == false);
             if (particle == null)
@@ -23,6 +23,12 @@ namespace Game
                 particle = Instantiate(_particleSystemPrefab, _parent);
                 _pool.Add(particle);
             }
+            
+            particle.transform.position = position;
+            var vector3 = particle.transform.localPosition;
+            vector3.z = -50;
+            particle.transform.localPosition = vector3;
+            
             particle.Play();
         }
     }

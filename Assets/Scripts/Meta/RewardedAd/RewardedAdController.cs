@@ -44,6 +44,7 @@ namespace Meta.RewardedAd
         private void ShowAdvertisement()
         {
             YG2.RewardedAdvShow("shopCoinReward", GetReward);
+            YG2.optionalPlatform.LoadRewardedAdv();
             _hideRewardedAd?.Invoke();
             StartCoroutine(WaitAdShow());
         }

@@ -38,6 +38,11 @@ namespace Meta.Shop
                 _skillUpgrade.text = $"{currentLevel.Value} -> {nextLevel.Value}";
                 _skillUpgradeText.text = currentLevel.Level == 0 ? "Купить" : "Прокачать";
                 _priceSkillUpgrade.text = nextLevel.Price.ToString();
+                _priceSkillUpgrade.text = nextLevel.Price > 1000000 ? 
+                    $"{nextLevel.Price / 1000000}кк" :
+                    nextLevel.Price > 1000 ? 
+                        $"{nextLevel.Price / 1000}к" : 
+                        nextLevel.Price.ToString();
                 _priceImage.gameObject.SetActive(true);
                 _priceSkillUpgrade.gameObject.SetActive(true);
                 
@@ -58,9 +63,11 @@ namespace Meta.Shop
             else
             {
                 _skillUpgrade.text = currentLevel.Value.ToString(CultureInfo.InvariantCulture);
-                _skillUpgrade.text = "Макс.\nуровень";
                 _priceImage.gameObject.SetActive(false);
                 _priceSkillUpgrade.gameObject.SetActive(false);
+                _skillUpgradeText.text = "Макс.\nуровень";
+                _buyButtonImage.color = Color.gray;
+                _skillUpgradeButton.enabled = false;
             }
         }
 

@@ -29,6 +29,7 @@ namespace Meta
         
         public override void Run(SceneEnterParams enterParams){
             YG2.InterstitialAdvShow();
+            YG2.optionalPlatform.LoadRewardedAdv();
             
             _saveSystem = FindFirstObjectByType<SaveSystem>();
             _audioManager = FindFirstObjectByType<AudioManager>();

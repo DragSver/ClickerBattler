@@ -10,7 +10,7 @@ public class RewardView : MonoBehaviour
 
     public void SetReward(ItemData itemData, int count)
     {
-        _rewardCountText.text = count.ToString();
+        _rewardCountText.text = count > 1000000? $"{count/1000000}кк": count > 1000? $"{count/1000}к" : count.ToString();
         _rewardImage.sprite = itemData.Sprite;
     }
 

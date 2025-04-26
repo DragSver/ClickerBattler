@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopWindow: {fileID: 1891139246539095192}
-  _walletText: {fileID: 5158418108088618335}
+  _walletController: {fileID: 2521241641412108208}
   _skillsHolder: {fileID: 5602295194995613355}
   _skillViewPrefab: {fileID: 3367654773220641477, guid: ed3ae14135f7c37489f748086e83cd86, type: 3}
   _mapButton: {fileID: 852332531971562570}
@@ -2094,7 +2094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00024414062}
+  m_AnchoredPosition: {x: 0, y: 29832.912}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &8613889712879716582
@@ -2809,15 +2809,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 932730d921c1d1b4a9c3d81d21b71475, type: 3}
---- !u!114 &5158418108088618335 stripped
+--- !u!114 &2521241641412108208 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3512079395554192036, guid: 932730d921c1d1b4a9c3d81d21b71475, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6185192162211395659, guid: 932730d921c1d1b4a9c3d81d21b71475, type: 3}
   m_PrefabInstance: {fileID: 8586966367707162619}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 18f6f63739744c4fb952cbc3b44f524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &9170123380894184771 stripped

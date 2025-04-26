@@ -684,7 +684,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg
     Standalone: PLUGIN_YG_2;TMP_YG2;YandexGamesPlatform_yg
-    WebGL: PLUGIN_YG_2;TMP_YG2;RU_YG2;YandexGamesPlatform_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;RedefinePlayerPrefs_yg;InterstitialAdv_yg
+    WebGL: PLUGIN_YG_2;TMP_YG2;RU_YG2;YandexGamesPlatform_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;RedefinePlayerPrefs_yg;InterstitialAdv_yg;Localization_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

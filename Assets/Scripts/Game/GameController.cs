@@ -15,6 +15,7 @@ using Game.Timer;
 using SceneManegement;
 using SceneManegement.EnterParams;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game {
     public class GameController : EntryPoint
@@ -115,15 +116,29 @@ namespace Game {
             {
                 TrySaveEndLevelData();
                 AddAndSaveRewards(_levelData.Rewards[0].Count);
+
+                UnityAction continueClick;
+                string continueButtonText;
+                var gameEnterParams = GetNextLevelGameEnterParams();
+                if (gameEnterParams == null)
+                {
+                    continueClick = LoadRestartLevel;
+                    continueButtonText = "Переиграть уровень";
+                }
+                else
+                {
+                    continueClick = LoadNextLevel;
+                    continueButtonText = "Продолжить путешествие";
+                }
                 
-                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), (GetNextLevelGameEnterParams() != null? LoadNextLevel : null), LoadMetaScene, _levelData.Rewards, _wallet.Coins, true);
+                _endLevelScreenController.CallEndLevelScreen(EditVictoryData(), continueClick, continueButtonText, LoadMetaScene, _levelData.Rewards, _wallet.Coins, true);
             }
             else
             {
                 var loseData = _loseScreenData;
                 var totalDeaths = _stats.DeathCount;
                 loseData.FirstLabel = $"Вы погибли {totalDeaths} раз";
-                _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, LoadMetaScene, null, _wallet.Coins, false);
+                _endLevelScreenController.CallEndLevelScreen(loseData, LoadRestartLevel, "Попробовать снова", LoadMetaScene, null, _wallet.Coins, false);
             }
         }
         

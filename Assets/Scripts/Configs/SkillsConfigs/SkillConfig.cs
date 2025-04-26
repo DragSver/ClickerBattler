@@ -28,6 +28,10 @@ namespace Configs
             if (_skillDataByLevelMap == null || _skillDataByLevelMap.Count == 0)
                 FillSkillDataMaps();
 
+            if (!_skillDataByLevelMap.ContainsKey(skillId)) return null;
+            if (level > _skillDataByLevelMap[skillId].Count - 1)
+                return _skillDataByLevelMap[skillId][_skillDataByLevelMap[skillId].Count - 1];
+            
             return _skillDataByLevelMap[skillId][level];
         }
 

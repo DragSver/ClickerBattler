@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Datas.Game;
 using Datas.Global;
+using Global;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,20 +28,22 @@ namespace Game
         [SerializeField] private Image _timeImage;
         [SerializeField] private Image _bestTimeImage;
 
+        [SerializeField] private TextMeshProUGUI _continueGameButtonText;
         [SerializeField] private Button _continueGameButton;
         [SerializeField] private Button _mapButton;
         
         [SerializeField] private RewardsController _rewardsController;
 
-        [SerializeField] private TextMeshProUGUI _wallet;
+        [SerializeField] private WalletViewController _walletController;
         
         
-        public void CallEndLevelScreen(EndLevelScreenData endLevelScreenData, UnityAction onContinueGameClick, UnityAction onMapButtonClick, List<CollectedItemsData> collectedItems, int coins, bool win)
+        public void CallEndLevelScreen(EndLevelScreenData endLevelScreenData, UnityAction onContinueGameClick, string continueGameButtonText, UnityAction onMapButtonClick, List<CollectedItemsData> collectedItems, int coins, bool win)
         {
             InitButton(_continueGameButton, onContinueGameClick);
             InitButton(_mapButton, onMapButtonClick);
+            _continueGameButtonText.text = continueGameButtonText;
 
-            _wallet.text = coins.ToString();
+            _walletController.UpdateWallet(coins);
             
             _background.sprite = endLevelScreenData.Background;
             _flagImage.sprite = endLevelScreenData.Flag;

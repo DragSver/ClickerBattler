@@ -1,5 +1,6 @@
 ﻿using Datas.Game;
 using Game.AttackButtons;
+using Global;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,7 +15,7 @@ namespace Game
         
         [Header("InfoArea")]
         [SerializeField] private TextMeshProUGUI _name;
-        [SerializeField] private TextMeshProUGUI _countCoins;
+        [SerializeField] private WalletViewController _walletController;
         
         [Header("GameArea")]
         [SerializeField] private Image _background;
@@ -40,7 +41,7 @@ namespace Game
             UnityAction onPauseButtonClicked)
         {
             _name.text = $"{locationViewData.Name} ур. {level}/{maxLevel}";
-            _countCoins.text = countCoins.ToString();
+            _walletController.UpdateWallet(countCoins);
             
             _background.sprite = locationViewData.Background;
             _attackButtonController = Instantiate(locationViewData.AttackButtonControllerPrefab, _attackButtonControllerHolder);

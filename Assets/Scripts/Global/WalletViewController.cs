@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Globalization;
+using TMPro;
 using UnityEngine;
 
 namespace Global
@@ -9,7 +10,7 @@ namespace Global
 
         public void UpdateWallet(int coins)
         {
-            _walletText.text = coins > 1000000? $"{coins/1000000}кк": coins > 1000? $"{coins/1000}к" : coins.ToString();
+            _walletText.text = coins.ToString("N0", new CultureInfo("ru-RU"));
         }
     }
 }

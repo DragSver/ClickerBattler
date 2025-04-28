@@ -24,7 +24,7 @@ namespace Meta.Shop
         public string SkillId => _skillId;
         private string _skillId;
 
-        public void SetSkill(SkillData skillData, SkillDataByLevel currentLevel, SkillDataByLevel? nextLevel, int currentWallet, UnityAction onBuySkill)
+        public void SetSkill(SkillData skillData, SkillDataByLevel currentLevel, SkillDataByLevel nextLevel, int currentWallet, UnityAction onBuySkill)
         {
             _skillId = skillData.Id;
             _skillName.text = skillData.Name;
@@ -38,11 +38,7 @@ namespace Meta.Shop
                 _skillUpgrade.text = $"{currentLevel.Value} -> {nextLevel.Value}";
                 _skillUpgradeText.text = currentLevel.Level == 0 ? "Купить" : "Прокачать";
                 _priceSkillUpgrade.text = nextLevel.Price.ToString();
-                _priceSkillUpgrade.text = nextLevel.Price > 1000000 ? 
-                    $"{nextLevel.Price / 1000000}кк" :
-                    nextLevel.Price > 1000 ? 
-                        $"{nextLevel.Price / 1000}к" : 
-                        nextLevel.Price.ToString();
+                _priceSkillUpgrade.text = nextLevel.Price.ToString("N0", new CultureInfo("ru-RU"));
                 _priceImage.gameObject.SetActive(true);
                 _priceSkillUpgrade.gameObject.SetActive(true);
                 

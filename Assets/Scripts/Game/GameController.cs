@@ -209,7 +209,7 @@ namespace Game {
             var maxLevel = _levels.GetCountMainLevelOnLocation(currentLocation);
             if (currentLevel+1 >= maxLevel)
             {
-                if (currentLocation + 1 < _levels.Locations.Count)
+                if (currentLocation + 1 < _levels.Locations.Count && _levels.Locations[currentLocation+1].Levels.Count > 0)
                 {
                     currentLevel = 0;
                     currentLocation++;
